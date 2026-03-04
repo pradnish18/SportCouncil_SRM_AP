@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SRM Sports Council — Site Architecture Flowchart</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg:         #060810;
+  --surface:    #0d1020;
+  --surface2:   #131729;
+  --border:     rgba(255,255,255,0.07);
+
+  --home:       #3b82f6;
+  --home-dim:   rgba(59,130,246,0.12);
+  --home-glow:  rgba(59,130,246,0.35);
+
+  --clubs:      #10b981;
+  --clubs-dim:  rgba(16,185,129,0.12);
+  --clubs-glow: rgba(16,185,129,0.35);
+
+  --events:     #f59e0b;
+  --events-dim: rgba(245,158,11,0.12);
+  --events-glow:rgba(245,158,11,0.35);
+
+  --ach:        #e879f9;
+  --ach-dim:    rgba(232,121,249,0.12);
+  --ach-glow:   rgba(232,121,249,0.35);
+
+  --nav-a:      #6366f1;
+  --nav-b:      #8b5cf6;
+
+  /* editable highlight */
+  --edit:       #fbbf24;
+  --edit-dim:   rgba(251,191,36,0.10);
+  --edit-glow:  rgba(251,191,36,0.25);
+
+  --text:       #e2e8f0;
+  --muted:      #64748b;
+  --subtle:     #94a3b8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 48px 28px 80px;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.wrap { position: relative; z-index: 1; max-width: 1300px; margin: 0 auto; }
+
+/* ── HEADER ── */
+.header { text-align: center; margin-bottom: 40px; animation: fadeDown .6s ease both; }
+.header .badge {
+  display: inline-block;
+  font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--nav-a); border: 1px solid rgba(99,102,241,0.3); border-radius: 20px;
+  padding: 4px 14px; margin-bottom: 14px; background: rgba(99,102,241,0.07);
+}
+.header h1 {
+  font-family: 'Syne', sans-serif; font-size: 30px; font-weight: 800;
+  background: linear-gradient(135deg, #fff 30%, rgba(255,255,255,0.45));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.header p { font-size: 12px; color: var(--muted); margin-top: 7px; }
+
+/* ── LEGEND ── */
+.legend {
+  display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+  margin-bottom: 36px; animation: fadeDown .6s .08s ease both;
+}
+.leg { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; color: var(--subtle); }
+.leg-dot { width: 8px; height: 8px; border-radius: 50%; }
+.leg-edit {
+  display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600;
+  color: var(--edit);
+  background: var(--edit-dim); border: 1px solid rgba(251,191,36,0.25);
+  border-radius: 20px; padding: 3px 10px;
+}
+
+/* ── NAVBAR ── */
+.navbar-node { display: flex; justify-content: center; margin-bottom: 0; animation: fadeDown .6s .12s ease both; }
+.navbar-box {
+  background: linear-gradient(135deg, var(--nav-a), var(--nav-b));
+  border-radius: 12px; padding: 13px 40px;
+  display: flex; align-items: center; gap: 12px;
+  box-shadow: 0 0 40px rgba(99,102,241,0.3), 0 8px 32px rgba(0,0,0,0.4);
+}
+.navbar-box .label { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: #fff; }
+.navbar-box .sub   { font-size: 10px; font-weight: 400; opacity: .6; margin-left: 6px; letter-spacing: 1px; text-transform: uppercase; }
+
+/* ── BRANCH SVG ── */
+.branch-svg { width: 100%; max-width: 1300px; display: block; margin: 0 auto; }
+
+/* ── COLUMN GRID ── */
+.col-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+
+/* ── SECTION COLUMN ── */
+.section-col { display: flex; flex-direction: column; gap: 0; animation: fadeUp .5s ease both; }
+.section-col:nth-child(1) { animation-delay: .2s; }
+.section-col:nth-child(2) { animation-delay: .3s; }
+.section-col:nth-child(3) { animation-delay: .4s; }
+.section-col:nth-child(4) { animation-delay: .5s; }
+
+.sec-header {
+  border-radius: 10px 10px 0 0;
+  padding: 13px 16px;
+  display: flex; align-items: center; gap: 9px;
+}
+.sec-header .sec-icon  { font-size: 17px; flex-shrink: 0; }
+.sec-header .sec-label { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: #fff; }
+.sec-header .sec-num   { margin-left: auto; font-size: 10px; font-weight: 600; opacity: .45; letter-spacing: 1px; }
+
+.sh-home   { background: linear-gradient(135deg,#1d4ed8,#3b82f6); box-shadow: 0 4px 20px var(--home-glow); }
+.sh-clubs  { background: linear-gradient(135deg,#047857,#10b981); box-shadow: 0 4px 20px var(--clubs-glow); }
+.sh-events { background: linear-gradient(135deg,#b45309,#f59e0b); box-shadow: 0 4px 20px var(--events-glow); }
+.sh-ach    { background: linear-gradient(135deg,#a21caf,#e879f9); box-shadow: 0 4px 20px var(--ach-glow); }
+
+.col-body {
+  background: var(--surface);
+  border: 1px solid var(--border); border-top: none;
+  border-radius: 0 0 12px 12px;
+  flex: 1; overflow: hidden;
+}
+
+/* ── CARD BLOCK ── */
+.card-block {
+  padding: 13px 15px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  transition: background .2s;
+}
+.card-block:last-child { border-bottom: none; }
+.card-block:hover { background: rgba(255,255,255,0.02); }
+
+.card-block.home-a   { border-left: 3px solid var(--home); }
+.card-block.clubs-a  { border-left: 3px solid var(--clubs); }
+.card-block.events-a { border-left: 3px solid var(--events); }
+.card-block.ach-a    { border-left: 3px solid var(--ach); }
+
+/* ── EDITABLE highlight override ── */
+.card-block.editable {
+  border-left: 3px solid var(--edit) !important;
+  background: var(--edit-dim);
+  box-shadow: inset 0 0 0 1px rgba(251,191,36,0.12);
+}
+.card-block.editable:hover { background: rgba(251,191,36,0.14); }
+
+/* editable badge */
+.edit-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 9px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase;
+  color: #92400e;
+  background: linear-gradient(135deg, #fde68a, #fbbf24);
+  border-radius: 4px; padding: 2px 7px;
+  margin-left: 6px;
+  box-shadow: 0 1px 4px rgba(251,191,36,0.3);
+  flex-shrink: 0;
+}
+
+.cb-header {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap;
+}
+.cb-icon {
+  font-size: 13px; width: 25px; height: 25px; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.home-i   { background: var(--home-dim); }
+.clubs-i  { background: var(--clubs-dim); }
+.events-i { background: var(--events-dim); }
+.ach-i    { background: var(--ach-dim); }
+.edit-i   { background: var(--edit-dim); }
+
+.cb-title {
+  font-size: 10.5px; font-weight: 600; letter-spacing: .5px;
+  text-transform: uppercase; color: var(--subtle);
+}
+.editable .cb-title { color: var(--edit); }
+
+.card-block ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.card-block ul li {
+  font-size: 12px; font-weight: 400; color: var(--text);
+  padding-left: 12px; position: relative; line-height: 1.5;
+}
+.card-block ul li::before {
+  content: ''; position: absolute; left: 0; top: 7px;
+  width: 4px; height: 4px; border-radius: 50%;
+}
+.home-a   ul li::before { background: var(--home); }
+.clubs-a  ul li::before { background: var(--clubs); }
+.events-a ul li::before { background: var(--events); }
+.ach-a    ul li::before { background: var(--ach); }
+.editable ul li::before { background: var(--edit); }
+
+/* ── ADMIN TAG ── */
+.admin-tag {
+  margin: 10px 13px 13px;
+  padding: 7px 12px;
+  background: rgba(16,185,129,0.07);
+  border: 1px dashed rgba(16,185,129,0.3);
+  border-radius: 7px;
+  font-size: 11px; font-weight: 500; color: var(--clubs);
+  display: flex; align-items: center; gap: 6px;
+}
+
+/* ── UPCOMING NOTE ── */
+.upcoming-note {
+  padding: 7px 15px;
+  border-bottom: 1px solid var(--border);
+  font-size: 10px; color: var(--muted);
+  font-style: italic; text-align: center; letter-spacing: .5px;
+}
+
+/* num chip */
+.num-chip {
+  font-size: 9px; font-weight: 700; color: var(--muted);
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 4px; padding: 1px 6px; letter-spacing: .5px;
+  margin-left: auto;
+}
+
+/* ═══════════════════════════════════
+   EVENTS LIFECYCLE — 3 STAGE FLOW
+═══════════════════════════════════ */
+.events-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Stage wrapper */
+.stage-wrap {
+  position: relative;
+}
+
+/* Stage connector arrow between stages */
+.stage-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 0;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  gap: 2px;
+}
+.stage-arrow .arrow-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--events);
+  opacity: .85;
+}
+.stage-arrow svg { display: block; }
+
+/* Stage card — styled like card-block but with stage number */
+.stage-card {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border);
+  border-left: 3px solid var(--events);
+  position: relative;
+  transition: background .2s;
+}
+.stage-card:hover { background: rgba(255,255,255,0.02); }
+
+/* stage badge */
+.stage-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 9px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase;
+  border-radius: 4px; padding: 2px 8px; margin-bottom: 6px;
+}
+.badge-planned  { background: rgba(99,102,241,0.15); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.25); }
+.badge-live     { background: rgba(239,68,68,0.15);  color: #fca5a5; border: 1px solid rgba(239,68,68,0.3);
+                  animation: pulse-red 1.6s infinite; }
+.badge-past     { background: rgba(100,116,139,0.15); color: #94a3b8; border: 1px solid rgba(100,116,139,0.25); }
+
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+  50%       { box-shadow: 0 0 0 4px rgba(239,68,68,0.15); }
+}
+
+.stage-card .sc-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px; font-weight: 700; color: #fff;
+  margin-bottom: 6px;
+  display: flex; align-items: center; gap: 7px;
+}
+
+.stage-card ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+.stage-card ul li {
+  font-size: 11.5px; color: var(--text);
+  padding-left: 12px; position: relative; line-height: 1.5;
+}
+.stage-card ul li::before {
+  content: ''; position: absolute; left: 0; top: 7px;
+  width: 4px; height: 4px; border-radius: 50%; background: var(--events);
+}
+
+/* editable inside stage */
+.stage-card.editable {
+  border-left: 3px solid var(--edit) !important;
+  background: var(--edit-dim);
+}
+.stage-card.editable ul li::before { background: var(--edit); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp   { from { opacity:0; transform:translateY(20px);  } to { opacity:1; transform:translateY(0); } }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="badge">Site Architecture · V1.0</div>
+    <h1>SRM Sports Council — Website Flowchart</h1>
+    <p>Digitised from handwritten plan &nbsp;·&nbsp; February 2026</p>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <div class="leg"><div class="leg-dot" style="background:var(--home)"></div>Home Page</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--clubs)"></div>Clubs Directory</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--events)"></div>Events Management</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--ach)"></div>Achievements</div>
+    <div class="leg-edit">✦ EDITABLE &nbsp;— admin-managed content</div>
+  </div>
+
+  <!-- NAVBAR -->
+  <div class="navbar-node">
+    <div class="navbar-box">
+      <span style="font-size:20px">🏅</span>
+      <span class="label">SRM Sports Council <span class="sub">· NavBar</span></span>
+    </div>
+  </div>
+
+  <!-- BRANCH LINES -->
+  <svg class="branch-svg" height="44" viewBox="0 0 1300 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="6" orient="auto">
+        <path d="M0,0 L3,6 L6,0" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+      </marker>
+    </defs>
+    <line x1="162" y1="3" x2="1138" y2="3" stroke="rgba(255,255,255,0.13)" stroke-width="1.5"/>
+    <line x1="162"  y1="3" x2="162"  y2="44" stroke="rgba(59,130,246,0.5)"   stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="487"  y1="3" x2="487"  y2="44" stroke="rgba(16,185,129,0.5)"  stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="813"  y1="3" x2="813"  y2="44" stroke="rgba(245,158,11,0.5)"  stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="1138" y1="3" x2="1138" y2="44" stroke="rgba(232,121,249,0.5)" stroke-width="1.5" marker-end="url(#arr)"/>
+  </svg>
+
+  <!-- 4-COLUMN GRID -->
+  <div class="col-grid">
+
+    <!-- ══════════════════ HOME ══════════════════ -->
+    <div class="section-col">
+      <div class="sec-header sh-home">
+        <span class="sec-icon">🏠</span>
+        <span class="sec-label">Home Page</span>
+        <span class="sec-num">01</span>
+      </div>
+      <div class="col-body">
+
+        <div class="card-block home-a">
+          <div class="cb-header">
+            <div class="cb-icon home-i">🎯</div>
+            <span class="cb-title">Hero Section</span>
+            <span class="num-chip">§1</span>
+          </div>
+          <ul>
+            <li>SRM Sports Council title</li>
+            <li>Full-width background image</li>
+            <li>Webpage name branding</li>
+            <li>Scroll / down navigation</li>
+          </ul>
+        </div>
+
+        <!-- ★ EDITABLE: Dynamic Slots -->
+        <div class="card-block editable">
+          <div class="cb-header">
+            <div class="cb-icon edit-i">📊</div>
+            <span class="cb-title">Dynamic Slots</span>
+            <span class="edit-badge">✦ Editable</span>
+          </div>
+          <ul>
+            <li>Total Players count</li>
+            <li>Live rankings display</li>
+          </ul>
+        </div>
+
+        <!-- ★ EDITABLE: News & Images -->
+        <div class="card-block editable">
+          <div class="cb-header">
+            <div class="cb-icon edit-i">📰</div>
+            <span class="cb-title">News &amp; Images</span>
+            <span class="edit-badge">✦ Editable</span>
+          </div>
+          <ul>
+            <li>Latest news articles</li>
+            <li>Director-placed articles</li>
+            <li>Photos &amp; team images</li>
+            <li>Media carousel</li>
+          </ul>
+        </div>
+
+        <div class="card-block editable">
+          <div class="cb-header">
+            <div class="cb-icon edit-i">🏛️</div>
+            <span class="cb-title">Council Hierarchy</span>
+            <span class="edit-badge">✦ Editable</span>
+          </div>
+          <ul>
+            <li>Secretary</li>
+            <li>Joint Secretary</li>
+            <li>Deputy Secretary</li>
+            <li>Treasurer</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════════════════ CLUBS ══════════════════ -->
+    <div class="section-col">
+      <div class="sec-header sh-clubs">
+        <span class="sec-icon">🏏</span>
+        <span class="sec-label">Clubs Directory</span>
+        <span class="sec-num">02</span>
+      </div>
+      <div class="col-body">
+
+        <!-- ★ EDITABLE: Sport Tile Grid -->
+        <div class="card-block editable">
+          <div class="cb-header">
+            <div class="cb-icon edit-i">🔲</div>
+            <span class="cb-title">Sport Tile Grid</span>
+            <span class="edit-badge">✦ Editable</span>
+          </div>
+          <ul>
+            <li>One tile per sport club</li>
+            <li>Club name + background image</li>
+            <li>Click → Club detail page</li>
+          </ul>
+        </div>
+
+        <div class="card-block editable">
+          <div class="cb-header">
+            <div class="cb-icon edit-i">👥</div>
+            <span class="cb-title">Club Leadership</span>
+            <span class="edit-badge">✦ Editable</span>
+          </div>
+          <ul>
+            <li>Convenor (name + photo)</li>
+            <li>Co-Convenor (name + photo)</li>
+          </ul>
+        </div>
+
+        <!-- ★ EDITABLE: Core SRM Team -->
+        <div class="card-block editable">
+          <div class="cb-header">
+            <div class="cb-icon edit-i">🧑‍🤝‍🧑</div>
+            <span class="cb-title">Core SRM Team</span>
+            <span class="edit-badge">✦ Editable</span>
+          </div>
+          <ul>
+            <li>Full player roster</li>
+            <li>Names &amp; profile images</li>
+          </ul>
+        </div>
+
+        <div class="card-block clubs-a">
+          <div class="cb-header">
+            <div class="cb-icon clubs-i">📬</div>
+            <span class="cb-title">Contact / Join</span>
+          </div>
+          <ul>
+            <li>Form to join a specific club</li>
+          </ul>
+        </div>
+
+        <div class="admin-tag">
+          <span>🔐</span> Add / Manage Clubs — Admin Only
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════════════════ EVENTS ══════════════════ -->
+    <div class="section-col">
+      <div class="sec-header sh-events">
+        <span class="sec-icon">📅</span>
+        <span class="sec-label">Events Management</span>
+        <span class="sec-num">03</span>
+      </div>
+      <div class="col-body events-flow">
+
+        <!-- STAGE 1: PLANNED -->
+        <div class="stage-wrap">
+          <div class="stage-card">
+            <div class="stage-badge badge-planned">📋 Stage 1 — Planned</div>
+            <div class="sc-title">We Plan It</div>
+            <ul>
+              <li>Sport &amp; category</li>
+              <li>Location &amp; Venue</li>
+              <li>Date &amp; Time</li>
+              <li>Phase &amp; Advertisement</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ARROW: Planned → Live -->
+        <div class="stage-arrow">
+          <svg width="14" height="14" viewBox="0 0 14 14">
+            <path d="M7 0 L7 10 M3 6 L7 10 L11 6" stroke="var(--events)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="arrow-label">"Time Has Come"</span>
+        </div>
+
+        <!-- STAGE 2: LIVE — editable (starred) -->
+        <div class="stage-wrap">
+          <div class="stage-card editable">
+            <div class="stage-badge badge-live">🔴 Stage 2 — Live Now</div>
+            <div class="sc-title" style="color:var(--edit)">
+              It's Live
+              <span class="edit-badge">✦ Editable</span>
+            </div>
+            <ul>
+              <li>Sport name &amp; match</li>
+              <li>Location (live venue)</li>
+              <li>Live time / ongoing</li>
+              <li>Teams — who vs who</li>
+              <li>Live scores &amp; updates</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ARROW: Live → Past -->
+        <div class="stage-arrow">
+          <svg width="14" height="14" viewBox="0 0 14 14">
+            <path d="M7 0 L7 10 M3 6 L7 10 L11 6" stroke="var(--events)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="arrow-label">Time Expired</span>
+        </div>
+
+        <!-- STAGE 3: PAST -->
+        <div class="stage-wrap">
+          <div class="stage-card">
+            <div class="stage-badge badge-past">📁 Stage 3 — Past</div>
+            <div class="sc-title">Becomes Archive</div>
+            <ul>
+              <li>Result card per event</li>
+              <li>Event name &amp; date</li>
+              <li>Match details</li>
+              <li>🥇 Winners / 1st place</li>
+              <li>🥈 Runner-up</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════════════════ ACHIEVEMENTS ══════════════════ -->
+    <div class="section-col">
+      <div class="sec-header sh-ach">
+        <span class="sec-icon">🏆</span>
+        <span class="sec-label">Achievements</span>
+        <span class="sec-num">04</span>
+      </div>
+      <div class="col-body">
+
+        <!-- ★ EDITABLE: Trophy Gallery -->
+        <div class="card-block editable">
+          <div class="cb-header">
+            <div class="cb-icon edit-i">🏆</div>
+            <span class="cb-title">Trophy Gallery</span>
+            <span class="edit-badge">✦ Editable</span>
+          </div>
+          <ul>
+            <li>SRMAP trophies</li>
+            <li>vs Other university trophies</li>
+            <li>Trophy images</li>
+            <li>Team details per trophy</li>
+          </ul>
+        </div>
+
+        <div class="card-block editable">
+          <div class="cb-header">
+            <div class="cb-icon edit-i">🏫</div>
+            <span class="cb-title">Inter-University</span>
+            <span class="edit-badge">✦ Editable</span>
+          </div>
+          <ul>
+            <li><strong style="color:var(--edit)">Hostel vs Hostel</strong></li>
+            <li>— Inter Hostel League</li>
+            <li><strong style="color:var(--edit)">Inter School Championship</strong></li>
+          </ul>
+        </div>
+
+        <!-- ★ EDITABLE: Individual Athlete Records -->
+        <div class="card-block editable">
+          <div class="cb-header">
+            <div class="cb-icon edit-i">🥇</div>
+            <span class="cb-title">Individual Athlete Records</span>
+            <span class="edit-badge">✦ Editable</span>
+          </div>
+          <ul>
+            <li>Olympic medals</li>
+            <li>AU</li>
+            <li>Khelo India</li>
+            <li>State trophies</li>
+            <li>National trophies</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end col-grid -->
+
+</div><!-- end wrap -->
+</body>
+</html>
