@@ -37,13 +37,29 @@ const sportsCouncil = [
     }
 ];
 
+const memberContainerVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.08 } },
+};
+
+const memberCardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+};
+
 export default function Hierarchy() {
     return (
         <section className="py-24 px-6 max-w-7xl mx-auto border-t border-white/5">
-            <div className="text-center mb-16">
+            <motion.div
+                className="text-center mb-16"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+            >
                 <h2 className="text-4xl font-syne font-bold">Council Hierarchy</h2>
                 <p className="mt-4 text-muted font-outfit">The leadership steering SRM Sports towards excellence.</p>
-            </div>
+            </motion.div>
 
             {/* Directorate of Sports */}
             <div className="space-y-20 mb-20">
@@ -54,11 +70,17 @@ export default function Hierarchy() {
                             <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-blue/30 to-transparent"></div>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {group.members.map((member, mIdx) => (
-                                <MemberCard key={member.title} member={member} index={mIdx} />
+                        <motion.div
+                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+                            variants={memberContainerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-60px" }}
+                        >
+                            {group.members.map((member) => (
+                                <MemberCard key={member.title} member={member} />
                             ))}
-                        </div>
+                        </motion.div>
                     </div>
                 ))}
             </div>
@@ -78,11 +100,17 @@ export default function Hierarchy() {
                             <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-indigo/30 to-transparent"></div>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {group.members.map((member, mIdx) => (
-                                <MemberCard key={member.title} member={member} index={mIdx} />
+                        <motion.div
+                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+                            variants={memberContainerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-60px" }}
+                        >
+                            {group.members.map((member) => (
+                                <MemberCard key={member.title} member={member} />
                             ))}
-                        </div>
+                        </motion.div>
                     </div>
                 ))}
 
@@ -93,11 +121,27 @@ export default function Hierarchy() {
                         <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-indigo/30 to-transparent"></div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {clubs.map((club, cIdx) => (
-                            <div key={club.id} className="space-y-6 p-6 glass rounded-3xl border border-white/5">
+                    <motion.div
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+                        variants={memberContainerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-60px" }}
+                    >
+                        {clubs.map((club) => (
+                            <motion.div
+                                key={club.id}
+                                variants={memberCardVariants}
+                                className="space-y-6 p-6 glass rounded-3xl border border-white/5"
+                            >
                                 <div className="flex items-center gap-4">
-                                    <span className="text-3xl">{club.icon}</span>
+                                    <motion.span
+                                        className="text-3xl cursor-default"
+                                        whileHover={{ scale: 1.4 }}
+                                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                    >
+                                        {club.icon}
+                                    </motion.span>
                                     <h4 className="text-xl font-syne font-bold">{club.name}</h4>
                                 </div>
                                 <div className="grid grid-cols-1 gap-4">
@@ -110,22 +154,19 @@ export default function Hierarchy() {
                                         <p className="font-syne font-semibold">{club.coConvenor.name}</p>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
     );
 }
 
-function MemberCard({ member, index }: { member: any, index: number }) {
+function MemberCard({ member }: { member: any }) {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
+            variants={memberCardVariants}
             className="group"
         >
             <div className="relative aspect-square sm:aspect-[3/4] rounded-2xl overflow-hidden glass mb-3 sm:mb-4">

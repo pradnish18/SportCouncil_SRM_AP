@@ -86,6 +86,17 @@ export default function NewsCarousel() {
                     </button>
                 </div>
 
+                {/* Auto-advance Progress Bar */}
+                <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-white/10">
+                    <motion.div
+                        key={index}
+                        className="h-full bg-brand-blue origin-left"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: 5, ease: "linear" }}
+                    />
+                </div>
+
                 {/* Indicators */}
                 <div className="absolute top-12 left-12 flex gap-2">
                     {newsItems.map((_, i) => (

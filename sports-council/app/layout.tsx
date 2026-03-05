@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 };
 
 import Navbar from "@/components/Navbar";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
 
 export default function RootLayout({
     children,
@@ -29,6 +30,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${inter.className} ${syne.variable} ${outfit.variable}`}>
+                <ScrollProgressBar />
                 <Navbar />
                 {children}
             </body>

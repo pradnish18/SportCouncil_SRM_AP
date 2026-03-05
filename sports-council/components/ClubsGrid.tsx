@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from "framer-motion";
 import ClubModal from "./ClubModal";
 
 export interface ClubData {
@@ -37,7 +37,7 @@ export const clubs: ClubData[] = [
         id: "badminton",
         name: "Badminton",
         icon: "🏸",
-        image: "https://images.unsplash.com/photo-1626225453014-490396593447?q=80&w=2070&auto=format&fit=crop",
+        image: "https://img.olympics.com/images/image/private/t_s_16_9_g_auto/t_s_w1460/f_auto/primary/tdslyl0pptzs6vst4uq5",
         description: "Speed, agility, and precision — our badminton club is a hub for high-intensity training and competitive excellence.",
         convenor: { name: "Smt. Shanti Devi", role: "Convenor", details: "Former national player and renowned tactical expert." },
         coConvenor: { name: "Mike Wilson", role: "Co-Convenor", details: "Strength and conditioning specialist for racquet sports." },
@@ -51,7 +51,7 @@ export const clubs: ClubData[] = [
         id: "volleyball",
         name: "Volleyball",
         icon: "🏐",
-        image: "https://images.unsplash.com/photo-1592656094267-764a45159577?q=80&w=2070&auto=format&fit=crop",
+        image: "https://www.lasemaine.fr/wp-content/uploads/2025/08/Volley.jpeg",
         description: "High-flying action and seamless teamwork define our Volleyball club, where every spike tells a story of dedication.",
         convenor: { name: "Mr. R. Sharma", role: "Convenor", details: "Former national level setter with focus on team synergy." },
         coConvenor: { name: "Anjali Gupta", role: "Co-Convenor", details: "Specialist in defensive strategies and player stamina." },
@@ -64,7 +64,7 @@ export const clubs: ClubData[] = [
         id: "kabaddi",
         name: "Kabaddi",
         icon: "🤼",
-        image: "https://images.unsplash.com/photo-1612872089673-98782ee9f835?q=80&w=2070&auto=format&fit=crop",
+        image: "https://azimpremjiuniversity.edu.in/imager/photos/stories/economies-of-khel-temp-qiufsjneehqhivxjwtftzyjjlralejbnjuki/1470366/EOK_Kabaddi_WebsiteBanner_4b32b63c5c28c858e051e9d1a2a717a1.jpeg",
         description: "Experience the raw power and tactical depth of Kabaddi, a sport rooted in tradition and fueled by modern athleticism.",
         convenor: { name: "Mr. Vikram Singh", role: "Convenor", details: "Renowned coach with expertise in traditional raiding techniques." },
         coConvenor: { name: "Amit Kumar", role: "Co-Convenor", details: "Expert in defensive locks and team coordination." },
@@ -92,7 +92,7 @@ export const clubs: ClubData[] = [
         id: "tennis",
         name: "Tennis",
         icon: "🎾",
-        image: "https://images.unsplash.com/photo-1595435066373-cf6a9e6900f6?q=80&w=2070&auto=format&fit=crop",
+        image: "https://i.pinimg.com/1200x/90/0c/19/900c194308c7fa34f59d219ac9b9311b.jpg",
         description: "From baseline rallies to powerful serves, our tennis club offers world-class training and competitive opportunities.",
         convenor: { name: "Dr. A. Sen", role: "Convenor", details: "Passionate about biomechanics and stroke optimization." },
         coConvenor: { name: "David Miller", role: "Co-Convenor", details: "Former professional circuit player and mentor." },
@@ -119,7 +119,7 @@ export const clubs: ClubData[] = [
         id: "carrom",
         name: "Carrom",
         icon: "♟️",
-        image: "https://images.unsplash.com/photo-1611091565578-831518349257?q=80&w=2070&auto=format&fit=crop",
+        image: "https://i.pinimg.com/736x/00/47/35/00473582cc85d8b5e4e89a2d2f732cf8.jpg",
         description: "A blend of strategy and touch, the Carrom club provides a platform for precision players to showcase their skills.",
         convenor: { name: "Mr. T. Mani", role: "Convenor", details: "National level carrom referee and veteran player." },
         coConvenor: { name: "Suresh G.", role: "Co-Convenor", details: "Expert in board strategy and tournament organization." },
@@ -146,7 +146,7 @@ export const clubs: ClubData[] = [
         id: "athletics",
         name: "Athletics",
         icon: "🏃",
-        image: "https://images.unsplash.com/photo-1461896756985-23w78536ec6b?q=80&w=2070&auto=format&fit=crop",
+        image: "https://i.pinimg.com/736x/7a/87/92/7a87927184ce01235f2cfede8ee5af2f.jpg",
         description: "The foundation of all sports. Our athletics club trains students in track and field events with elite coaching.",
         convenor: { name: "Dr. L. Narayana", role: "Convenor", details: "Former Olympic qualifier coach with focus on biomechanics." },
         coConvenor: { name: "Priya Das", role: "Co-Convenor", details: "Specialist in middle-distance running and endurance." },
@@ -172,7 +172,7 @@ export const clubs: ClubData[] = [
         id: "fitness",
         name: "Fitness",
         icon: "💪",
-        image: "https://images.unsplash.com/photo-1517836357463-d25dfeac00ad?q=80&w=2070&auto=format&fit=crop",
+        image: "https://i.pinimg.com/1200x/87/0f/db/870fdbc24f282fd469df9096aa2c1417.jpg",
         description: "Promoting a culture of health and wellness through diverse fitness programs and community engagement.",
         convenor: { name: "Ms. Aarti Shah", role: "Convenor", details: "Renowned lifestyle coach and metabolic health expert." },
         coConvenor: { name: "Sameer J.", role: "Co-Convenor", details: "Specialist in functional training and HIIT." },
@@ -210,57 +210,98 @@ export const clubs: ClubData[] = [
     }
 ];
 
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.07,
+        },
+    },
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+function TiltCard({ club, onClick }: { club: ClubData; onClick: () => void }) {
+    const ref = useRef<HTMLDivElement>(null);
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+    const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [8, -8]), { stiffness: 300, damping: 30 });
+    const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-8, 8]), { stiffness: 300, damping: 30 });
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!ref.current) return;
+        const rect = ref.current.getBoundingClientRect();
+        x.set((e.clientX - rect.left) / rect.width - 0.5);
+        y.set((e.clientY - rect.top) / rect.height - 0.5);
+    };
+    const handleMouseLeave = () => { x.set(0); y.set(0); };
+
+    return (
+        <motion.div
+            ref={ref}
+            variants={cardVariants}
+            style={{ rotateX, rotateY, transformPerspective: 800 }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            whileHover={{ y: -8, transition: { duration: 0.2 } }}
+            onClick={onClick}
+            className="group relative h-[300px] rounded-[2rem] overflow-hidden glass cursor-pointer"
+        >
+            {/* Background Image */}
+            <div className="absolute inset-0">
+                <Image
+                    src={club.image}
+                    alt={club.name}
+                    fill
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+            </div>
+
+            {/* Content */}
+            <div className="absolute bottom-8 left-8 right-8 flex items-center justify-between">
+                <div>
+                    <div className="text-4xl mb-2">{club.icon}</div>
+                    <h3 className="text-2xl font-syne font-bold">{club.name}</h3>
+                </div>
+                <div className="w-12 h-12 glass rounded-full flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                    <span className="text-xl">→</span>
+                </div>
+            </div>
+        </motion.div>
+    );
+}
+
 export default function ClubsGrid() {
     const [selectedClub, setSelectedClub] = useState<ClubData | null>(null);
 
     return (
         <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {clubs.map((club, idx) => (
-                    <motion.div
+            <motion.div
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+            >
+                {clubs.map((club) => (
+                    <TiltCard
                         key={club.id}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.1 }}
-                        whileHover={{ y: -10 }}
-                        onClick={() => {
-                            console.log("Opening club:", club.name);
-                            setSelectedClub(club);
-                        }}
-                        className="group relative h-[300px] rounded-[2rem] overflow-hidden glass cursor-pointer"
-                    >
-                        {/* Background Image */}
-                        <div className="absolute inset-0">
-                            <Image
-                                src={club.image}
-                                alt={club.name}
-                                fill
-                                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100"
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
-                        </div>
-
-                        {/* Content */}
-                        <div className="absolute bottom-8 left-8 right-8 flex items-center justify-between">
-                            <div>
-                                <div className="text-4xl mb-2">{club.icon}</div>
-                                <h3 className="text-2xl font-syne font-bold">{club.name}</h3>
-                            </div>
-                            <div className="w-12 h-12 glass rounded-full flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-colors">
-                                <span className="text-xl">→</span>
-                            </div>
-                        </div>
-                    </motion.div>
+                        club={club}
+                        onClick={() => setSelectedClub(club)}
+                    />
                 ))}
 
                 {/* Expansion Slot */}
-                <div className="h-[300px] rounded-[2rem] border-2 border-dashed border-white/10 flex flex-col items-center justify-center text-muted">
+                <motion.div variants={cardVariants} className="h-[300px] rounded-[2rem] border-2 border-dashed border-white/10 flex flex-col items-center justify-center text-muted">
                     <div className="text-4xl mb-2">➕</div>
                     <div className="text-sm font-outfit uppercase tracking-widest">More Coming Soon</div>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
 
             <AnimatePresence mode="wait">
                 {selectedClub && (

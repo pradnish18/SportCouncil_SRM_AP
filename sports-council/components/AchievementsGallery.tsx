@@ -38,6 +38,16 @@ export default function AchievementsGallery() {
                                 className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
+                            {/* Shimmer shine on hover */}
+                            <motion.div
+                                className="absolute inset-0 pointer-events-none"
+                                initial={{ x: "-100%", opacity: 0 }}
+                                whileHover={{ x: "200%", opacity: 1 }}
+                                transition={{ duration: 0.6, ease: "easeInOut" }}
+                                style={{
+                                    background: "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.25) 50%, transparent 60%)",
+                                }}
+                            />
                             <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
                             <div className="absolute bottom-6 left-6 right-6">
                                 <div className="text-[10px] uppercase tracking-widest text-brand-purple mb-1 font-bold">{trophy.category}</div>
