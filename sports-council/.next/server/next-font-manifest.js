@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/pradnishchintada/Desktop/SportCouncli_SRM_AP/sports-council/app/layout\":[\"static/media/e4af272ccee01ff0-s.p.woff2\",\"static/media/7b0b24f36b1a6d0b-s.p.woff2\",\"static/media/8a1d8947e5852e30-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

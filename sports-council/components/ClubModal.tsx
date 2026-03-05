@@ -52,8 +52,8 @@ export default function ClubModal({ club, onClose }: ClubModalProps) {
 
                     {/* Club Title Info */}
                     <div className="absolute bottom-12 left-8 md:left-12 z-20">
-                        <div className="text-6xl mb-4">{club.icon}</div>
-                        <h2 className="text-5xl md:text-7xl font-syne font-extrabold">{club.name}</h2>
+                        <div className="text-4xl md:text-6xl mb-4">{club.icon}</div>
+                        <h2 className="text-3xl sm:text-5xl md:text-7xl font-syne font-extrabold leading-tight">{club.name}</h2>
                     </div>
 
                     {/* Coach Photo - Right Side Cutout */}

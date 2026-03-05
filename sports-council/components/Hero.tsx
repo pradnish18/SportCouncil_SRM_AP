@@ -19,10 +19,10 @@ export default function Hero() {
                 <span className="inline-block px-4 py-1 mb-4 text-[10px] font-semibold tracking-[0.2em] uppercase border rounded-full border-brand-indigo/30 bg-brand-indigo/10 text-brand-indigo">
                     SRM University AP
                 </span>
-                <h1 className="text-6xl md:text-8xl font-syne font-extrabold bg-gradient-to-br from-white via-white to-white/40 bg-clip-text text-transparent">
+                <h1 className="text-4xl sm:text-7xl md:text-8xl font-syne font-extrabold bg-gradient-to-br from-white via-white to-white/40 bg-clip-text text-transparent px-4">
                     SRM Sports Council
                 </h1>
-                <p className="mt-6 text-subtle font-outfit text-lg max-w-2xl mx-auto opacity-70">
+                <p className="mt-6 text-subtle font-outfit text-base sm:text-lg max-w-2xl mx-auto opacity-70 px-6">
                     The central hub for all sports-related activities, club information, event management, and achievement showcases.
                 </p>
             </motion.div>
@@ -32,15 +32,15 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className="mt-16 z-10 glass rounded-2xl px-12 py-6 flex gap-16"
+                className="mt-16 z-10 glass rounded-2xl px-8 sm:px-12 py-6 flex flex-wrap justify-center gap-8 sm:gap-16"
             >
                 <div className="text-center">
-                    <div className="text-3xl font-syne font-bold text-brand-blue">15+</div>
+                    <div className="text-2xl sm:text-3xl font-syne font-bold text-brand-blue">15+</div>
                     <div className="text-[10px] uppercase tracking-widest text-muted">Total Teams</div>
                 </div>
-                <div className="w-[1px] h-12 bg-white/10"></div>
+                <div className="hidden sm:block w-[1px] h-12 bg-white/10"></div>
                 <div className="text-center">
-                    <div className="text-3xl font-syne font-bold text-brand-green">500+</div>
+                    <div className="text-2xl sm:text-3xl font-syne font-bold text-brand-green">500+</div>
                     <div className="text-[10px] uppercase tracking-widest text-muted">Total Members</div>
                 </div>
             </motion.div>
