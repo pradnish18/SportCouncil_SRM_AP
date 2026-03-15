@@ -106,6 +106,31 @@ export default function ClubModal({ club, onClose }: ClubModalProps) {
                         </div>
                     </section>
 
+                    {/* Team Roster Section */}
+                    {club.players && club.players.length > 0 && (
+                        <section>
+                            <h3 className="text-3xl font-syne font-bold mb-8 flex items-center gap-4">
+                                <span className="w-8 h-[2px] bg-brand-amber"></span>
+                                Team Roster
+                            </h3>
+                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                                {club.players.map((player) => (
+                                    <div key={player.id} className="glass p-4 rounded-2xl flex flex-col items-center text-center group hover:bg-white/10 transition-colors">
+                                        <div className="relative w-16 h-16 rounded-full overflow-hidden mb-3 bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-brand-amber transition-colors">
+                                            {player.photoUrl ? (
+                                                <Image src={player.photoUrl} alt={player.name} fill className="object-cover" />
+                                            ) : (
+                                                <span className="text-2xl">👤</span>
+                                            )}
+                                        </div>
+                                        <div className="font-outfit font-medium text-white">{player.name}</div>
+                                        <div className="text-xs text-brand-amber uppercase tracking-wider mt-1">Athlete</div>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+                    )}
+
                     {/* Achievements Section */}
                     <section>
                         <h3 className="text-3xl font-syne font-bold mb-8 flex items-center gap-4">

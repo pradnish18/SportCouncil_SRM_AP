@@ -6,39 +6,17 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
-enum Role {
-  SUPER_ADMIN
-  CLUB_REP
-}
 
-enum MemberTier {
-  DIRECTOR
-  CONVENOR
-  COACH
-  STUDENT_BODY
-}
-
-enum EventStage {
-  PLANNED
-  LIVE
-  PAST
-}
-
-enum AchievementCategory {
-  TROPHY
-  ACCOLADE
-  RECORD
-}
 
 model Admin {
   id        String   @id @default(cuid())
   username  String   @unique
   password  String
-  role      Role     @default(CLUB_REP)
+  role      String   @default("CLUB_REP")
   clubId    String?  // If role is CLUB_REP, linked to a specific club
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -49,7 +27,7 @@ model CouncilMember {
   name      String
   title     String
   photoUrl  String?
-  tier      MemberTier
+  tier      String
   order     Int        @default(0)
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
@@ -61,9 +39,14 @@ model Club {
   description   String?
   logoUrl       String?
   bgImageUrl    String?
-  convenorId    String?
-  coConvenorId  String?
-  order         Int      @default(0)
+  convenorName      String?
+  convenorRole      String?
+  convenorDetails   String?
+  coConvenorName    String?
+  coConvenorRole    String?
+  coConvenorDetails String?
+  achievementsList  String?  // JSON stringified array of achievements
+  order             Int      @default(0)
   players       Player[]
   gallery       ClubImage[]
   events        Event[]
@@ -98,7 +81,7 @@ model Event {
   date          DateTime
   time          String?
   description   String?
-  stage         EventStage @default(PLANNED)
+  stage         String @default("PLANNED")
   
   // For LIVE stage
   team1         String?
@@ -125,7 +108,7 @@ model Achievement {
   photoUrl    String?
   date        DateTime
   sport       String
-  category    AchievementCategory @default(TROPHY)
+  category    String @default("TROPHY")
   createdAt   DateTime            @default(now())
   updatedAt   DateTime            @updatedAt
 }

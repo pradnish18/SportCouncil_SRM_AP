@@ -1,9 +1,12 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from "framer-motion";
 import ClubModal from "./ClubModal";
+import useSWR from 'swr';
+
+const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 export interface ClubData {
     id: string;
@@ -16,6 +19,7 @@ export interface ClubData {
     achievements: string[];
     gallery: { type: 'image' | 'video'; url: string }[];
     coachImage?: string;
+    players?: { id: string; name: string; photoUrl?: string | null }[];
 }
 
 export const clubs: ClubData[] = [
@@ -248,7 +252,7 @@ function TiltCard({ club, onClick }: { club: ClubData; onClick: () => void }) {
             onMouseLeave={handleMouseLeave}
             whileHover={{ y: -8, transition: { duration: 0.2 } }}
             onClick={onClick}
-            className="group relative h-[300px] rounded-[2rem] overflow-hidden glass cursor-pointer"
+            className="group relative h-[300px] rounded-[2.5rem] overflow-hidden theme-card border border-border cursor-pointer shadow-lg hover:shadow-brand-srm/20 transition-all duration-300"
         >
             {/* Background Image */}
             <div className="absolute inset-0">
@@ -256,31 +260,91 @@ function TiltCard({ club, onClick }: { club: ClubData; onClick: () => void }) {
                     src={club.image}
                     alt={club.name}
                     fill
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100"
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100 opacity-60 group-hover:opacity-100"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent transition-colors duration-500"></div>
             </div>
 
             {/* Content */}
-            <div className="absolute bottom-8 left-8 right-8 flex items-center justify-between">
+            <div className="absolute bottom-10 left-10 right-10 flex items-center justify-between z-10">
                 <div>
-                    <div className="text-4xl mb-2">{club.icon}</div>
-                    <h3 className="text-2xl font-syne font-bold">{club.name}</h3>
+                    <div className="text-4xl mb-3 drop-shadow-lg transform group-hover:scale-110 transition-transform">{club.icon}</div>
+                    <h3 className="text-2xl font-syne font-black text-foreground drop-shadow-md">{club.name}</h3>
                 </div>
-                <div className="w-12 h-12 glass rounded-full flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-colors">
-                    <span className="text-xl">→</span>
+                <div className="w-12 h-12 rounded-2xl bg-brand-srm text-white flex items-center justify-center shadow-xl transform group-hover:translate-x-2 transition-all">
+                    <span className="text-xl font-bold">→</span>
                 </div>
             </div>
         </motion.div>
     );
 }
 
+// Helper to format Prisma model to UI interface
+function formatDynamicClub(prismaClub: any): ClubData {
+    // Attempt to match with a static club by name (case-insensitive) to inherit icons/mock data
+    const staticMatch = clubs.find(c => c.name.toLowerCase() === prismaClub.name.toLowerCase());
+
+    let parsedAchievements = [];
+    try {
+        if (prismaClub.achievementsList) {
+            parsedAchievements = JSON.parse(prismaClub.achievementsList);
+        }
+    } catch (e) { console.error("Could not parse achievements for", prismaClub.name); }
+
+    const formattedConvenor = prismaClub.convenorName ? {
+        name: prismaClub.convenorName,
+        role: prismaClub.convenorRole || 'Convenor',
+        details: prismaClub.convenorDetails || ''
+    } : staticMatch?.convenor || { name: 'TBA', role: 'Convenor', details: '' };
+
+    const formattedCoConvenor = prismaClub.coConvenorName ? {
+        name: prismaClub.coConvenorName,
+        role: prismaClub.coConvenorRole || 'Co-Convenor',
+        details: prismaClub.coConvenorDetails || ''
+    } : staticMatch?.coConvenor || { name: 'TBA', role: 'Co-Convenor', details: '' };
+
+    // Capitalize name: e.g. "basketball" → "Basketball", "table-tennis" → "Table Tennis"
+    const capitalizedName = staticMatch?.name ||
+        prismaClub.name
+            .split(/[-\s]+/)
+            .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
+            .join(" ");
+
+    return {
+        id: prismaClub.id,
+        name: capitalizedName,
+        icon: staticMatch?.icon || "🏆", // Fallback to a generic trophy if not matched
+        image: prismaClub.bgImageUrl || staticMatch?.image || "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop", // Default geometric sports image
+        description: prismaClub.description || staticMatch?.description || "A premier sports club at SRM University AP.",
+        convenor: formattedConvenor,
+        coConvenor: formattedCoConvenor,
+        achievements: parsedAchievements.length > 0 ? parsedAchievements : (staticMatch?.achievements || ["Coming Soon"]),
+        gallery: prismaClub.gallery?.length ? prismaClub.gallery.map((g: any) => ({ type: 'image', url: g.url })) : (staticMatch?.gallery || []),
+        coachImage: staticMatch?.coachImage,
+        players: prismaClub.players || staticMatch?.players || [],
+    };
+}
+
 export default function ClubsGrid() {
     const [selectedClub, setSelectedClub] = useState<ClubData | null>(null);
+    const [isMounted, setIsMounted] = useState(false);
+    const { data: dynamicClubs, isLoading } = useSWR('/api/clubs', fetcher);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    // Prefer dynamic data from the generic API if it exists and has items.
+    // While loading, or if the API fails/returns empty, fallback to the hardcoded local array.
+    const displayClubs = (Array.isArray(dynamicClubs) && dynamicClubs.length > 0)
+        ? dynamicClubs.map(formatDynamicClub)
+        : clubs;
+
+    if (!isMounted) return <div className="min-h-[50vh] flex items-center justify-center font-outfit text-white/50">Loading clubs...</div>;
 
     return (
-        <>
+        <section className="bg-background py-1 transition-colors duration-500">
             <motion.div
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
                 variants={containerVariants}
@@ -288,7 +352,7 @@ export default function ClubsGrid() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
             >
-                {clubs.map((club) => (
+                {displayClubs.map((club: ClubData) => (
                     <TiltCard
                         key={club.id}
                         club={club}
@@ -297,9 +361,12 @@ export default function ClubsGrid() {
                 ))}
 
                 {/* Expansion Slot */}
-                <motion.div variants={cardVariants} className="h-[300px] rounded-[2rem] border-2 border-dashed border-white/10 flex flex-col items-center justify-center text-muted">
-                    <div className="text-4xl mb-2">➕</div>
-                    <div className="text-sm font-outfit uppercase tracking-widest">More Coming Soon</div>
+                <motion.div
+                    variants={cardVariants}
+                    className="h-[300px] rounded-[2.5rem] border-2 border-dashed border-border flex flex-col items-center justify-center text-muted group hover:border-brand-srm/50 transition-colors"
+                >
+                    <div className="text-4xl mb-4 group-hover:scale-125 transition-transform">➕</div>
+                    <div className="text-[10px] font-black font-syne uppercase tracking-[0.3em]">Expansion Hub</div>
                 </motion.div>
             </motion.div>
 
@@ -311,6 +378,7 @@ export default function ClubsGrid() {
                     />
                 )}
             </AnimatePresence>
-        </>
+        </section>
     );
 }
+

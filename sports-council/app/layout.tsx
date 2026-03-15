@@ -15,12 +15,14 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-    title: "SRM Sports Council",
-    description: "Official portal for SRM Sports Council activities, clubs, and achievements.",
+    title: { default: "SRM Sports Council — AP", template: "%s | SRM Sports Council" },
+    description: "Official portal for SRM University AP Sports Council. Explore clubs, events, achievements, and join our athletic community.",
+    keywords: ["SRM University", "Sports Council", "AP", "Athletics", "Clubs", "Events"],
 };
 
 import Navbar from "@/components/Navbar";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export default function RootLayout({
     children,
@@ -30,10 +32,17 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${inter.className} ${syne.variable} ${outfit.variable}`}>
-                <ScrollProgressBar />
-                <Navbar />
-                {children}
+                <ThemeProvider>
+                    {/* Skip to main content — WCAG 2.4.1 Bypass Blocks */}
+                    <a href="#main-content" className="skip-to-main">
+                        Skip to main content
+                    </a>
+                    <ScrollProgressBar />
+                    <Navbar />
+                    {children}
+                </ThemeProvider>
             </body>
         </html>
     );
 }
+

@@ -1,41 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { clubs } from "./ClubsGrid";
+import useSWR from 'swr';
+// `clubs` is no longer imported from ClubsGrid, we fetch it dynamically
 
-const directorateOfSports = [
-    {
-        title: "Directorate of Sports",
-        members: [
-            { name: "Placeholder Name", title: "Director", image: "/placeholder-user.jpg" },
-            { name: "Placeholder Name", title: "Assistant Director", image: "/placeholder-user.jpg" },
-            { name: "Placeholder Name", title: "Sports Officer", image: "/placeholder-user.jpg" },
-            { name: "Placeholder Name", title: "Sports Person", image: "/placeholder-user.jpg" },
-        ]
-    }
-];
+const fetcher = (url: string) => fetch(url).then(res => res.json());
 
-const sportsCouncil = [
-    {
-        tier: "Core Team",
-        members: [
-            { name: "Placeholder Name", title: "Secretary", image: "/placeholder-user.jpg" },
-            { name: "Placeholder Name", title: "Deputy Secretary", image: "/placeholder-user.jpg" },
-            { name: "Placeholder Name", title: "Joint Secretary", image: "/placeholder-user.jpg" },
-            { name: "Placeholder Name", title: "Treasurer", image: "/placeholder-user.jpg" },
-        ]
-    },
-    {
-        tier: "Wings",
-        members: [
-            { name: "Placeholder Name", title: "Events Wing", image: "/placeholder-user.jpg" },
-            { name: "Placeholder Name", title: "Operations", image: "/placeholder-user.jpg" },
-            { name: "Placeholder Name", title: "Public Relations", image: "/placeholder-user.jpg" },
-            { name: "Placeholder Name", title: "Writers Wing", image: "/placeholder-user.jpg" },
-            { name: "Placeholder Name", title: "Technical Wing", image: "/placeholder-user.jpg" },
-        ]
-    }
-];
+// Fallback image for clubs without bgImage to match ClubsGrid
+const fallbackClubImage = "https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=2067&auto=format&fit=crop";
 
 const memberContainerVariants = {
     hidden: {},
@@ -48,77 +20,148 @@ const memberCardVariants = {
 };
 
 export default function Hierarchy() {
+    const { data: membersObj } = useSWR('/api/council', fetcher);
+    // Fetch clubs to render the bottom row of Hierarchy
+    const { data: dbClubs } = useSWR('/api/clubs', fetcher);
+
+    // Fallbacks if data isn't loaded or available
+    const directors = membersObj?.DIRECTOR || [];
+    const convenors = membersObj?.CONVENOR || [];
+    const coaches = membersObj?.COACH || [];
+    const studentBody = membersObj?.STUDENT_BODY || [];
+
+    // Sport icon map for common club names
+    const sportIconMap: Record<string, string> = {
+        basketball: "🏀", cricket: "🏏", football: "⚽", badminton: "🏸",
+        volleyball: "🏐", tennis: "🎾", "table tennis": "🏓", kabaddi: "🤼",
+        carrom: "♟️", chess: "♟️", athletics: "🏃", gymnasium: "🏋️",
+        fitness: "💪", yoga: "🧘", "yoga and meditation": "🧘",
+    };
+
+    // Map Prisma clubs to UI format
+    const clubsArr = Array.isArray(dbClubs) ? dbClubs : [];
+    const clubs = clubsArr.map((club: any) => {
+        const nameLower = club.name.toLowerCase();
+        // Capitalize name: e.g. "basketball" → "Basketball", "table-tennis" → "Table Tennis"
+        const capitalizedName = club.name
+            .split(/[-\s]+/)
+            .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
+            .join(" ");
+        // Use sport icon map; logoUrl may be a full image URL so don't use it as an emoji
+        const icon = sportIconMap[nameLower] || "🏆";
+        return {
+            id: club.id,
+            name: capitalizedName,
+            icon,
+            image: club.bgImageUrl || fallbackClubImage,
+            convenor: { name: club.convenorName || "TBD" },
+            coConvenor: { name: club.coConvenorName || "TBD" },
+        };
+    });
+
+    // Map to expected structure
+    const directorateOfSports = directors.length > 0 ? [
+        {
+            title: "Directorate of Sports",
+            members: directors
+        }
+    ] : [];
+
+    const sportsCouncil = (convenors.length > 0 || studentBody.length > 0) ? [
+        {
+            tier: "Core Team",
+            members: studentBody
+        },
+        {
+            tier: "Convenors & Coaches",
+            members: [...convenors, ...coaches]
+        }
+    ] : [];
+
     return (
-        <section className="py-24 px-6 max-w-7xl mx-auto border-t border-white/5">
+        <section className="py-24 px-6 max-w-7xl mx-auto border-t border-border bg-background transition-colors duration-500">
             <motion.div
-                className="text-center mb-16"
+                className="text-center mb-24"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
             >
-                <h2 className="text-4xl font-syne font-bold">Council Hierarchy</h2>
-                <p className="mt-4 text-muted font-outfit">The leadership steering SRM Sports towards excellence.</p>
+                <div className="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.2em] uppercase border rounded-xl border-brand-srm/20 bg-brand-srm/5 text-brand-srm">
+                    Leadership
+                </div>
+                <h2 className="text-4xl md:text-5xl font-syne font-extrabold text-foreground tracking-tight">Council Hierarchy</h2>
+                <p className="mt-4 text-muted font-outfit max-w-xl mx-auto">The leadership steering SRM Sports towards competitive excellence and holistic development.</p>
             </motion.div>
 
             {/* Directorate of Sports */}
-            <div className="space-y-20 mb-20">
-                {directorateOfSports.map((group) => (
-                    <div key={group.title}>
-                        <div className="flex items-center gap-6 mb-10">
-                            <h3 className="text-lg font-syne font-bold uppercase tracking-widest text-brand-blue">{group.title}</h3>
-                            <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-blue/30 to-transparent"></div>
+            {directorateOfSports.length > 0 && (
+                <div className="space-y-24 mb-24">
+                    {directorateOfSports.map((group) => (
+                        <div key={group.title}>
+                            <div className="flex items-center gap-6 mb-12">
+                                <h3 className="text-sm font-syne font-black uppercase tracking-[0.3em] text-brand-srm">{group.title}</h3>
+                                <div className="h-[2px] flex-1 bg-gradient-to-r from-brand-srm/20 to-transparent"></div>
+                            </div>
+
+                            <motion.div
+                                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+                                variants={memberContainerVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, margin: "-60px" }}
+                            >
+                                {group.members.map((member: any) => (
+                                    <MemberCard key={member.name} member={member} />
+                                ))}
+                            </motion.div>
                         </div>
+                    ))}
+                </div>
+            )}
 
-                        <motion.div
-                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-                            variants={memberContainerVariants}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-60px" }}
-                        >
-                            {group.members.map((member) => (
-                                <MemberCard key={member.title} member={member} />
-                            ))}
-                        </motion.div>
+            {/* Sports Council Divider */}
+            {sportsCouncil.length > 0 && (
+                <div className="mb-16 relative py-12">
+                    <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                        <div className="w-full border-t border-border"></div>
                     </div>
-                ))}
-            </div>
-
-            {/* Sports Council Header */}
-            <div className="mb-10 text-center">
-                <h3 className="text-2xl font-syne font-bold">Sports Council</h3>
-                <div className="h-[2px] w-24 mx-auto mt-4 bg-brand-indigo/50"></div>
-            </div>
+                    <div className="relative flex justify-center">
+                        <span className="bg-background px-8 font-syne font-bold text-3xl text-foreground transition-colors duration-500">Sports Council</span>
+                    </div>
+                </div>
+            )}
 
             {/* Sports Council - Core Team and Wings */}
-            <div className="space-y-20">
+            <div className="space-y-24">
                 {sportsCouncil.map((group) => (
-                    <div key={group.tier}>
-                        <div className="flex items-center gap-6 mb-10">
-                            <h3 className="text-lg font-syne font-bold uppercase tracking-widest text-brand-indigo">{group.tier}</h3>
-                            <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-indigo/30 to-transparent"></div>
-                        </div>
+                    group.members.length > 0 && (
+                        <div key={group.tier}>
+                            <div className="flex items-center gap-6 mb-12">
+                                <h3 className="text-sm font-syne font-black uppercase tracking-[0.3em] text-brand-srm">{group.tier}</h3>
+                                <div className="h-[2px] flex-1 bg-gradient-to-r from-brand-srm/20 to-transparent"></div>
+                            </div>
 
-                        <motion.div
-                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-                            variants={memberContainerVariants}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-60px" }}
-                        >
-                            {group.members.map((member) => (
-                                <MemberCard key={member.title} member={member} />
-                            ))}
-                        </motion.div>
-                    </div>
+                            <motion.div
+                                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+                                variants={memberContainerVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, margin: "-60px" }}
+                            >
+                                {group.members.map((member: any) => (
+                                    <MemberCard key={member.name} member={member} />
+                                ))}
+                            </motion.div>
+                        </div>
+                    )
                 ))}
 
                 {/* Clubs Section */}
                 <div>
-                    <div className="flex items-center gap-6 mb-10">
-                        <h3 className="text-lg font-syne font-bold uppercase tracking-widest text-brand-indigo">Clubs</h3>
-                        <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-indigo/30 to-transparent"></div>
+                    <div className="flex items-center gap-6 mb-12">
+                        <h3 className="text-sm font-syne font-black uppercase tracking-[0.3em] text-brand-srm">Clubs Coordination</h3>
+                        <div className="h-[2px] flex-1 bg-gradient-to-r from-brand-srm/20 to-transparent"></div>
                     </div>
 
                     <motion.div
@@ -128,30 +171,26 @@ export default function Hierarchy() {
                         whileInView="visible"
                         viewport={{ once: true, margin: "-60px" }}
                     >
-                        {clubs.map((club) => (
+                        {clubs.map((club: any) => (
                             <motion.div
                                 key={club.id}
                                 variants={memberCardVariants}
-                                className="space-y-6 p-6 glass rounded-3xl border border-white/5"
+                                className="space-y-6 p-8 theme-card rounded-3xl border border-border group hover:border-brand-srm/40 transition-all shadow-sm active:scale-95 cursor-default"
                             >
-                                <div className="flex items-center gap-4">
-                                    <motion.span
-                                        className="text-3xl cursor-default"
-                                        whileHover={{ scale: 1.4 }}
-                                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                                    >
+                                <div className="flex items-center gap-5">
+                                    <div className="w-12 h-12 rounded-2xl bg-brand-srm/10 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                                         {club.icon}
-                                    </motion.span>
-                                    <h4 className="text-xl font-syne font-bold">{club.name}</h4>
-                                </div>
-                                <div className="grid grid-cols-1 gap-4">
-                                    <div className="p-4 bg-white/5 rounded-2xl">
-                                        <p className="text-xs text-muted uppercase tracking-tighter mb-1">Convenor</p>
-                                        <p className="font-syne font-semibold">{club.convenor.name}</p>
                                     </div>
-                                    <div className="p-4 bg-white/5 rounded-2xl">
-                                        <p className="text-xs text-muted uppercase tracking-tighter mb-1">Co-Convenor</p>
-                                        <p className="font-syne font-semibold">{club.coConvenor.name}</p>
+                                    <h4 className="text-xl font-syne font-extrabold text-foreground">{club.name}</h4>
+                                </div>
+                                <div className="grid grid-cols-1 gap-4 mt-8">
+                                    <div className="p-5 bg-foreground/[0.03] rounded-2xl border border-border">
+                                        <p className="text-[10px] text-muted font-bold uppercase tracking-[0.1em] mb-1">Convenor</p>
+                                        <p className="font-syne font-bold text-foreground">{club.convenor.name}</p>
+                                    </div>
+                                    <div className="p-5 bg-foreground/[0.03] rounded-2xl border border-border">
+                                        <p className="text-[10px] text-muted font-bold uppercase tracking-[0.1em] mb-1">Co-Convenor</p>
+                                        <p className="font-syne font-bold text-foreground">{club.coConvenor.name}</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -169,14 +208,14 @@ function MemberCard({ member }: { member: any }) {
             variants={memberCardVariants}
             className="group"
         >
-            <div className="relative aspect-square sm:aspect-[3/4] rounded-2xl overflow-hidden glass mb-3 sm:mb-4">
-                <div className="absolute inset-0 bg-white/5 group-hover:bg-transparent transition-colors"></div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity">
-                    <span className="text-4xl sm:text-6xl text-white">👤</span>
+            <div className="relative aspect-square sm:aspect-[3/4] rounded-3xl overflow-hidden bg-foreground/5 mb-6 group-hover:shadow-2xl transition-all border border-border">
+                <div className="absolute inset-0 bg-brand-srm/5 group-hover:bg-brand-srm/0 transition-colors"></div>
+                <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity">
+                    <span className="text-6xl text-foreground">👤</span>
                 </div>
             </div>
-            <h4 className="text-base sm:text-xl font-syne font-bold group-hover:text-brand-blue transition-colors leading-tight">{member.name}</h4>
-            <p className="text-xs sm:text-sm text-muted uppercase tracking-wider mt-1">{member.title}</p>
+            <h4 className="text-lg sm:text-xl font-syne font-extrabold text-foreground group-hover:text-brand-srm transition-colors leading-tight mb-1">{member.name}</h4>
+            <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">{member.title}</p>
         </motion.div>
     );
 }

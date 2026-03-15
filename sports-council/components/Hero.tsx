@@ -1,75 +1,91 @@
 "use client";
 
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect } from "react";
+import useSWR from 'swr';
+import { motion } from "framer-motion";
 
-function CountUp({ to, suffix = "" }: { to: number; suffix?: string }) {
-    const count = useMotionValue(0);
-    const rounded = useTransform(count, (v) => `${Math.round(v)}${suffix}`);
-    useEffect(() => {
-        const controls = animate(count, to, { duration: 2, ease: "easeOut" });
-        return controls.stop;
-    }, [count, to]);
-    return <motion.span>{rounded}</motion.span>;
-}
+const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 export default function Hero() {
+    const { data: stats } = useSWR('/api/stats', fetcher);
+
+    const totalTeams = stats ? stats.totalTeams : 15;
+    const totalMembers = stats ? stats.totalMembers : 500;
+
     return (
-        <section className="relative min-h-screen pt-24 flex flex-col items-center justify-center overflow-hidden">
-            {/* Background with Grid */}
-            <div className="absolute inset-0 z-0 opacity-20">
-                <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+        <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden">
+            {/* Background Video & Theme Overlay */}
+            <div className="absolute inset-0 z-0 bg-brand-srm">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 object-cover w-full h-full opacity-40 mix-blend-luminosity"
+                >
+                    <source src="/college-edit-video.mp4" type="video/mp4" />
+                </video>
+                {/* Gradient to blend into the next section */}
+                <div className="absolute inset-0 bg-gradient-to-b from-brand-srm/60 via-brand-srm/40 to-background transition-colors duration-500"></div>
             </div>
 
-            <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="z-10 text-center"
-            >
+            <div className="z-10 text-center max-w-4xl px-6">
                 <motion.span
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
-                    className="inline-block px-4 py-1 mb-4 text-[10px] font-semibold tracking-[0.2em] uppercase border rounded-full border-brand-indigo/30 bg-brand-indigo/10 text-brand-indigo"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.3em] uppercase border rounded-xl border-white/20 bg-white/10 text-white backdrop-blur-md"
                 >
                     SRM University AP
                 </motion.span>
-                <h1 className="text-4xl sm:text-7xl md:text-8xl font-syne font-extrabold bg-gradient-to-br from-white via-white to-white/40 bg-clip-text text-transparent px-4">
-                    SRM Sports Council
-                </h1>
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.7 }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
-                    className="mt-6 text-subtle font-outfit text-base sm:text-lg max-w-2xl mx-auto px-6"
+                <motion.h1
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="text-5xl sm:text-7xl md:text-8xl font-syne font-extrabold text-white drop-shadow-2xl leading-[0.95] tracking-tight"
                 >
-                    The central hub for all sports-related activities, club information, event management, and achievement showcases.
+                    SRM <span className="text-white/80">SPORTS</span><br /> COUNCIL
+                </motion.h1>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="mt-8 font-outfit text-lg sm:text-xl max-w-2xl mx-auto text-white/80 leading-relaxed font-medium"
+                >
+                    Nurturing champions, fostering community, and driving athletic excellence at SRM University AP.
                 </motion.p>
-            </motion.div>
+            </div>
 
             {/* Stats Bar */}
             <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="mt-16 z-10 glass rounded-2xl px-8 sm:px-12 py-6 flex flex-wrap justify-center gap-8 sm:gap-16"
+                transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
+                className="mt-16 z-10 glass shadow-2xl rounded-3xl p-1 bg-white/5 border-white/10"
             >
-                <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-syne font-bold text-brand-blue">
-                        <CountUp to={15} suffix="+" />
+                <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 p-2">
+                    <div className="px-8 sm:px-12 py-6 text-center">
+                        <div className="text-3xl sm:text-4xl font-syne font-extrabold text-white">
+                            {totalTeams}+
+                        </div>
+                        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mt-1">Teams</div>
                     </div>
-                    <div className="text-[10px] uppercase tracking-widest text-muted">Total Teams</div>
-                </div>
-                <div className="hidden sm:block w-[1px] h-12 bg-white/10"></div>
-                <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-syne font-bold text-brand-green">
-                        <CountUp to={500} suffix="+" />
+                    <div className="hidden sm:block w-[1px] h-12 bg-white/10"></div>
+                    <div className="px-8 sm:px-12 py-6 text-center">
+                        <div className="text-3xl sm:text-4xl font-syne font-extrabold text-white">
+                            {totalMembers}+
+                        </div>
+                        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mt-1">Athletes</div>
                     </div>
-                    <div className="text-[10px] uppercase tracking-widest text-muted">Total Members</div>
+                    <div className="hidden sm:block w-[1px] h-12 bg-white/10"></div>
+                    <div className="px-8 sm:px-12 py-6 text-center">
+                        <div className="text-3xl sm:text-4xl font-syne font-extrabold text-white">
+                            25+
+                        </div>
+                        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mt-1">Sports</div>
+                    </div>
                 </div>
             </motion.div>
         </section>
     );
 }
+
 
