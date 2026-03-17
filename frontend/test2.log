@@ -1,0 +1,1383 @@
+  console.error
+    Warning: Received `true` for a non-boolean attribute `fill`.
+    
+    If you want to write it to the DOM, pass a string instead: fill="true" or fill={value.toString()}.
+        at img
+        at default
+        at div
+        at MotionDOMComponent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\index.tsx:101:16)
+        at PopChildMeasure (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PopChild.tsx:37:1)
+        at PopChild (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PopChild.tsx:72:28)
+        at PresenceChild (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PresenceChild.tsx:27:5)
+        at AnimatePresence (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\index.tsx:47:5)
+        at div
+        at section
+        at NewsCarousel (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\src\features\news\NewsCarousel.tsx:30:39)
+        at div
+        at Home
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3765:9)
+      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3803:21)
+      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3827:3)
+      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:9541:5)
+      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9830:5)
+      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10950:3)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:22232:17)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26632:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26607:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26505:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26473:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25777:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    Warning: Received `true` for a non-boolean attribute `priority`.
+    
+    If you want to write it to the DOM, pass a string instead: priority="true" or priority={value.toString()}.
+        at img
+        at default
+        at div
+        at MotionDOMComponent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\index.tsx:101:16)
+        at PopChildMeasure (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PopChild.tsx:37:1)
+        at PopChild (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PopChild.tsx:72:28)
+        at PresenceChild (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PresenceChild.tsx:27:5)
+        at AnimatePresence (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\index.tsx:47:5)
+        at div
+        at section
+        at NewsCarousel (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\src\features\news\NewsCarousel.tsx:30:39)
+        at div
+        at Home
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3765:9)
+      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3803:21)
+      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3827:3)
+      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:9541:5)
+      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9830:5)
+      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10950:3)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:22232:17)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26632:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26607:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26505:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26473:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25777:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    Error: Uncaught [ReferenceError: IntersectionObserver is not defined]
+        at reportException (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\helpers\runtime-script-errors.js:66:24)
+        at innerInvokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:353:9)
+        at invokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+        at HTMLUnknownElementImpl._dispatch (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+        at HTMLUnknownElementImpl.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+        at HTMLUnknownElement.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+        at Object.invokeGuardedCallbackDev (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4213:16)
+        at invokeGuardedCallback (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4277:31)
+        at reportUncaughtErrorInDEV (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:22877:5)
+        at captureCommitPhaseError (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:27165:5)
+        at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24729:9)
+        at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+        at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+        at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+        at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+        at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+        at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+        at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+        at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+        at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+        at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+        at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+        at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+        at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+        at new Promise (<anonymous>)
+        at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+        at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+        at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+        at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+        at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+        at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+        at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+        at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7) {
+      detail: ReferenceError: IntersectionObserver is not defined
+          at initIntersectionObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:54:34)
+          at observeIntersection (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:68:39)
+          at InViewFeature.startObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:64:16)
+          at InViewFeature.mount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:72:14)
+          at HTMLVisualElement.updateFeatures (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\motion-dom\src\render\VisualElement.ts:656:29)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\utils\use-visual-element.ts:147:23
+          at commitHookEffectListMount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+          at commitLayoutEffectOnFiber (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23312:15)
+          at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24727:9)
+          at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+          at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+          at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+          at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+          at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+          at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+          at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+          at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+          at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+          at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+          at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+          at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+          at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+          at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+          at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+          at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+          at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+          at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+          at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7),
+      type: 'unhandled exception'
+    }
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at VirtualConsole.<anonymous> (node_modules/@jest/environment-jsdom-abstract/build/index.js:87:23)
+      at reportException (node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:70:28)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at reportUncaughtErrorInDEV (node_modules/react-dom/cjs/react-dom.development.js:22877:5)
+      at captureCommitPhaseError (node_modules/react-dom/cjs/react-dom.development.js:27165:5)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24729:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    Error: Uncaught [ReferenceError: IntersectionObserver is not defined]
+        at reportException (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\helpers\runtime-script-errors.js:66:24)
+        at innerInvokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:353:9)
+        at invokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+        at HTMLUnknownElementImpl._dispatch (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+        at HTMLUnknownElementImpl.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+        at HTMLUnknownElement.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+        at Object.invokeGuardedCallbackDev (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4213:16)
+        at invokeGuardedCallback (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4277:31)
+        at reportUncaughtErrorInDEV (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:22877:5)
+        at captureCommitPhaseError (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:27165:5)
+        at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24729:9)
+        at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+        at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+        at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+        at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+        at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+        at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+        at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+        at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+        at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+        at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+        at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+        at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+        at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+        at new Promise (<anonymous>)
+        at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+        at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+        at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+        at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+        at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+        at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+        at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+        at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7) {
+      detail: ReferenceError: IntersectionObserver is not defined
+          at initIntersectionObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:54:34)
+          at observeIntersection (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:68:39)
+          at InViewFeature.startObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:64:16)
+          at InViewFeature.mount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:72:14)
+          at HTMLVisualElement.updateFeatures (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\motion-dom\src\render\VisualElement.ts:656:29)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\utils\use-visual-element.ts:147:23
+          at commitHookEffectListMount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+          at commitLayoutEffectOnFiber (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23312:15)
+          at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24727:9)
+          at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+          at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+          at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+          at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+          at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+          at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+          at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+          at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+          at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+          at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+          at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+          at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+          at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+          at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+          at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+          at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+          at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+          at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+          at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7),
+      type: 'unhandled exception'
+    }
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at VirtualConsole.<anonymous> (node_modules/@jest/environment-jsdom-abstract/build/index.js:87:23)
+      at reportException (node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:70:28)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at reportUncaughtErrorInDEV (node_modules/react-dom/cjs/react-dom.development.js:22877:5)
+      at captureCommitPhaseError (node_modules/react-dom/cjs/react-dom.development.js:27165:5)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24729:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    Error: Uncaught [ReferenceError: IntersectionObserver is not defined]
+        at reportException (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\helpers\runtime-script-errors.js:66:24)
+        at innerInvokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:353:9)
+        at invokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+        at HTMLUnknownElementImpl._dispatch (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+        at HTMLUnknownElementImpl.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+        at HTMLUnknownElement.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+        at Object.invokeGuardedCallbackDev (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4213:16)
+        at invokeGuardedCallback (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4277:31)
+        at reportUncaughtErrorInDEV (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:22877:5)
+        at captureCommitPhaseError (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:27165:5)
+        at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24729:9)
+        at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+        at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+        at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+        at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+        at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+        at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+        at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+        at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+        at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+        at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+        at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+        at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+        at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+        at new Promise (<anonymous>)
+        at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+        at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+        at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+        at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+        at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+        at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+        at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+        at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7) {
+      detail: ReferenceError: IntersectionObserver is not defined
+          at initIntersectionObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:54:34)
+          at observeIntersection (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:68:39)
+          at InViewFeature.startObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:64:16)
+          at InViewFeature.mount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:72:14)
+          at HTMLVisualElement.updateFeatures (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\motion-dom\src\render\VisualElement.ts:656:29)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\utils\use-visual-element.ts:147:23
+          at commitHookEffectListMount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+          at commitLayoutEffectOnFiber (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23312:15)
+          at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24727:9)
+          at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+          at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+          at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+          at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+          at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+          at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+          at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+          at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+          at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+          at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+          at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+          at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+          at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+          at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+          at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+          at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+          at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+          at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+          at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7),
+      type: 'unhandled exception'
+    }
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at VirtualConsole.<anonymous> (node_modules/@jest/environment-jsdom-abstract/build/index.js:87:23)
+      at reportException (node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:70:28)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at reportUncaughtErrorInDEV (node_modules/react-dom/cjs/react-dom.development.js:22877:5)
+      at captureCommitPhaseError (node_modules/react-dom/cjs/react-dom.development.js:27165:5)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24729:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    Error: Uncaught [ReferenceError: IntersectionObserver is not defined]
+        at reportException (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\helpers\runtime-script-errors.js:66:24)
+        at innerInvokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:353:9)
+        at invokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+        at HTMLUnknownElementImpl._dispatch (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+        at HTMLUnknownElementImpl.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+        at HTMLUnknownElement.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+        at Object.invokeGuardedCallbackDev (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4213:16)
+        at invokeGuardedCallback (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4277:31)
+        at reportUncaughtErrorInDEV (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:22877:5)
+        at captureCommitPhaseError (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:27165:5)
+        at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24729:9)
+        at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+        at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+        at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+        at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+        at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+        at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+        at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+        at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+        at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+        at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+        at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+        at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+        at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+        at new Promise (<anonymous>)
+        at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+        at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+        at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+        at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+        at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+        at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+        at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+        at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7) {
+      detail: ReferenceError: IntersectionObserver is not defined
+          at initIntersectionObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:54:34)
+          at observeIntersection (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:68:39)
+          at InViewFeature.startObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:64:16)
+          at InViewFeature.mount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:72:14)
+          at HTMLVisualElement.updateFeatures (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\motion-dom\src\render\VisualElement.ts:656:29)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\utils\use-visual-element.ts:147:23
+          at commitHookEffectListMount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+          at commitLayoutEffectOnFiber (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23312:15)
+          at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24727:9)
+          at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+          at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+          at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+          at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+          at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+          at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+          at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+          at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+          at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+          at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+          at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+          at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+          at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+          at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+          at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+          at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+          at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+          at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+          at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7),
+      type: 'unhandled exception'
+    }
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at VirtualConsole.<anonymous> (node_modules/@jest/environment-jsdom-abstract/build/index.js:87:23)
+      at reportException (node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:70:28)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at reportUncaughtErrorInDEV (node_modules/react-dom/cjs/react-dom.development.js:22877:5)
+      at captureCommitPhaseError (node_modules/react-dom/cjs/react-dom.development.js:27165:5)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24729:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    Error: Uncaught [ReferenceError: IntersectionObserver is not defined]
+        at reportException (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\helpers\runtime-script-errors.js:66:24)
+        at innerInvokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:353:9)
+        at invokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+        at HTMLUnknownElementImpl._dispatch (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+        at HTMLUnknownElementImpl.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+        at HTMLUnknownElement.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+        at Object.invokeGuardedCallbackDev (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4213:16)
+        at invokeGuardedCallback (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4277:31)
+        at reportUncaughtErrorInDEV (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:22877:5)
+        at captureCommitPhaseError (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:27165:5)
+        at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24729:9)
+        at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+        at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+        at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+        at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+        at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+        at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+        at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+        at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+        at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+        at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+        at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+        at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+        at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+        at new Promise (<anonymous>)
+        at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+        at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+        at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+        at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+        at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+        at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+        at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+        at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7) {
+      detail: ReferenceError: IntersectionObserver is not defined
+          at initIntersectionObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:54:34)
+          at observeIntersection (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:68:39)
+          at InViewFeature.startObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:64:16)
+          at InViewFeature.mount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:72:14)
+          at HTMLVisualElement.updateFeatures (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\motion-dom\src\render\VisualElement.ts:656:29)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\utils\use-visual-element.ts:147:23
+          at commitHookEffectListMount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+          at commitLayoutEffectOnFiber (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23312:15)
+          at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24727:9)
+          at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+          at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+          at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+          at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+          at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+          at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+          at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+          at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+          at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+          at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+          at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+          at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+          at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+          at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+          at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+          at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+          at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+          at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+          at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7),
+      type: 'unhandled exception'
+    }
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at VirtualConsole.<anonymous> (node_modules/@jest/environment-jsdom-abstract/build/index.js:87:23)
+      at reportException (node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:70:28)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at reportUncaughtErrorInDEV (node_modules/react-dom/cjs/react-dom.development.js:22877:5)
+      at captureCommitPhaseError (node_modules/react-dom/cjs/react-dom.development.js:27165:5)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24729:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    Error: Uncaught [ReferenceError: IntersectionObserver is not defined]
+        at reportException (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\helpers\runtime-script-errors.js:66:24)
+        at innerInvokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:353:9)
+        at invokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+        at HTMLUnknownElementImpl._dispatch (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+        at HTMLUnknownElementImpl.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+        at HTMLUnknownElement.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+        at Object.invokeGuardedCallbackDev (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4213:16)
+        at invokeGuardedCallback (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4277:31)
+        at reportUncaughtErrorInDEV (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:22877:5)
+        at captureCommitPhaseError (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:27165:5)
+        at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24729:9)
+        at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+        at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+        at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+        at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+        at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+        at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+        at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+        at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+        at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+        at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+        at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+        at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+        at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+        at new Promise (<anonymous>)
+        at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+        at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+        at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+        at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+        at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+        at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+        at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+        at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7) {
+      detail: ReferenceError: IntersectionObserver is not defined
+          at initIntersectionObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:54:34)
+          at observeIntersection (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:68:39)
+          at InViewFeature.startObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:64:16)
+          at InViewFeature.mount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:72:14)
+          at HTMLVisualElement.updateFeatures (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\motion-dom\src\render\VisualElement.ts:656:29)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\utils\use-visual-element.ts:147:23
+          at commitHookEffectListMount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+          at commitLayoutEffectOnFiber (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23312:15)
+          at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24727:9)
+          at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+          at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+          at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+          at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+          at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+          at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+          at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+          at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+          at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+          at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+          at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+          at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+          at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+          at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+          at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+          at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+          at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+          at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+          at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7),
+      type: 'unhandled exception'
+    }
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at VirtualConsole.<anonymous> (node_modules/@jest/environment-jsdom-abstract/build/index.js:87:23)
+      at reportException (node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:70:28)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at reportUncaughtErrorInDEV (node_modules/react-dom/cjs/react-dom.development.js:22877:5)
+      at captureCommitPhaseError (node_modules/react-dom/cjs/react-dom.development.js:27165:5)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24729:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    Error: Uncaught [ReferenceError: IntersectionObserver is not defined]
+        at reportException (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\helpers\runtime-script-errors.js:66:24)
+        at innerInvokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:353:9)
+        at invokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+        at HTMLUnknownElementImpl._dispatch (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+        at HTMLUnknownElementImpl.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+        at HTMLUnknownElement.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+        at Object.invokeGuardedCallbackDev (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4213:16)
+        at invokeGuardedCallback (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4277:31)
+        at reportUncaughtErrorInDEV (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:22877:5)
+        at captureCommitPhaseError (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:27165:5)
+        at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24729:9)
+        at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+        at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+        at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+        at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+        at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+        at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+        at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+        at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+        at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+        at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+        at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+        at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+        at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+        at new Promise (<anonymous>)
+        at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+        at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+        at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+        at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+        at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+        at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+        at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+        at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7) {
+      detail: ReferenceError: IntersectionObserver is not defined
+          at initIntersectionObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:54:34)
+          at observeIntersection (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:68:39)
+          at InViewFeature.startObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:64:16)
+          at InViewFeature.mount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:72:14)
+          at HTMLVisualElement.updateFeatures (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\motion-dom\src\render\VisualElement.ts:656:29)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\utils\use-visual-element.ts:147:23
+          at commitHookEffectListMount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+          at commitLayoutEffectOnFiber (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23312:15)
+          at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24727:9)
+          at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+          at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+          at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+          at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+          at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+          at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+          at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+          at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+          at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+          at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+          at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+          at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+          at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+          at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+          at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+          at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+          at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+          at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+          at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7),
+      type: 'unhandled exception'
+    }
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at VirtualConsole.<anonymous> (node_modules/@jest/environment-jsdom-abstract/build/index.js:87:23)
+      at reportException (node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:70:28)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at reportUncaughtErrorInDEV (node_modules/react-dom/cjs/react-dom.development.js:22877:5)
+      at captureCommitPhaseError (node_modules/react-dom/cjs/react-dom.development.js:27165:5)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24729:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    Error: Uncaught [ReferenceError: IntersectionObserver is not defined]
+        at reportException (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\helpers\runtime-script-errors.js:66:24)
+        at innerInvokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:353:9)
+        at invokeEventListeners (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+        at HTMLUnknownElementImpl._dispatch (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+        at HTMLUnknownElementImpl.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+        at HTMLUnknownElement.dispatchEvent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+        at Object.invokeGuardedCallbackDev (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4213:16)
+        at invokeGuardedCallback (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:4277:31)
+        at reportUncaughtErrorInDEV (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:22877:5)
+        at captureCommitPhaseError (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:27165:5)
+        at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24729:9)
+        at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+        at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+        at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+        at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+        at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+        at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+        at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+        at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+        at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+        at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+        at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+        at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+        at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+        at new Promise (<anonymous>)
+        at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+        at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+        at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+        at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+        at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+        at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+        at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+        at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+        at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7) {
+      detail: ReferenceError: IntersectionObserver is not defined
+          at initIntersectionObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:54:34)
+          at observeIntersection (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\observers.ts:68:39)
+          at InViewFeature.startObserver (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:64:16)
+          at InViewFeature.mount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\features\viewport\index.ts:72:14)
+          at HTMLVisualElement.updateFeatures (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\motion-dom\src\render\VisualElement.ts:656:29)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\utils\use-visual-element.ts:147:23
+          at commitHookEffectListMount (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+          at commitLayoutEffectOnFiber (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:23312:15)
+          at commitLayoutMountEffects_complete (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24727:9)
+          at commitLayoutEffects_begin (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24713:7)
+          at commitLayoutEffects (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:24651:3)
+          at commitRootImpl (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26862:5)
+          at commitRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26721:5)
+          at finishConcurrentRender (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:26020:9)
+          at performConcurrentWorkOnRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react-dom\cjs\react-dom.development.js:25848:7)
+          at flushActQueue (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2667:24)
+          at act (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\react\cjs\react.development.js:2582:11)
+          at C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\act-compat.js:46:25
+          at renderRoot (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:189:26)
+          at render (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\@testing-library\react\dist\pure.js:291:10)
+          at Object.<anonymous> (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\__tests__\Home.test.tsx:15:15)
+          at Promise.finally.completed (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1557:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1497:10)
+          at _callCircusTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1007:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at async _runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:947:3)
+          at async C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:849:7
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:862:11)
+          at async _runTestsForDescribeBlock (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:857:11)
+          at async run (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:761:3)
+          at async runAndTransformResultsToJestFormat (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\jestAdapterInit.js:1918:21)
+          at async jestAdapter (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-circus\build\runner.js:101:19)
+          at async runTestInternal (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:275:16)
+          at async runTest (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\jest-runner\build\index.js:343:7),
+      type: 'unhandled exception'
+    }
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at VirtualConsole.<anonymous> (node_modules/@jest/environment-jsdom-abstract/build/index.js:87:23)
+      at reportException (node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:70:28)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at reportUncaughtErrorInDEV (node_modules/react-dom/cjs/react-dom.development.js:22877:5)
+      at captureCommitPhaseError (node_modules/react-dom/cjs/react-dom.development.js:27165:5)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24729:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    The above error occurred in the <ForwardRef(motion.div)> component:
+    
+        at MotionDOMComponent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\index.tsx:101:16)
+        at div
+        at div
+        at section
+        at AboutCouncil
+        at div
+        at Home
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at logCapturedError (node_modules/react-dom/cjs/react-dom.development.js:18704:23)
+      at update.callback (node_modules/react-dom/cjs/react-dom.development.js:18737:5)
+      at callCallback (node_modules/react-dom/cjs/react-dom.development.js:15036:12)
+      at commitUpdateQueue (node_modules/react-dom/cjs/react-dom.development.js:15057:9)
+      at commitLayoutEffectOnFiber (node_modules/react-dom/cjs/react-dom.development.js:23430:13)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24727:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26156:3)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26998:3)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    The above error occurred in the <ForwardRef(motion.div)> component:
+    
+        at MotionDOMComponent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\index.tsx:101:16)
+        at div
+        at div
+        at section
+        at AboutCouncil
+        at div
+        at Home
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at logCapturedError (node_modules/react-dom/cjs/react-dom.development.js:18704:23)
+      at update.callback (node_modules/react-dom/cjs/react-dom.development.js:18737:5)
+      at callCallback (node_modules/react-dom/cjs/react-dom.development.js:15036:12)
+      at commitUpdateQueue (node_modules/react-dom/cjs/react-dom.development.js:15057:9)
+      at commitLayoutEffectOnFiber (node_modules/react-dom/cjs/react-dom.development.js:23430:13)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24727:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26156:3)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26998:3)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    The above error occurred in the <ForwardRef(motion.div)> component:
+    
+        at MotionDOMComponent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\index.tsx:101:16)
+        at div
+        at div
+        at section
+        at AboutCouncil
+        at div
+        at Home
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at logCapturedError (node_modules/react-dom/cjs/react-dom.development.js:18704:23)
+      at update.callback (node_modules/react-dom/cjs/react-dom.development.js:18737:5)
+      at callCallback (node_modules/react-dom/cjs/react-dom.development.js:15036:12)
+      at commitUpdateQueue (node_modules/react-dom/cjs/react-dom.development.js:15057:9)
+      at commitLayoutEffectOnFiber (node_modules/react-dom/cjs/react-dom.development.js:23430:13)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24727:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26156:3)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26998:3)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    The above error occurred in the <ForwardRef(motion.div)> component:
+    
+        at MotionDOMComponent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\index.tsx:101:16)
+        at div
+        at div
+        at section
+        at AboutCouncil
+        at div
+        at Home
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at logCapturedError (node_modules/react-dom/cjs/react-dom.development.js:18704:23)
+      at update.callback (node_modules/react-dom/cjs/react-dom.development.js:18737:5)
+      at callCallback (node_modules/react-dom/cjs/react-dom.development.js:15036:12)
+      at commitUpdateQueue (node_modules/react-dom/cjs/react-dom.development.js:15057:9)
+      at commitLayoutEffectOnFiber (node_modules/react-dom/cjs/react-dom.development.js:23430:13)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24727:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26156:3)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26998:3)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    The above error occurred in the <ForwardRef(motion.div)> component:
+    
+        at MotionDOMComponent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\index.tsx:101:16)
+        at div
+        at div
+        at section
+        at AboutCouncil
+        at div
+        at Home
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at logCapturedError (node_modules/react-dom/cjs/react-dom.development.js:18704:23)
+      at update.callback (node_modules/react-dom/cjs/react-dom.development.js:18737:5)
+      at callCallback (node_modules/react-dom/cjs/react-dom.development.js:15036:12)
+      at commitUpdateQueue (node_modules/react-dom/cjs/react-dom.development.js:15057:9)
+      at commitLayoutEffectOnFiber (node_modules/react-dom/cjs/react-dom.development.js:23430:13)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24727:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26156:3)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26998:3)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    The above error occurred in the <ForwardRef(motion.div)> component:
+    
+        at MotionDOMComponent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\index.tsx:101:16)
+        at div
+        at div
+        at section
+        at AboutCouncil
+        at div
+        at Home
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at logCapturedError (node_modules/react-dom/cjs/react-dom.development.js:18704:23)
+      at update.callback (node_modules/react-dom/cjs/react-dom.development.js:18737:5)
+      at callCallback (node_modules/react-dom/cjs/react-dom.development.js:15036:12)
+      at commitUpdateQueue (node_modules/react-dom/cjs/react-dom.development.js:15057:9)
+      at commitLayoutEffectOnFiber (node_modules/react-dom/cjs/react-dom.development.js:23430:13)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24727:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26156:3)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26998:3)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    The above error occurred in the <ForwardRef(motion.div)> component:
+    
+        at MotionDOMComponent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\index.tsx:101:16)
+        at section
+        at Hierarchy (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\src\components\layout\Hierarchy.tsx:23:40)
+        at div
+        at Home
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at logCapturedError (node_modules/react-dom/cjs/react-dom.development.js:18704:23)
+      at update.callback (node_modules/react-dom/cjs/react-dom.development.js:18737:5)
+      at callCallback (node_modules/react-dom/cjs/react-dom.development.js:15036:12)
+      at commitUpdateQueue (node_modules/react-dom/cjs/react-dom.development.js:15057:9)
+      at commitLayoutEffectOnFiber (node_modules/react-dom/cjs/react-dom.development.js:23430:13)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24727:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26156:3)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26998:3)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    The above error occurred in the <ForwardRef(motion.div)> component:
+    
+        at MotionDOMComponent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\index.tsx:101:16)
+        at div
+        at div
+        at section
+        at Hierarchy (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\src\components\layout\Hierarchy.tsx:23:40)
+        at div
+        at Home
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at logCapturedError (node_modules/react-dom/cjs/react-dom.development.js:18704:23)
+      at update.callback (node_modules/react-dom/cjs/react-dom.development.js:18737:5)
+      at callCallback (node_modules/react-dom/cjs/react-dom.development.js:15036:12)
+      at commitUpdateQueue (node_modules/react-dom/cjs/react-dom.development.js:15057:9)
+      at commitLayoutEffectOnFiber (node_modules/react-dom/cjs/react-dom.development.js:23430:13)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24727:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26156:3)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26998:3)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+FAIL __tests__/Home.test.tsx
+  Home Page Sanity Check
+    × renders without crashing (265 ms)
+
+  ● Home Page Sanity Check › renders without crashing
+
+    ReferenceError: IntersectionObserver is not defined
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at initIntersectionObserver (node_modules/framer-motion/src/motion/features/viewport/observers.ts:54:34)
+      at observeIntersection (node_modules/framer-motion/src/motion/features/viewport/observers.ts:68:39)
+      at InViewFeature.startObserver (node_modules/framer-motion/src/motion/features/viewport/index.ts:64:16)
+      at InViewFeature.mount (node_modules/framer-motion/src/motion/features/viewport/index.ts:72:14)
+      at HTMLVisualElement.updateFeatures (node_modules/motion-dom/src/render/VisualElement.ts:656:29)
+      at node_modules/framer-motion/src/motion/utils/use-visual-element.ts:147:23
+      at commitHookEffectListMount (node_modules/react-dom/cjs/react-dom.development.js:23189:26)
+      at commitLayoutEffectOnFiber (node_modules/react-dom/cjs/react-dom.development.js:23312:15)
+      at commitLayoutMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24727:9)
+      at commitLayoutEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24713:7)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:24651:3)
+      at commitRootImpl (node_modules/react-dom/cjs/react-dom.development.js:26862:5)
+      at commitRoot (node_modules/react-dom/cjs/react-dom.development.js:26721:5)
+      at finishConcurrentRender (node_modules/react-dom/cjs/react-dom.development.js:26020:9)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25848:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        2.238 s
+Ran all test suites.

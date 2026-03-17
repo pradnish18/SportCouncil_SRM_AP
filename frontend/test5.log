@@ -1,0 +1,964 @@
+FAIL __tests__/components/layout/AboutCouncil.test.tsx
+  ● Test suite failed to run
+
+    Cannot find module 'react-simple-maps' from '__tests__/components/layout/AboutCouncil.test.tsx'
+
+    [0m [90m 3 |[39m
+     [90m 4 |[39m [90m// Mock map component to avoid mapbox/leaflet errors[39m
+    [31m[1m>[22m[39m[90m 5 |[39m jest[33m.[39mmock([32m'react-simple-maps'[39m[33m,[39m () [33m=>[39m ({
+     [90m   |[39m      [31m[1m^[22m[39m
+     [90m 6 |[39m     [33mComposableMap[39m[33m:[39m () [33m=>[39m [33m<[39m[33mdiv[39m data[33m-[39mtestid[33m=[39m[32m"composable-map"[39m [33m/[39m[33m>[39m[33m,[39m
+     [90m 7 |[39m     [33mGeographies[39m[33m:[39m () [33m=>[39m [33m<[39m[33mdiv[39m [33m/[39m[33m>[39m[33m,[39m
+     [90m 8 |[39m     [33mGeography[39m[33m:[39m () [33m=>[39m [33m<[39m[33mdiv[39m [33m/[39m[33m>[39m[33m,[39m[0m
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:863:11)
+      at Object.mock (__tests__/components/layout/AboutCouncil.test.tsx:5:6)
+
+PASS __tests__/features/clubs/ClubsGrid.test.tsx
+FAIL __tests__/components/layout/Navbar.test.tsx
+  ● Navbar Component › renders the logo
+
+    TestingLibraryElementError: Unable to find an element with the alt text: /SRM Logo/i
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"fixed top-0 left-0 right-0 z-[100] w-full bg-background/80 backdrop-blur-md border-b border-border transition-colors"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"w-full bg-brand-srm text-white text-[10px] font-bold py-1.5 px-6 flex justify-between items-center hidden md:flex uppercase tracking-widest"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center gap-4"[39m
+            [36m>[39m
+              [36m<span>[39m
+                [0m✉ info@srmuniversity.ac.in[0m
+              [36m</span>[39m
+              [36m<span>[39m
+                [0m📍 SRM University AP, Andhra Pradesh[0m
+              [36m</span>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center gap-6"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"cursor-pointer hover:opacity-100 opacity-80"[39m
+              [36m>[39m
+                [0mFacebook[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"cursor-pointer hover:opacity-100 opacity-80"[39m
+              [36m>[39m
+                [0mInstagram[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"cursor-pointer hover:opacity-100 opacity-80"[39m
+              [36m>[39m
+                [0mTwitter[0m
+              [36m</span>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between px-6 xl:px-12 py-4 h-[70px]"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"flex items-center gap-3 group"[39m
+              [33mhref[39m=[32m"/"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"w-10 h-10 bg-brand-srm text-white rounded-xl flex items-center justify-center text-xl font-bold shadow-lg transform group-hover:rotate-6 transition-transform"[39m
+              [36m>[39m
+                [0mS[0m
+              [36m</div>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"font-syne font-extrabold text-xl text-foreground hidden sm:block tracking-tight uppercase"[39m
+              [36m>[39m
+                [0mSRM [0m
+                [36m<span[39m
+                  [33mclass[39m=[32m"text-brand-srm"[39m
+                [36m>[39m
+                  [0mSports[0m
+                [36m</span>[39m
+              [36m</span>[39m
+            [36m</a>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"hidden md:flex items-center h-full gap-2"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"relative h-full flex items-center px-5 font-outfit text-xs font-bold uppercase tracking-widest transition-all rounded-xl hover:bg-brand-srm/5 text-brand-srm"[39m
+                [33mhref[39m=[32m"/"[39m
+              [36m>[39m
+                [0mHome[0m
+                [36m<div[39m
+                  [33mclass[39m=[32m"absolute inset-0 bg-brand-srm/10 rounded-xl"[39m
+                [36m/>[39m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"relative h-full flex items-center px-5 font-outfit text-xs font-bold uppercase tracking-widest transition-all rounded-xl hover:bg-brand-srm/5 text-muted hover:text-foreground"[39m
+                [33mhref[39m=[32m"/clubs"[39m
+              [36m>[39m
+                [0mClubs[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"relative h-full flex items-center px-5 font-outfit text-xs font-bold uppercase tracking-widest transition-all rounded-xl hover:bg-brand-srm/5 text-muted hover:text-foreground"[39m
+                [33mhref[39m=[32m"/events"[39m
+              [36m>[39m
+                [0mEvents[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"relative h-full flex items-center px-5 font-outfit text-xs font-bold uppercase tracking-widest transition-all rounded-xl hover:bg-brand-srm/5 text-muted hover:text-foreground"[39m
+                [33mhref[39m=[32m"/achievements"[39m
+              [36m>[39m
+                [0mAchievements[0m
+              [36m</a>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center gap-4"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Toggle theme"[39m
+                [33mclass[39m=[32m"w-10 h-10 flex items-center justify-center rounded-xl bg-card border border-border text-foreground hover:bg-brand-srm/10 transition-colors"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-sun"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"18"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"18"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<circle[39m
+                    [33mcx[39m=[32m"12"[39m
+                    [33mcy[39m=[32m"12"[39m
+                    [33mr[39m=[32m"4"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M12 2v2"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M12 20v2"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m4.93 4.93 1.41 1.41"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m17.66 17.66 1.41 1.41"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M2 12h2"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M20 12h2"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m6.34 17.66-1.41 1.41"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m19.07 4.93-1.41 1.41"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</button>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"hidden md:block"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"px-6 py-2.5 bg-brand-srm text-white font-outfit text-xs font-bold tracking-widest uppercase hover:bg-brand-srm_light transition-colors shadow-lg rounded-xl"[39m
+                  [33mhref[39m=[32m"/events"[39m
+                [36m>[39m
+                  [0mJoin a Club[0m
+                [36m</a>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Toggle Menu"[39m
+                [33mclass[39m=[32m"md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"block w-6 h-0.5 rounded-full bg-foreground origin-center"[39m
+                  [33mstyle[39m=[32m"transform: none;"[39m
+                [36m/>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"block w-6 h-0.5 rounded-full bg-foreground"[39m
+                  [33mstyle[39m=[32m"opacity: 1; transform: none;"[39m
+                [36m/>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"block w-6 h-0.5 rounded-full bg-foreground origin-center"[39m
+                  [33mstyle[39m=[32m"transform: none;"[39m
+                [36m/>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+    [0m [90m 17 |[39m     it([32m'renders the logo'[39m[33m,[39m () [33m=>[39m {
+     [90m 18 |[39m         render([33m<[39m[33mNavbar[39m [33m/[39m[33m>[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 19 |[39m         expect(screen[33m.[39mgetByAltText([35m/SRM Logo/i[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m    |[39m                       [31m[1m^[22m[39m
+     [90m 20 |[39m     })[33m;[39m
+     [90m 21 |[39m
+     [90m 22 |[39m     it([32m'renders navigation links'[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByAltText (__tests__/components/layout/Navbar.test.tsx:19:23)
+
+PASS __tests__/features/achievements/AchievementsGallery.test.tsx
+FAIL __tests__/components/layout/Hero.test.tsx
+  ● Hero Component › renders the main heading
+
+    TestingLibraryElementError: Unable to find an element with the text: /SRM AP/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<section[39m
+          [33mclass[39m=[32m"relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"absolute inset-0 z-0 bg-brand-srm"[39m
+          [36m>[39m
+            [36m<video[39m
+              [33mautoplay[39m=[32m""[39m
+              [33mclass[39m=[32m"absolute inset-0 object-cover w-full h-full opacity-40 mix-blend-luminosity"[39m
+              [33mloop[39m=[32m""[39m
+              [33mplaysinline[39m=[32m""[39m
+            [36m>[39m
+              [36m<source[39m
+                [33msrc[39m=[32m"https://www.w3schools.com/html/mov_bbb.mp4"[39m
+                [33mtype[39m=[32m"video/mp4"[39m
+              [36m/>[39m
+            [36m</video>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute inset-0 bg-gradient-to-b from-brand-srm/60 via-brand-srm/40 to-background transition-colors duration-500"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"z-10 text-center max-w-4xl px-6"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.3em] uppercase border rounded-xl border-white/20 bg-white/10 text-white backdrop-blur-md"[39m
+              [33mstyle[39m=[32m"opacity: 0; transform: translateY(10px);"[39m
+            [36m>[39m
+              [0mSRM University AP[0m
+            [36m</span>[39m
+            [36m<h1[39m
+              [33mclass[39m=[32m"text-5xl sm:text-7xl md:text-8xl font-syne font-extrabold text-white drop-shadow-2xl leading-[0.95] tracking-tight"[39m
+              [33mstyle[39m=[32m"opacity: 0; transform: scale(0.95);"[39m
+            [36m>[39m
+              [0mSRM [0m
+              [36m<span[39m
+                [33mclass[39m=[32m"text-white/80"[39m
+              [36m>[39m
+                [0mSPORTS[0m
+              [36m</span>[39m
+              [36m<br />[39m
+              [0m COUNCIL[0m
+            [36m</h1>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"mt-8 font-outfit text-lg sm:text-xl max-w-2xl mx-auto text-white/80 leading-relaxed font-medium"[39m
+              [33mstyle[39m=[32m"opacity: 0; transform: translateY(20px);"[39m
+            [36m>[39m
+              [0mNurturing champions, fostering community, and driving athletic excellence at SRM University AP.[0m
+            [36m</p>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"mt-16 z-10 glass shadow-2xl rounded-3xl p-1 bg-white/5 border-white/10"[39m
+            [33mstyle[39m=[32m"opacity: 0; transform: translateY(40px);"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-wrap justify-center items-center gap-2 sm:gap-4 p-2"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"px-8 sm:px-12 py-6 text-center"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-3xl sm:text-4xl font-syne font-extrabold text-white"[39m
+                [36m>[39m
+                  [0m15[0m
+                  [0m+[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mt-1"[39m
+                [36m>[39m
+                  [0mTeams[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"hidden sm:block w-[1px] h-12 bg-white/10"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"px-8 sm:px-12 py-6 text-center"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-3xl sm:text-4xl font-syne font-extrabold text-white"[39m
+                [36m>[39m
+                  [0m500[0m
+                  [0m+[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mt-1"[39m
+                [36m>[39m
+                  [0mAthletes[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"hidden sm:block w-[1px] h-12 bg-white/10"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"px-8 sm:px-12 py-6 text-center"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-3xl sm:text-4xl font-syne font-extrabold text-white"[39m
+                [36m>[39m
+                  [0m25+[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mt-1"[39m
+                [36m>[39m
+                  [0mSports[0m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+    [0m [90m 22 |[39m     it([32m'renders the main heading'[39m[33m,[39m () [33m=>[39m {
+     [90m 23 |[39m         render([33m<[39m[33mHero[39m [33m/[39m[33m>[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 24 |[39m         expect(screen[33m.[39mgetByText([35m/SRM AP/i[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m    |[39m                       [31m[1m^[22m[39m
+     [90m 25 |[39m         expect(screen[33m.[39mgetByText([35m/SPORTS COUNCIL/i[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m 26 |[39m     })[33m;[39m
+     [90m 27 |[39m[0m
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (__tests__/components/layout/Hero.test.tsx:24:23)
+
+  ● Hero Component › renders the call to action buttons
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Join a Club/i`
+
+    Here are the accessible roles:
+
+      heading:
+
+      Name "SRM SPORTS COUNCIL":
+      [36m<h1[39m
+        [33mclass[39m=[32m"text-5xl sm:text-7xl md:text-8xl font-syne font-extrabold text-white drop-shadow-2xl leading-[0.95] tracking-tight"[39m
+        [33mstyle[39m=[32m"opacity: 0; transform: scale(0.95);"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      paragraph:
+
+      Name "":
+      [36m<p[39m
+        [33mclass[39m=[32m"mt-8 font-outfit text-lg sm:text-xl max-w-2xl mx-auto text-white/80 leading-relaxed font-medium"[39m
+        [33mstyle[39m=[32m"opacity: 0; transform: translateY(20px);"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<section[39m
+          [33mclass[39m=[32m"relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"absolute inset-0 z-0 bg-brand-srm"[39m
+          [36m>[39m
+            [36m<video[39m
+              [33mautoplay[39m=[32m""[39m
+              [33mclass[39m=[32m"absolute inset-0 object-cover w-full h-full opacity-40 mix-blend-luminosity"[39m
+              [33mloop[39m=[32m""[39m
+              [33mplaysinline[39m=[32m""[39m
+            [36m>[39m
+              [36m<source[39m
+                [33msrc[39m=[32m"https://www.w3schools.com/html/mov_bbb.mp4"[39m
+                [33mtype[39m=[32m"video/mp4"[39m
+              [36m/>[39m
+            [36m</video>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute inset-0 bg-gradient-to-b from-brand-srm/60 via-brand-srm/40 to-background transition-colors duration-500"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"z-10 text-center max-w-4xl px-6"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.3em] uppercase border rounded-xl border-white/20 bg-white/10 text-white backdrop-blur-md"[39m
+              [33mstyle[39m=[32m"opacity: 0; transform: translateY(10px);"[39m
+            [36m>[39m
+              [0mSRM University AP[0m
+            [36m</span>[39m
+            [36m<h1[39m
+              [33mclass[39m=[32m"text-5xl sm:text-7xl md:text-8xl font-syne font-extrabold text-white drop-shadow-2xl leading-[0.95] tracking-tight"[39m
+              [33mstyle[39m=[32m"opacity: 0; transform: scale(0.95);"[39m
+            [36m>[39m
+              [0mSRM [0m
+              [36m<span[39m
+                [33mclass[39m=[32m"text-white/80"[39m
+              [36m>[39m
+                [0mSPORTS[0m
+              [36m</span>[39m
+              [36m<br />[39m
+              [0m COUNCIL[0m
+            [36m</h1>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"mt-8 font-outfit text-lg sm:text-xl max-w-2xl mx-auto text-white/80 leading-relaxed font-medium"[39m
+              [33mstyle[39m=[32m"opacity: 0; transform: translateY(20px);"[39m
+            [36m>[39m
+              [0mNurturing champions, fostering community, and driving athletic excellence at SRM University AP.[0m
+            [36m</p>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"mt-16 z-10 glass shadow-2xl rounded-3xl p-1 bg-white/5 border-white/10"[39m
+            [33mstyle[39m=[32m"opacity: 0; transform: translateY(40px);"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-wrap justify-center items-center gap-2 sm:gap-4 p-2"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"px-8 sm:px-12 py-6 text-center"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-3xl sm:text-4xl font-syne font-extrabold text-white"[39m
+                [36m>[39m
+                  [0m15[0m
+                  [0m+[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mt-1"[39m
+                [36m>[39m
+                  [0mTeams[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"hidden sm:block w-[1px] h-12 bg-white/10"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"px-8 sm:px-12 py-6 text-center"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-3xl sm:text-4xl font-syne font-extrabold text-white"[39m
+                [36m>[39m
+                  [0m500[0m
+                  [0m+[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mt-1"[39m
+                [36m>[39m
+                  [0mAthletes[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"hidden sm:block w-[1px] h-12 bg-white/10"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"px-8 sm:px-12 py-6 text-center"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-3xl sm:text-4xl font-syne font-extrabold text-white"[39m
+                [36m>[39m
+                  [0m25+[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mt-1"[39m
+                [36m>[39m
+                  [0mSports[0m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+    [0m [90m 28 |[39m     it([32m'renders the call to action buttons'[39m[33m,[39m () [33m=>[39m {
+     [90m 29 |[39m         render([33m<[39m[33mHero[39m [33m/[39m[33m>[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 30 |[39m         expect(screen[33m.[39mgetByRole([32m'button'[39m[33m,[39m { name[33m:[39m [35m/Join a Club/i[39m }))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m    |[39m                       [31m[1m^[22m[39m
+     [90m 31 |[39m         expect(screen[33m.[39mgetByRole([32m'button'[39m[33m,[39m { name[33m:[39m [35m/Upcoming Events/i[39m }))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m 32 |[39m     })[33m;[39m
+     [90m 33 |[39m })[33m;[39m[0m
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByRole (__tests__/components/layout/Hero.test.tsx:30:23)
+
+PASS __tests__/Home.test.tsx
+  ● Console
+
+    console.error
+      Warning: Received `true` for a non-boolean attribute `fill`.
+      
+      If you want to write it to the DOM, pass a string instead: fill="true" or fill={value.toString()}.
+          at img
+          at default
+          at div
+          at useContext (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\index.tsx:101:16)
+          at PopChildMeasure (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PopChild.tsx:37:1)
+          at PopChild (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PopChild.tsx:72:28)
+          at PresenceChild (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PresenceChild.tsx:27:5)
+          at AnimatePresence (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\index.tsx:47:5)
+          at div
+          at section
+          at NewsCarousel (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\src\features\news\NewsCarousel.tsx:30:39)
+          at div
+          at Home
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3765:9)
+      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3803:21)
+      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3827:3)
+      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:9541:5)
+      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9830:5)
+      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10950:3)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:22232:17)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26632:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26607:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26505:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26473:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25777:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+    console.error
+      Warning: Received `true` for a non-boolean attribute `priority`.
+      
+      If you want to write it to the DOM, pass a string instead: priority="true" or priority={value.toString()}.
+          at img
+          at default
+          at div
+          at useContext (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\index.tsx:101:16)
+          at PopChildMeasure (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PopChild.tsx:37:1)
+          at PopChild (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PopChild.tsx:72:28)
+          at PresenceChild (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PresenceChild.tsx:27:5)
+          at AnimatePresence (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\index.tsx:47:5)
+          at div
+          at section
+          at NewsCarousel (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\src\features\news\NewsCarousel.tsx:30:39)
+          at div
+          at Home
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3765:9)
+      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3803:21)
+      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3827:3)
+      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:9541:5)
+      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9830:5)
+      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10950:3)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:22232:17)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26632:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26607:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26505:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26473:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25777:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+FAIL __tests__/features/news/NewsCarousel.test.tsx
+  ● Console
+
+    console.error
+      Warning: An update to NewsCarousel inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at NewsCarousel (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\src\features\news\NewsCarousel.tsx:30:39)
+
+    [0m [90m 40 |[39m     useEffect(() [33m=>[39m {
+     [90m 41 |[39m         [36mconst[39m timer [33m=[39m setInterval(() [33m=>[39m {
+    [31m[1m>[22m[39m[90m 42 |[39m             setIndex((prev) [33m=>[39m (prev [33m+[39m [35m1[39m) [33m%[39m newsData[33m.[39mlength)[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 43 |[39m         }[33m,[39m [35m6000[39m)[33m;[39m
+     [90m 44 |[39m         [36mreturn[39m () [33m=>[39m clearInterval(timer)[33m;[39m
+     [90m 45 |[39m     }[33m,[39m [newsData[33m.[39mlength])[33m;[39m[0m
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (node_modules/react-dom/cjs/react-dom.development.js:27628:9)
+      at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:25547:5)
+      at dispatchSetState (node_modules/react-dom/cjs/react-dom.development.js:16708:7)
+      at setIndex (src/features/news/NewsCarousel.tsx:42:13)
+      at callTimer (node_modules/@sinonjs/fake-timers/src/fake-timers-src.js:825:24)
+      at doTickInner (node_modules/@sinonjs/fake-timers/src/fake-timers-src.js:1504:29)
+      at doTick (node_modules/@sinonjs/fake-timers/src/fake-timers-src.js:1585:20)
+      at Object.tick (node_modules/@sinonjs/fake-timers/src/fake-timers-src.js:1593:20)
+      at FakeTimers.advanceTimersByTime (node_modules/@jest/fake-timers/build/index.js:576:19)
+      at Object.advanceTimersByTime (__tests__/features/news/NewsCarousel.test.tsx:72:14)
+
+  ● NewsCarousel Component › navigates to the next slide when next button is clicked
+
+    TestingLibraryElementError: Unable to find an element with the text: Test Headline 2. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<section[39m
+          [33mclass[39m=[32m"py-24 px-6 max-w-7xl mx-auto bg-background transition-colors duration-500"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between mb-12"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mclass[39m=[32m"text-3xl md:text-4xl font-syne font-black text-foreground uppercase tracking-tight"[39m
+            [36m>[39m
+              [0mLatest News[0m
+            [36m</h2>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-3"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Previous story"[39m
+                [33mclass[39m=[32m"w-12 h-12 flex items-center justify-center rounded-2xl bg-card border border-border text-foreground hover:bg-brand-srm/10 transition-colors shadow-sm"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-chevron-left"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"20"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"20"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m15 18-6-6 6-6"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</button>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Next story"[39m
+                [33mclass[39m=[32m"w-12 h-12 flex items-center justify-center rounded-2xl bg-card border border-border text-foreground hover:bg-brand-srm/10 transition-colors shadow-sm"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-chevron-right"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"20"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"20"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m9 18 6-6-6-6"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"relative h-[600px] overflow-hidden rounded-[3rem] border border-border group shadow-2xl"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute inset-0"[39m
+              [33mstyle[39m=[32m"opacity: 0;"[39m
+            [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m"Test Headline 1"[39m
+                [33mclass[39m=[32m"object-cover"[39m
+                [33mdata-nimg[39m=[32m"fill"[39m
+                [33mdecoding[39m=[32m"async"[39m
+                [33mfetchpriority[39m=[32m"high"[39m
+                [33msizes[39m=[32m"100vw"[39m
+                [33msrc[39m=[32m"/_next/image?url=%2Ftest1.jpg&w=3840&q=75"[39m
+                [33msrcset[39m=[32m"/_next/image?url=%2Ftest1.jpg&w=640&q=75 640w, /_next/image?url=%2Ftest1.jpg&w=750&q=75 750w, /_next/image?url=%2Ftest1.jpg&w=828&q=75 828w, /_next/image?url=%2Ftest1.jpg&w=1080&q=75 1080w, /_next/image?url=%2Ftest1.jpg&w=1200&q=75 1200w, /_next/image?url=%2Ftest1.jpg&w=1920&q=75 1920w, /_next/image?url=%2Ftest1.jpg&w=2048&q=75 2048w, /_next/image?url=%2Ftest1.jpg&w=3840&q=75 3840w"[39m
+                [33mstyle[39m=[32m"position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute bottom-20 left-12 right-12 max-w-4xl z-10"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"inline-block px-3 py-1 bg-brand-srm text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-lg mb-6 shadow-lg"[39m
+                  [33mstyle[39m=[32m"opacity: 0; transform: translateX(-20px);"[39m
+                [36m>[39m
+                  [0mHighlighted Story[0m
+                [36m</span>[39m
+                [36m<h3[39m
+                  [33mclass[39m=[32m"text-4xl md:text-6xl font-syne font-black text-white leading-[1.1] tracking-tight drop-shadow-xl"[39m
+                  [33mstyle[39m=[32m"opacity: 0; transform: translateY(30px);"[39m
+                [36m>[39m
+                  [0mTest Headline 1[0m
+                [36m</h3>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute bottom-0 left-0 right-0 h-1.5 bg-white/10 z-20"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-full bg-brand-srm origin-left shadow-[0_0_15px_rgba(73,70,35,0.8)]"[39m
+                [33mstyle[39m=[32m"transform: scaleX(0);"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute top-12 left-12 flex gap-3 z-20"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Go to slide 1"[39m
+                [33mclass[39m=[32m"h-1.5 transition-all duration-500 rounded-full shadow-lg w-4 bg-white/20 hover:bg-white/40"[39m
+              [36m/>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Go to slide 2"[39m
+                [33mclass[39m=[32m"h-1.5 transition-all duration-500 rounded-full shadow-lg w-12 bg-white"[39m
+              [36m/>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+    [0m [90m 61 |[39m         [36mawait[39m user[33m.[39mclick(nextButton)[33m;[39m
+     [90m 62 |[39m
+    [31m[1m>[22m[39m[90m 63 |[39m         expect(screen[33m.[39mgetByText([32m'Test Headline 2'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m    |[39m                       [31m[1m^[22m[39m
+     [90m 64 |[39m     })[33m;[39m
+     [90m 65 |[39m
+     [90m 66 |[39m     it([32m'auto-advances the slide after 6 seconds'[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (__tests__/features/news/NewsCarousel.test.tsx:63:23)
+
+  ● NewsCarousel Component › auto-advances the slide after 6 seconds
+
+    TestingLibraryElementError: Unable to find an element with the text: Test Headline 2. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<section[39m
+          [33mclass[39m=[32m"py-24 px-6 max-w-7xl mx-auto bg-background transition-colors duration-500"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between mb-12"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mclass[39m=[32m"text-3xl md:text-4xl font-syne font-black text-foreground uppercase tracking-tight"[39m
+            [36m>[39m
+              [0mLatest News[0m
+            [36m</h2>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-3"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Previous story"[39m
+                [33mclass[39m=[32m"w-12 h-12 flex items-center justify-center rounded-2xl bg-card border border-border text-foreground hover:bg-brand-srm/10 transition-colors shadow-sm"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-chevron-left"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"20"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"20"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m15 18-6-6 6-6"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</button>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Next story"[39m
+                [33mclass[39m=[32m"w-12 h-12 flex items-center justify-center rounded-2xl bg-card border border-border text-foreground hover:bg-brand-srm/10 transition-colors shadow-sm"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-chevron-right"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"20"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"20"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m9 18 6-6-6-6"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"relative h-[600px] overflow-hidden rounded-[3rem] border border-border group shadow-2xl"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute inset-0"[39m
+              [33mstyle[39m=[32m"opacity: 0;"[39m
+            [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m"Test Headline 1"[39m
+                [33mclass[39m=[32m"object-cover"[39m
+                [33mdata-nimg[39m=[32m"fill"[39m
+                [33mdecoding[39m=[32m"async"[39m
+                [33mfetchpriority[39m=[32m"high"[39m
+                [33msizes[39m=[32m"100vw"[39m
+                [33msrc[39m=[32m"/_next/image?url=%2Ftest1.jpg&w=3840&q=75"[39m
+                [33msrcset[39m=[32m"/_next/image?url=%2Ftest1.jpg&w=640&q=75 640w, /_next/image?url=%2Ftest1.jpg&w=750&q=75 750w, /_next/image?url=%2Ftest1.jpg&w=828&q=75 828w, /_next/image?url=%2Ftest1.jpg&w=1080&q=75 1080w, /_next/image?url=%2Ftest1.jpg&w=1200&q=75 1200w, /_next/image?url=%2Ftest1.jpg&w=1920&q=75 1920w, /_next/image?url=%2Ftest1.jpg&w=2048&q=75 2048w, /_next/image?url=%2Ftest1.jpg&w=3840&q=75 3840w"[39m
+                [33mstyle[39m=[32m"position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute bottom-20 left-12 right-12 max-w-4xl z-10"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"inline-block px-3 py-1 bg-brand-srm text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-lg mb-6 shadow-lg"[39m
+                  [33mstyle[39m=[32m"opacity: 0; transform: translateX(-20px);"[39m
+                [36m>[39m
+                  [0mHighlighted Story[0m
+                [36m</span>[39m
+                [36m<h3[39m
+                  [33mclass[39m=[32m"text-4xl md:text-6xl font-syne font-black text-white leading-[1.1] tracking-tight drop-shadow-xl"[39m
+                  [33mstyle[39m=[32m"opacity: 0; transform: translateY(30px);"[39m
+                [36m>[39m
+                  [0mTest Headline 1[0m
+                [36m</h3>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute bottom-0 left-0 right-0 h-1.5 bg-white/10 z-20"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-full bg-brand-srm origin-left shadow-[0_0_15px_rgba(73,70,35,0.8)]"[39m
+                [33mstyle[39m=[32m"transform: scaleX(0);"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute top-12 left-12 flex gap-3 z-20"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Go to slide 1"[39m
+                [33mclass[39m=[32m"h-1.5 transition-all duration-500 rounded-full shadow-lg w-12 bg-white"[39m
+              [36m/>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Go to slide 2"[39m
+                [33mclass[39m=[32m"h-1.5 transition-all duration-500 rounded-full shadow-lg w-4 bg-white/20 hover:bg-white/40"[39m
+              [36m/>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+    [0m [90m 73 |[39m
+     [90m 74 |[39m         [90m// UI state updates inside useEffect[39m
+    [31m[1m>[22m[39m[90m 75 |[39m         expect(screen[33m.[39mgetByText([32m'Test Headline 2'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m    |[39m                       [31m[1m^[22m[39m
+     [90m 76 |[39m     })[33m;[39m
+     [90m 77 |[39m     
+     [90m 78 |[39m     it([32m'uses fallback data if fetch fails or returns empty'[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (__tests__/features/news/NewsCarousel.test.tsx:75:23)
+
+FAIL __tests__/features/events/EventsList.test.tsx
+  ● EventsList Component › renders UPCOMING events by default
+
+    expect(element).not.toBeInTheDocument()
+
+    expected document not to contain element, found <h3 class="text-2xl font-syne font-extrabold text-white mb-1">Inter-Hostel Cricket League</h3> instead
+
+    [0m [90m 51 |[39m         
+     [90m 52 |[39m         [90m// LIVE/PAST shouldn't be rendered initially[39m
+    [31m[1m>[22m[39m[90m 53 |[39m         expect(screen[33m.[39mqueryByText([32m'Inter-Hostel Cricket League'[39m))[33m.[39mnot[33m.[39mtoBeInTheDocument()[33m;[39m [90m// LIVE[39m
+     [90m    |[39m                                                                       [31m[1m^[22m[39m
+     [90m 54 |[39m         expect(screen[33m.[39mqueryByText([32m'T20 Championship Finals'[39m))[33m.[39mnot[33m.[39mtoBeInTheDocument()[33m;[39m [90m// PAST[39m
+     [90m 55 |[39m     })[33m;[39m
+     [90m 56 |[39m[0m
+
+      at Object.toBeInTheDocument (__tests__/features/events/EventsList.test.tsx:53:71)
+
+  ● EventsList Component › switches to LIVE events when LIVE filter is clicked
+
+    expect(element).not.toBeInTheDocument()
+
+    expected document not to contain element, found <h3 class="text-2xl font-syne font-black text-foreground mb-6 leading-tight group-hover:text-brand-srm transition-colors">University Open Badminton</h3> instead
+
+    [0m [90m 62 |[39m
+     [90m 63 |[39m         expect(screen[33m.[39mgetByText([32m'Inter-Hostel Cricket League'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+    [31m[1m>[22m[39m[90m 64 |[39m         expect(screen[33m.[39mqueryByText([32m'University Open Badminton'[39m))[33m.[39mnot[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m    |[39m                                                                     [31m[1m^[22m[39m
+     [90m 65 |[39m     })[33m;[39m
+     [90m 66 |[39m
+     [90m 67 |[39m     it([32m'filters events by search query'[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.toBeInTheDocument (__tests__/features/events/EventsList.test.tsx:64:69)
+
+Test Suites: 5 failed, 3 passed, 8 total
+Tests:       7 failed, 11 passed, 18 total
+Snapshots:   0 total
+Time:        3.409 s
+Ran all test suites.

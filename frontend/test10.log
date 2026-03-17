@@ -1,0 +1,180 @@
+FAIL __tests__/features/events/EventsList.test.tsx
+  EventsList Component
+    √ renders UPCOMING events by default (200 ms)
+    × switches to LIVE events when LIVE filter is clicked (185 ms)
+    √ filters events by search query (50 ms)
+    √ filters events by sport (55 ms)
+
+  ● EventsList Component › switches to LIVE events when LIVE filter is clicked
+
+    TestingLibraryElementError: Unable to find an element with the text: T20 Championship Finals. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"space-y-12"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"space-y-4"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center gap-3"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"[39m
+              [36m/>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"text-red-400 font-syne font-extrabold uppercase tracking-widest text-sm"[39m
+              [36m>[39m
+                [0mLive Right Now[0m
+              [36m</span>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"grid grid-cols-1 md:grid-cols-2 gap-6"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-600/20 via-red-500/10 to-transparent border border-red-500/30 p-8"[39m
+                [33mstyle[39m=[32m"opacity: 0; transform: scale(0.97);"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-red-400 to-red-600 animate-pulse"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"absolute top-4 right-4"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"flex items-center gap-1.5 bg-red-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"w-1.5 h-1.5 rounded-full bg-white animate-pulse"[39m
+                    [36m/>[39m
+                    [0mLIVE[0m
+                  [36m</span>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-xs font-bold uppercase tracking-widest text-red-400 mb-1"[39m
+                [36m>[39m
+                  [0mCricket[0m
+                  [0m · [0m
+                  [0mHostel vs Hostel[0m
+                [36m</div>[39m
+                [36m<h3[39m
+                  [33mclass[39m=[32m"text-2xl font-syne font-extrabold text-white mb-1"[39m
+                [36m>[39m
+                  [0mInter-Hostel Cricket League[0m
+                [36m</h3>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-white/50 text-sm font-outfit mb-6"[39m
+                [36m>[39m
+                  [0m📍 [0m
+                  [0mHostel Ground[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"bg-white/5 rounded-2xl p-6 border border-white/10"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"text-xs uppercase tracking-widest text-white/40 mb-3 font-bold"[39m
+                  [36m>[39m
+                    [0mScoreboard[0m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"flex items-center justify-between gap-4"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"flex-1 text-center"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"text-lg font-syne font-bold text-white"[39m
+                      [36m>[39m
+                        [0mHostel 1[0m
+                      [36m</div>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"text-3xl font-syne font-extrabold text-red-400 mt-1"[39m
+                      [36m>[39m
+                        [0m145/6[0m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"text-white/30 font-bold text-xl font-syne"[39m
+                    [36m>[39m
+                      [0mVS[0m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"flex-1 text-center"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"text-lg font-syne font-bold text-white"[39m
+                      [36m>[39m
+                        [0mHostel 4[0m
+                      [36m</div>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"text-3xl font-syne font-extrabold text-white/70 mt-1"[39m
+                      [36m>[39m
+                        [0mBatting[0m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"mt-4 text-xs text-red-300 font-outfit bg-red-500/10 rounded-xl px-4 py-2 border border-red-500/20"[39m
+                  [36m>[39m
+                    [0m🔴 [0m
+                    [0mHostel 1 batting powerfully in 15th over[0m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 bg-card border border-border p-6 rounded-[2.5rem] shadow-sm"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-2 p-1.5 bg-background border border-border rounded-2xl w-full lg:w-fit"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"relative flex-1 lg:flex-none px-8 py-3 rounded-xl text-[10px] font-black tracking-[0.2em] uppercase transition-all text-muted hover:text-foreground"[39m
+              [36m>[39m
+                [0mLIVE[0m
+                [36m<span[39m
+                  [33mclass[39m=[32m"absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse border-2 border-background"[39m
+                [36m/>[39m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"relative flex-1 lg:flex-none px-8 py-3 rounded-xl text-[10px] font-black tracking-[0.2em] uppercase transition-all text-muted hover:text-foreground"[39m
+              [36m>[39m
+                [0mUPCOMING[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"relative flex-1 lg:flex-none px-8 py-3 rounded-xl text-[10px] font-black tracking-[0.2em] uppercase transition-all bg-brand-srm text-white shadow-xl shadow-brand-srm/20"[39m
+              [36m>[39m
+                [0mPAST[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-wrap items-center gap-4 w-full lg:w-auto"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"relative flex-1 lg:flex-none"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"bg-background border border-border text-foreground rounded-xl px-5 py-3 text-sm w-full lg:w-64 focus:outline-none focus:ring-2 focus:ring-brand-srm/20 focus:border-brand-srm transition-all ...
+
+    [0m [90m 60 |[39m         fireEvent[33m.[39mclick(pastTab)[33m;[39m
+     [90m 61 |[39m
+    [31m[1m>[22m[39m[90m 62 |[39m         expect(screen[33m.[39mgetByText([32m'T20 Championship Finals'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m    |[39m                       [31m[1m^[22m[39m
+     [90m 63 |[39m     })[33m;[39m
+     [90m 64 |[39m
+     [90m 65 |[39m     it([32m'filters events by search query'[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
+      at Object.<anonymous> (__tests__/features/events/EventsList.test.tsx:62:23)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 3 passed, 4 total
+Snapshots:   0 total
+Time:        3.797 s
+Ran all test suites matching __tests__/features/events/EventsList.test.tsx.

@@ -1,0 +1,103 @@
+  console.error
+    Warning: Received `true` for a non-boolean attribute `fill`.
+    
+    If you want to write it to the DOM, pass a string instead: fill="true" or fill={value.toString()}.
+        at img
+        at default
+        at div
+        at MotionDOMComponent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\index.tsx:101:16)
+        at PopChildMeasure (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PopChild.tsx:37:1)
+        at PopChild (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PopChild.tsx:72:28)
+        at PresenceChild (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PresenceChild.tsx:27:5)
+        at AnimatePresence (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\index.tsx:47:5)
+        at div
+        at section
+        at NewsCarousel (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\src\features\news\NewsCarousel.tsx:30:39)
+        at div
+        at Home
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3765:9)
+      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3803:21)
+      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3827:3)
+      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:9541:5)
+      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9830:5)
+      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10950:3)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:22232:17)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26632:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26607:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26505:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26473:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25777:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+  console.error
+    Warning: Received `true` for a non-boolean attribute `priority`.
+    
+    If you want to write it to the DOM, pass a string instead: priority="true" or priority={value.toString()}.
+        at img
+        at default
+        at div
+        at MotionDOMComponent (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\motion\index.tsx:101:16)
+        at PopChildMeasure (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PopChild.tsx:37:1)
+        at PopChild (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PopChild.tsx:72:28)
+        at PresenceChild (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\PresenceChild.tsx:27:5)
+        at AnimatePresence (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\node_modules\framer-motion\src\components\AnimatePresence\index.tsx:47:5)
+        at div
+        at section
+        at NewsCarousel (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\src\features\news\NewsCarousel.tsx:30:39)
+        at div
+        at Home
+
+    [0m [90m 13 |[39m describe([32m'Home Page Sanity Check'[39m[33m,[39m () [33m=>[39m {
+     [90m 14 |[39m     it([32m'renders without crashing'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 15 |[39m         render([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 16 |[39m     })[33m;[39m
+     [90m 17 |[39m })[33m;[39m
+     [90m 18 |[39m[0m
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3765:9)
+      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3803:21)
+      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3827:3)
+      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:9541:5)
+      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9830:5)
+      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10950:3)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:22232:17)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26632:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26607:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26505:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26473:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25777:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (__tests__/Home.test.tsx:15:15)
+
+PASS __tests__/Home.test.tsx
+  Home Page Sanity Check
+    √ renders without crashing (184 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        1.842 s
+Ran all test suites.

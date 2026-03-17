@@ -1,0 +1,12 @@
+PASS __tests__/features/news/NewsCarousel.test.tsx
+  NewsCarousel Component
+    √ renders the carousel with fetched data (125 ms)
+    √ navigates to the next slide when next button is clicked (223 ms)
+    √ auto-advances the slide after 6 seconds (37 ms)
+    √ uses fallback data if fetch fails or returns empty (23 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       4 passed, 4 total
+Snapshots:   0 total
+Time:        4.037 s
+Ran all test suites matching __tests__/features/news/NewsCarousel.test.tsx.

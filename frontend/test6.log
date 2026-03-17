@@ -1,0 +1,334 @@
+  console.error
+    Warning: An update to NewsCarousel inside a test was not wrapped in act(...).
+    
+    When testing, code that causes React state updates should be wrapped into act(...):
+    
+    act(() => {
+      /* fire events that update state */
+    });
+    /* assert on the output */
+    
+    This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+        at NewsCarousel (C:\Users\sande\OneDrive\Desktop\SportCouncil_SRM_AP\frontend\src\features\news\NewsCarousel.tsx:30:39)
+
+    [0m [90m 40 |[39m     useEffect(() [33m=>[39m {
+     [90m 41 |[39m         [36mconst[39m timer [33m=[39m setInterval(() [33m=>[39m {
+    [31m[1m>[22m[39m[90m 42 |[39m             setIndex((prev) [33m=>[39m (prev [33m+[39m [35m1[39m) [33m%[39m newsData[33m.[39mlength)[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 43 |[39m         }[33m,[39m [35m6000[39m)[33m;[39m
+     [90m 44 |[39m         [36mreturn[39m () [33m=>[39m clearInterval(timer)[33m;[39m
+     [90m 45 |[39m     }[33m,[39m [newsData[33m.[39mlength])[33m;[39m[0m
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (node_modules/react-dom/cjs/react-dom.development.js:27628:9)
+      at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:25547:5)
+      at setIndex (node_modules/react-dom/cjs/react-dom.development.js:16708:7)
+      at src/features/news/NewsCarousel.tsx:42:13
+      at callTimer (node_modules/@sinonjs/fake-timers/src/fake-timers-src.js:825:24)
+      at doTickInner (node_modules/@sinonjs/fake-timers/src/fake-timers-src.js:1504:29)
+      at doTick (node_modules/@sinonjs/fake-timers/src/fake-timers-src.js:1585:20)
+      at Object.tick (node_modules/@sinonjs/fake-timers/src/fake-timers-src.js:1593:20)
+      at FakeTimers.advanceTimersByTime (node_modules/@jest/fake-timers/build/index.js:576:19)
+      at Object.<anonymous> (__tests__/features/news/NewsCarousel.test.tsx:72:14)
+
+FAIL __tests__/features/news/NewsCarousel.test.tsx
+  NewsCarousel Component
+    √ renders the carousel with fetched data (126 ms)
+    × navigates to the next slide when next button is clicked (195 ms)
+    × auto-advances the slide after 6 seconds (97 ms)
+    √ uses fallback data if fetch fails or returns empty (21 ms)
+
+  ● NewsCarousel Component › navigates to the next slide when next button is clicked
+
+    TestingLibraryElementError: Unable to find an element with the text: Test Headline 2. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<section[39m
+          [33mclass[39m=[32m"py-24 px-6 max-w-7xl mx-auto bg-background transition-colors duration-500"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between mb-12"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mclass[39m=[32m"text-3xl md:text-4xl font-syne font-black text-foreground uppercase tracking-tight"[39m
+            [36m>[39m
+              [0mLatest News[0m
+            [36m</h2>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-3"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Previous story"[39m
+                [33mclass[39m=[32m"w-12 h-12 flex items-center justify-center rounded-2xl bg-card border border-border text-foreground hover:bg-brand-srm/10 transition-colors shadow-sm"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-chevron-left"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"20"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"20"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m15 18-6-6 6-6"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</button>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Next story"[39m
+                [33mclass[39m=[32m"w-12 h-12 flex items-center justify-center rounded-2xl bg-card border border-border text-foreground hover:bg-brand-srm/10 transition-colors shadow-sm"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-chevron-right"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"20"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"20"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m9 18 6-6-6-6"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"relative h-[600px] overflow-hidden rounded-[3rem] border border-border group shadow-2xl"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute inset-0"[39m
+              [33mstyle[39m=[32m"opacity: 0;"[39m
+            [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m"Test Headline 1"[39m
+                [33mclass[39m=[32m"object-cover"[39m
+                [33mdata-nimg[39m=[32m"fill"[39m
+                [33mdecoding[39m=[32m"async"[39m
+                [33mfetchpriority[39m=[32m"high"[39m
+                [33msizes[39m=[32m"100vw"[39m
+                [33msrc[39m=[32m"/_next/image?url=%2Ftest1.jpg&w=3840&q=75"[39m
+                [33msrcset[39m=[32m"/_next/image?url=%2Ftest1.jpg&w=640&q=75 640w, /_next/image?url=%2Ftest1.jpg&w=750&q=75 750w, /_next/image?url=%2Ftest1.jpg&w=828&q=75 828w, /_next/image?url=%2Ftest1.jpg&w=1080&q=75 1080w, /_next/image?url=%2Ftest1.jpg&w=1200&q=75 1200w, /_next/image?url=%2Ftest1.jpg&w=1920&q=75 1920w, /_next/image?url=%2Ftest1.jpg&w=2048&q=75 2048w, /_next/image?url=%2Ftest1.jpg&w=3840&q=75 3840w"[39m
+                [33mstyle[39m=[32m"position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute bottom-20 left-12 right-12 max-w-4xl z-10"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"inline-block px-3 py-1 bg-brand-srm text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-lg mb-6 shadow-lg"[39m
+                  [33mstyle[39m=[32m"opacity: 0; transform: translateX(-20px);"[39m
+                [36m>[39m
+                  [0mHighlighted Story[0m
+                [36m</span>[39m
+                [36m<h3[39m
+                  [33mclass[39m=[32m"text-4xl md:text-6xl font-syne font-black text-white leading-[1.1] tracking-tight drop-shadow-xl"[39m
+                  [33mstyle[39m=[32m"opacity: 0; transform: translateY(30px);"[39m
+                [36m>[39m
+                  [0mTest Headline 1[0m
+                [36m</h3>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute bottom-0 left-0 right-0 h-1.5 bg-white/10 z-20"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-full bg-brand-srm origin-left shadow-[0_0_15px_rgba(73,70,35,0.8)]"[39m
+                [33mstyle[39m=[32m"transform: scaleX(0);"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute top-12 left-12 flex gap-3 z-20"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Go to slide 1"[39m
+                [33mclass[39m=[32m"h-1.5 transition-all duration-500 rounded-full shadow-lg w-4 bg-white/20 hover:bg-white/40"[39m
+              [36m/>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Go to slide 2"[39m
+                [33mclass[39m=[32m"h-1.5 transition-all duration-500 rounded-full shadow-lg w-12 bg-white"[39m
+              [36m/>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+    [0m [90m 61 |[39m         [36mawait[39m user[33m.[39mclick(nextButton)[33m;[39m
+     [90m 62 |[39m
+    [31m[1m>[22m[39m[90m 63 |[39m         expect(screen[33m.[39mgetByText([32m'Test Headline 2'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m    |[39m                       [31m[1m^[22m[39m
+     [90m 64 |[39m     })[33m;[39m
+     [90m 65 |[39m
+     [90m 66 |[39m     it([32m'auto-advances the slide after 6 seconds'[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
+      at Object.<anonymous> (__tests__/features/news/NewsCarousel.test.tsx:63:23)
+
+  ● NewsCarousel Component › auto-advances the slide after 6 seconds
+
+    TestingLibraryElementError: Unable to find an element with the text: Test Headline 2. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<section[39m
+          [33mclass[39m=[32m"py-24 px-6 max-w-7xl mx-auto bg-background transition-colors duration-500"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between mb-12"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mclass[39m=[32m"text-3xl md:text-4xl font-syne font-black text-foreground uppercase tracking-tight"[39m
+            [36m>[39m
+              [0mLatest News[0m
+            [36m</h2>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-3"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Previous story"[39m
+                [33mclass[39m=[32m"w-12 h-12 flex items-center justify-center rounded-2xl bg-card border border-border text-foreground hover:bg-brand-srm/10 transition-colors shadow-sm"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-chevron-left"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"20"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"20"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m15 18-6-6 6-6"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</button>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Next story"[39m
+                [33mclass[39m=[32m"w-12 h-12 flex items-center justify-center rounded-2xl bg-card border border-border text-foreground hover:bg-brand-srm/10 transition-colors shadow-sm"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-chevron-right"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"20"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"20"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m9 18 6-6-6-6"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"relative h-[600px] overflow-hidden rounded-[3rem] border border-border group shadow-2xl"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute inset-0"[39m
+              [33mstyle[39m=[32m"opacity: 0;"[39m
+            [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m"Test Headline 1"[39m
+                [33mclass[39m=[32m"object-cover"[39m
+                [33mdata-nimg[39m=[32m"fill"[39m
+                [33mdecoding[39m=[32m"async"[39m
+                [33mfetchpriority[39m=[32m"high"[39m
+                [33msizes[39m=[32m"100vw"[39m
+                [33msrc[39m=[32m"/_next/image?url=%2Ftest1.jpg&w=3840&q=75"[39m
+                [33msrcset[39m=[32m"/_next/image?url=%2Ftest1.jpg&w=640&q=75 640w, /_next/image?url=%2Ftest1.jpg&w=750&q=75 750w, /_next/image?url=%2Ftest1.jpg&w=828&q=75 828w, /_next/image?url=%2Ftest1.jpg&w=1080&q=75 1080w, /_next/image?url=%2Ftest1.jpg&w=1200&q=75 1200w, /_next/image?url=%2Ftest1.jpg&w=1920&q=75 1920w, /_next/image?url=%2Ftest1.jpg&w=2048&q=75 2048w, /_next/image?url=%2Ftest1.jpg&w=3840&q=75 3840w"[39m
+                [33mstyle[39m=[32m"position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"absolute bottom-20 left-12 right-12 max-w-4xl z-10"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"inline-block px-3 py-1 bg-brand-srm text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-lg mb-6 shadow-lg"[39m
+                  [33mstyle[39m=[32m"opacity: 0; transform: translateX(-20px);"[39m
+                [36m>[39m
+                  [0mHighlighted Story[0m
+                [36m</span>[39m
+                [36m<h3[39m
+                  [33mclass[39m=[32m"text-4xl md:text-6xl font-syne font-black text-white leading-[1.1] tracking-tight drop-shadow-xl"[39m
+                  [33mstyle[39m=[32m"opacity: 0; transform: translateY(30px);"[39m
+                [36m>[39m
+                  [0mTest Headline 1[0m
+                [36m</h3>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute bottom-0 left-0 right-0 h-1.5 bg-white/10 z-20"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-full bg-brand-srm origin-left shadow-[0_0_15px_rgba(73,70,35,0.8)]"[39m
+                [33mstyle[39m=[32m"transform: scaleX(0);"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"absolute top-12 left-12 flex gap-3 z-20"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Go to slide 1"[39m
+                [33mclass[39m=[32m"h-1.5 transition-all duration-500 rounded-full shadow-lg w-12 bg-white"[39m
+              [36m/>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Go to slide 2"[39m
+                [33mclass[39m=[32m"h-1.5 transition-all duration-500 rounded-full shadow-lg w-4 bg-white/20 hover:bg-white/40"[39m
+              [36m/>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+    [0m [90m 73 |[39m
+     [90m 74 |[39m         [90m// UI state updates inside useEffect[39m
+    [31m[1m>[22m[39m[90m 75 |[39m         expect(screen[33m.[39mgetByText([32m'Test Headline 2'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m    |[39m                       [31m[1m^[22m[39m
+     [90m 76 |[39m     })[33m;[39m
+     [90m 77 |[39m     
+     [90m 78 |[39m     it([32m'uses fallback data if fetch fails or returns empty'[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
+      at Object.<anonymous> (__tests__/features/news/NewsCarousel.test.tsx:75:23)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 2 passed, 4 total
+Snapshots:   0 total
+Time:        3.765 s
+Ran all test suites matching __tests__/features/news/NewsCarousel.test.tsx.

@@ -1,0 +1,28 @@
+FAIL __tests__/features/events/EventsList.test.tsx
+  EventsList Component
+    √ renders UPCOMING events by default (210 ms)
+    × switches to LIVE events when LIVE filter is clicked (197 ms)
+    √ filters events by search query (54 ms)
+    √ filters events by sport (56 ms)
+
+  ● EventsList Component › switches to LIVE events when LIVE filter is clicked
+
+    expect(element).not.toBeInTheDocument()
+
+    expected document not to contain element, found <h3 class="text-2xl font-syne font-black text-foreground mb-6 leading-tight group-hover:text-brand-srm transition-colors">University Open Badminton</h3> instead
+
+    [0m [90m 61 |[39m
+     [90m 62 |[39m         expect(screen[33m.[39mgetByText([32m'Inter-Hostel Cricket League'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+    [31m[1m>[22m[39m[90m 63 |[39m         expect(screen[33m.[39mqueryByText([32m'University Open Badminton'[39m))[33m.[39mnot[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m    |[39m                                                                     [31m[1m^[22m[39m
+     [90m 64 |[39m     })[33m;[39m
+     [90m 65 |[39m
+     [90m 66 |[39m     it([32m'filters events by search query'[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.<anonymous> (__tests__/features/events/EventsList.test.tsx:63:69)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 3 passed, 4 total
+Snapshots:   0 total
+Time:        3.222 s
+Ran all test suites matching __tests__/features/events/EventsList.test.tsx.
