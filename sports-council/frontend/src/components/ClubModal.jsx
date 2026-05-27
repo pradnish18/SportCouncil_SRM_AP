@@ -1,8 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function ClubModal({ club, onClose }) {
+  const [joinName, setJoinName] = useState("");
+  const [joinEmail, setJoinEmail] = useState("");
+  const [joinMessage, setJoinMessage] = useState("");
+  const [joinStatus, setJoinStatus] = useState(null);
+
   if (!club) return null;
 
   return (
@@ -74,11 +80,15 @@ export default function ClubModal({ club, onClose }) {
               <span className="w-8 h-[2px] bg-brand-green"></span>
               Leadership
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[club.convenor, club.coConvenor].map((member, idx) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[club.convenor, club.coConvenor, club.coach].filter(Boolean).map((member, idx) => (
                 <div key={idx} className="glass p-6 rounded-3xl flex gap-6 items-center">
                   <div className="relative w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0 bg-white/5 flex items-center justify-center">
-                    <span className="text-4xl">👤</span>
+                    {member.photoUrl ? (
+                      <img src={member.photoUrl} alt={member.name} className="absolute inset-0 object-cover w-full h-full" />
+                    ) : (
+                      <span className="text-4xl">👤</span>
+                    )}
                   </div>
                   <div>
                     <div className="text-brand-green text-[10px] font-bold uppercase tracking-widest mb-1">{member.role}</div>
@@ -87,6 +97,78 @@ export default function ClubModal({ club, onClose }) {
                   </div>
                 </div>
               ))}
+            </div>
+          </section>
+
+          {/* Join Club Section */}
+          <section>
+            <h3 className="text-3xl font-syne font-bold mb-8 flex items-center gap-4">
+              <span className="w-8 h-[2px] bg-brand-srm"></span>
+              Join / Contact
+            </h3>
+            <div className="grid gap-4 max-w-2xl mx-auto">
+              <p className="text-sm text-muted font-outfit leading-relaxed">
+                Interested in joining this club? Send your details and a short message, and the club coordinators will reach out.
+              </p>
+              <input
+                type="text"
+                placeholder="Your name"
+                value={joinName}
+                onChange={(e) => setJoinName(e.target.value)}
+                className="w-full p-4 rounded-3xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-brand-srm/30"
+              />
+              <input
+                type="email"
+                placeholder="Email address"
+                value={joinEmail}
+                onChange={(e) => setJoinEmail(e.target.value)}
+                className="w-full p-4 rounded-3xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-brand-srm/30"
+              />
+              <textarea
+                placeholder="Message to the club convenor"
+                value={joinMessage}
+                onChange={(e) => setJoinMessage(e.target.value)}
+                className="w-full p-4 rounded-3xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-brand-srm/30"
+                rows={4}
+              />
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <button
+                  onClick={async () => {
+                    try {
+                      const response = await fetch('/api/clubs/join', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                          clubId: club.id,
+                          name: joinName,
+                          email: joinEmail,
+                          message: joinMessage,
+                        }),
+                      });
+                      if (response.ok) {
+                        setJoinName('');
+                        setJoinEmail('');
+                        setJoinMessage('');
+                        setJoinStatus('success');
+                      } else {
+                        setJoinStatus('error');
+                      }
+                    } catch (error) {
+                      console.error(error);
+                      setJoinStatus('error');
+                    }
+                  }}
+                  className="px-6 py-3 rounded-3xl bg-brand-srm text-white font-bold hover:bg-brand-srm/90 transition-colors"
+                >
+                  Send Request
+                </button>
+                {joinStatus === 'success' && (
+                  <span className="text-sm font-semibold text-green-500">Your join request has been sent.</span>
+                )}
+                {joinStatus === 'error' && (
+                  <span className="text-sm font-semibold text-red-500">Unable to send request. Please try again.</span>
+                )}
+              </div>
             </div>
           </section>
 

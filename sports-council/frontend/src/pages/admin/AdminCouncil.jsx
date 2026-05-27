@@ -5,26 +5,58 @@ import { fetcher } from "../../lib/api";
 export default function AdminCouncil() {
   const { data: council, mutate } = useSWR("/api/council", fetcher);
   const [editingMember, setEditingMember] = useState(null);
-  const [formData, setFormData] = useState({});
+  const [isCreating, setIsCreating] = useState(false);
+  const [formData, setFormData] = useState({ tier: "STUDENT_BODY", order: 0 });
+  const [originalData, setOriginalData] = useState({});
+
+  const hasChanges = JSON.stringify(formData) !== JSON.stringify(originalData);
+
+  const handleCloseModal = () => {
+    if (hasChanges) {
+      const confirmClose = window.confirm(
+        "You have unsaved changes. Do you want to discard them?"
+      );
+      if (!confirmClose) return;
+    }
+    setEditingMember(null);
+    setIsCreating(false);
+    setFormData({ tier: "STUDENT_BODY", order: 0 });
+    setOriginalData({});
+  };
 
   const handleEdit = (member) => {
     setEditingMember(member);
     setFormData(member);
+    setOriginalData(member);
+    setIsCreating(false);
+  };
+
+  const handleAdd = () => {
+    setEditingMember(null);
+    const emptyFormData = { name: "", title: "", tier: "STUDENT_BODY", photoUrl: "", order: 0 };
+    setFormData(emptyFormData);
+    setOriginalData(emptyFormData);
+    setIsCreating(true);
   };
 
   const handleSave = async () => {
     try {
-      const response = await fetch(`/api/admin/council/${editingMember.id}`, {
-        method: "PUT",
+      const method = editingMember ? "PUT" : "POST";
+      const url = editingMember ? `/api/admin/council/${editingMember.id}` : "/api/admin/council";
+      const response = await fetch(url, {
+        method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
       if (response.ok) {
         mutate();
         setEditingMember(null);
+        setIsCreating(false);
+        setFormData({ tier: "STUDENT_BODY", order: 0 });
+        setOriginalData({});
       }
     } catch (error) {
-      console.error("Error updating council member:", error);
+      console.error("Error saving council member:", error);
     }
   };
 
@@ -41,6 +73,7 @@ export default function AdminCouncil() {
 
   const allMembers = [
     ...(council?.DIRECTOR || []),
+    ...(council?.ASSISTANT_DIRECTOR || []),
     ...(council?.CONVENOR || []),
     ...(council?.COACH || []),
     ...(council?.STUDENT_BODY || []),
@@ -53,7 +86,7 @@ export default function AdminCouncil() {
           <h1 className="text-3xl font-syne font-bold text-foreground">Manage Council</h1>
           <p className="text-muted mt-2">Manage council members and leadership</p>
         </div>
-        <button className="px-4 py-2 bg-brand-srm text-white rounded-lg hover:bg-brand-srm/90 transition-colors">
+        <button onClick={handleAdd} className="px-4 py-2 bg-brand-srm text-white rounded-lg hover:bg-brand-srm/90 transition-colors">
           Add New Member
         </button>
       </div>
@@ -108,11 +141,19 @@ export default function AdminCouncil() {
         </table>
       </div>
 
-      {/* Edit Modal */}
-      {editingMember && (
+      {/* Edit / Add Modal */}
+      {(editingMember || isCreating) && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4">
-          <div className="bg-card p-6 rounded-lg max-w-md w-full">
-            <h2 className="text-xl font-syne font-bold mb-4">Edit Council Member</h2>
+          <div className="bg-card p-6 rounded-lg max-w-md w-full relative">
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-4 right-4 text-muted hover:text-foreground text-2xl leading-none"
+            >
+              ✕
+            </button>
+            <h2 className="text-xl font-syne font-bold mb-4">
+              {editingMember ? "Edit Council Member" : "Add Council Member"}
+            </h2>
             <div className="space-y-4">
               <input
                 type="text"
@@ -128,20 +169,35 @@ export default function AdminCouncil() {
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                 className="w-full p-2 border border-border rounded"
               />
+              <input
+                type="text"
+                placeholder="Photo URL"
+                value={formData.photoUrl || ""}
+                onChange={(e) => setFormData({ ...formData, photoUrl: e.target.value })}
+                className="w-full p-2 border border-border rounded"
+              />
               <select
-                value={formData.tier || ""}
+                value={formData.tier || "STUDENT_BODY"}
                 onChange={(e) => setFormData({ ...formData, tier: e.target.value })}
                 className="w-full p-2 border border-border rounded"
               >
                 <option value="DIRECTOR">Director</option>
+                <option value="ASSISTANT_DIRECTOR">Assistant Director</option>
                 <option value="CONVENOR">Convenor</option>
                 <option value="COACH">Coach</option>
                 <option value="STUDENT_BODY">Student Body</option>
               </select>
+              <input
+                type="number"
+                placeholder="Order"
+                value={formData.order ?? 0}
+                onChange={(e) => setFormData({ ...formData, order: Number(e.target.value) })}
+                className="w-full p-2 border border-border rounded"
+              />
             </div>
             <div className="flex justify-end gap-2 mt-6">
               <button
-                onClick={() => setEditingMember(null)}
+                onClick={handleCloseModal}
                 className="px-4 py-2 text-muted hover:text-foreground"
               >
                 Cancel

@@ -5,26 +5,58 @@ import { fetcher } from "../../lib/api";
 export default function AdminAchievements() {
   const { data: achievements, mutate } = useSWR("/api/achievements", fetcher);
   const [editingAchievement, setEditingAchievement] = useState(null);
+  const [isCreating, setIsCreating] = useState(false);
   const [formData, setFormData] = useState({});
+  const [originalData, setOriginalData] = useState({});
+
+  const hasChanges = JSON.stringify(formData) !== JSON.stringify(originalData);
+
+  const handleCloseModal = () => {
+    if (hasChanges) {
+      const confirmClose = window.confirm(
+        "You have unsaved changes. Do you want to discard them?"
+      );
+      if (!confirmClose) return;
+    }
+    setEditingAchievement(null);
+    setIsCreating(false);
+    setFormData({});
+    setOriginalData({});
+  };
 
   const handleEdit = (achievement) => {
     setEditingAchievement(achievement);
     setFormData(achievement);
+    setOriginalData(achievement);
+    setIsCreating(false);
+  };
+
+  const handleAdd = () => {
+    setEditingAchievement(null);
+    const emptyFormData = { title: "", description: "", sport: "", category: "", year: new Date().getFullYear() };
+    setFormData(emptyFormData);
+    setOriginalData(emptyFormData);
+    setIsCreating(true);
   };
 
   const handleSave = async () => {
     try {
-      const response = await fetch(`/api/admin/achievements/${editingAchievement.id}`, {
-        method: "PUT",
+      const url = editingAchievement ? `/api/admin/achievements/${editingAchievement.id}` : "/api/admin/achievements";
+      const method = editingAchievement ? "PUT" : "POST";
+      const response = await fetch(url, {
+        method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
       if (response.ok) {
         mutate();
         setEditingAchievement(null);
+        setIsCreating(false);
+        setFormData({});
+        setOriginalData({});
       }
     } catch (error) {
-      console.error("Error updating achievement:", error);
+      console.error("Error saving achievement:", error);
     }
   };
 
@@ -46,7 +78,7 @@ export default function AdminAchievements() {
           <h1 className="text-3xl font-syne font-bold text-foreground">Manage Achievements</h1>
           <p className="text-muted mt-2">Track and showcase sports achievements</p>
         </div>
-        <button className="px-4 py-2 bg-brand-srm text-white rounded-lg hover:bg-brand-srm/90 transition-colors">
+        <button onClick={handleAdd} className="px-4 py-2 bg-brand-srm text-white rounded-lg hover:bg-brand-srm/90 transition-colors">
           Add New Achievement
         </button>
       </div>
@@ -104,11 +136,19 @@ export default function AdminAchievements() {
         </table>
       </div>
 
-      {/* Edit Modal */}
-      {editingAchievement && (
+      {/* Edit/Create Modal */}
+      {(editingAchievement || isCreating) && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4">
-          <div className="bg-card p-6 rounded-lg max-w-md w-full">
-            <h2 className="text-xl font-syne font-bold mb-4">Edit Achievement</h2>
+          <div className="bg-card p-6 rounded-lg max-w-md w-full relative">
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-4 right-4 text-muted hover:text-foreground text-2xl leading-none"
+            >
+              ✕
+            </button>
+            <h2 className="text-xl font-syne font-bold mb-4">
+              {isCreating ? "Create Achievement" : "Edit Achievement"}
+            </h2>
             <div className="space-y-4">
               <input
                 type="text"
@@ -143,7 +183,7 @@ export default function AdminAchievements() {
             </div>
             <div className="flex justify-end gap-2 mt-6">
               <button
-                onClick={() => setEditingAchievement(null)}
+                onClick={handleCloseModal}
                 className="px-4 py-2 text-muted hover:text-foreground"
               >
                 Cancel

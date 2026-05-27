@@ -9,6 +9,7 @@ router.get('/', async (req, res) => {
 
     const groupedMembers = {
       DIRECTOR: members.filter((m) => m.tier === 'DIRECTOR'),
+      ASSISTANT_DIRECTOR: members.filter((m) => m.tier === 'ASSISTANT_DIRECTOR'),
       CONVENOR: members.filter((m) => m.tier === 'CONVENOR'),
       COACH: members.filter((m) => m.tier === 'COACH'),
       STUDENT_BODY: members.filter((m) => m.tier === 'STUDENT_BODY'),

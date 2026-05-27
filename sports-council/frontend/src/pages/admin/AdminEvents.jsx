@@ -5,26 +5,58 @@ import { fetcher } from "../../lib/api";
 export default function AdminEvents() {
   const { data: events, mutate } = useSWR("/api/events", fetcher);
   const [editingEvent, setEditingEvent] = useState(null);
+  const [isCreating, setIsCreating] = useState(false);
   const [formData, setFormData] = useState({});
+  const [originalData, setOriginalData] = useState({});
+
+  const hasChanges = JSON.stringify(formData) !== JSON.stringify(originalData);
+
+  const handleCloseModal = () => {
+    if (hasChanges) {
+      const confirmClose = window.confirm(
+        "You have unsaved changes. Do you want to discard them?"
+      );
+      if (!confirmClose) return;
+    }
+    setEditingEvent(null);
+    setIsCreating(false);
+    setFormData({});
+    setOriginalData({});
+  };
 
   const handleEdit = (event) => {
     setEditingEvent(event);
     setFormData(event);
+    setOriginalData(event);
+    setIsCreating(false);
+  };
+
+  const handleAdd = () => {
+    setEditingEvent(null);
+    const emptyFormData = { title: "", sport: "", date: "", time: "", venue: "" };
+    setFormData(emptyFormData);
+    setOriginalData(emptyFormData);
+    setIsCreating(true);
   };
 
   const handleSave = async () => {
     try {
-      const response = await fetch(`/api/admin/events/${editingEvent.id}`, {
-        method: "PUT",
+      const url = editingEvent ? `/api/admin/events/${editingEvent.id}` : "/api/admin/events";
+      const method = editingEvent ? "PUT" : "POST";
+      const response = await fetch(url, {
+        method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
       if (response.ok) {
         mutate();
         setEditingEvent(null);
+        setIsCreating(false);
+        setFormData({});
+        setOriginalData({});
       }
     } catch (error) {
-      console.error("Error updating event:", error);
+      console.error("Error saving event:", error);
     }
   };
 
@@ -46,7 +78,7 @@ export default function AdminEvents() {
           <h1 className="text-3xl font-syne font-bold text-foreground">Manage Events</h1>
           <p className="text-muted mt-2">Schedule and manage sports events</p>
         </div>
-        <button className="px-4 py-2 bg-brand-srm text-white rounded-lg hover:bg-brand-srm/90 transition-colors">
+        <button onClick={handleAdd} className="px-4 py-2 bg-brand-srm text-white rounded-lg hover:bg-brand-srm/90 transition-colors">
           Add New Event
         </button>
       </div>
@@ -104,11 +136,19 @@ export default function AdminEvents() {
         </table>
       </div>
 
-      {/* Edit Modal */}
-      {editingEvent && (
+      {/* Edit/Create Modal */}
+      {(editingEvent || isCreating) && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4">
-          <div className="bg-card p-6 rounded-lg max-w-md w-full">
-            <h2 className="text-xl font-syne font-bold mb-4">Edit Event</h2>
+          <div className="bg-card p-6 rounded-lg max-w-md w-full relative">
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-4 right-4 text-muted hover:text-foreground text-2xl leading-none"
+            >
+              ✕
+            </button>
+            <h2 className="text-xl font-syne font-bold mb-4">
+              {isCreating ? "Create Event" : "Edit Event"}
+            </h2>
             <div className="space-y-4">
               <input
                 type="text"
@@ -140,7 +180,7 @@ export default function AdminEvents() {
             </div>
             <div className="flex justify-end gap-2 mt-6">
               <button
-                onClick={() => setEditingEvent(null)}
+                onClick={handleCloseModal}
                 className="px-4 py-2 text-muted hover:text-foreground"
               >
                 Cancel

@@ -5,26 +5,58 @@ import { fetcher } from "../../lib/api";
 export default function AdminNews() {
   const { data: news, mutate } = useSWR("/api/news", fetcher);
   const [editingNews, setEditingNews] = useState(null);
+  const [isCreating, setIsCreating] = useState(false);
   const [formData, setFormData] = useState({});
+  const [originalData, setOriginalData] = useState({});
+
+  const hasChanges = JSON.stringify(formData) !== JSON.stringify(originalData);
+
+  const handleCloseModal = () => {
+    if (hasChanges) {
+      const confirmClose = window.confirm(
+        "You have unsaved changes. Do you want to discard them?"
+      );
+      if (!confirmClose) return;
+    }
+    setEditingNews(null);
+    setIsCreating(false);
+    setFormData({});
+    setOriginalData({});
+  };
 
   const handleEdit = (newsItem) => {
     setEditingNews(newsItem);
     setFormData(newsItem);
+    setOriginalData(newsItem);
+    setIsCreating(false);
+  };
+
+  const handleAdd = () => {
+    setEditingNews(null);
+    const emptyFormData = { headline: "", description: "", imageUrl: "", order: 0 };
+    setFormData(emptyFormData);
+    setOriginalData(emptyFormData);
+    setIsCreating(true);
   };
 
   const handleSave = async () => {
     try {
-      const response = await fetch(`/api/admin/news/${editingNews.id}`, {
-        method: "PUT",
+      const url = editingNews ? `/api/admin/news/${editingNews.id}` : "/api/admin/news";
+      const method = editingNews ? "PUT" : "POST";
+      const response = await fetch(url, {
+        method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
       if (response.ok) {
         mutate();
         setEditingNews(null);
+        setIsCreating(false);
+        setFormData({});
+        setOriginalData({});
       }
     } catch (error) {
-      console.error("Error updating news:", error);
+      console.error("Error saving news:", error);
     }
   };
 
@@ -46,7 +78,7 @@ export default function AdminNews() {
           <h1 className="text-3xl font-syne font-bold text-foreground">Manage News</h1>
           <p className="text-muted mt-2">Update and manage news headlines</p>
         </div>
-        <button className="px-4 py-2 bg-brand-srm text-white rounded-lg hover:bg-brand-srm/90 transition-colors">
+        <button onClick={handleAdd} className="px-4 py-2 bg-brand-srm text-white rounded-lg hover:bg-brand-srm/90 transition-colors">
           Add New News
         </button>
       </div>
@@ -95,17 +127,39 @@ export default function AdminNews() {
         </table>
       </div>
 
-      {/* Edit Modal */}
-      {editingNews && (
+      {/* Edit/Create Modal */}
+      {(editingNews || isCreating) && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4">
-          <div className="bg-card p-6 rounded-lg max-w-md w-full">
-            <h2 className="text-xl font-syne font-bold mb-4">Edit News</h2>
+          <div className="bg-card p-6 rounded-lg max-w-md w-full relative">
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-4 right-4 text-muted hover:text-foreground text-2xl leading-none"
+            >
+              ✕
+            </button>
+            <h2 className="text-xl font-syne font-bold mb-4">
+              {isCreating ? "Create News" : "Edit News"}
+            </h2>
             <div className="space-y-4">
               <input
                 type="text"
                 placeholder="Headline"
                 value={formData.headline || ""}
                 onChange={(e) => setFormData({ ...formData, headline: e.target.value })}
+                className="w-full p-2 border border-border rounded"
+              />
+              <textarea
+                placeholder="Description"
+                value={formData.description || ""}
+                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                className="w-full p-2 border border-border rounded"
+                rows={3}
+              />
+              <input
+                type="text"
+                placeholder="Image URL"
+                value={formData.imageUrl || ""}
+                onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
                 className="w-full p-2 border border-border rounded"
               />
               <input
@@ -118,7 +172,7 @@ export default function AdminNews() {
             </div>
             <div className="flex justify-end gap-2 mt-6">
               <button
-                onClick={() => setEditingNews(null)}
+                onClick={handleCloseModal}
                 className="px-4 py-2 text-muted hover:text-foreground"
               >
                 Cancel

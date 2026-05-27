@@ -19,6 +19,7 @@ export default function Hierarchy() {
   const { data: dbClubs } = useSWR("/api/clubs", fetcher);
 
   const directors = membersObj?.DIRECTOR || [];
+  const assistantDirectors = membersObj?.ASSISTANT_DIRECTOR || [];
   const convenors = membersObj?.CONVENOR || [];
   const coaches = membersObj?.COACH || [];
   const studentBody = membersObj?.STUDENT_BODY || [];
@@ -58,13 +59,15 @@ export default function Hierarchy() {
     };
   });
 
-  const directorateOfSports = directors.length > 0 ? [{ title: "Directorate of Sports", members: directors }] : [];
+  const directorateMembers = [...directors, ...assistantDirectors];
+  const directorateOfSports = directorateMembers.length > 0 ? [{ title: "Directorate of Sports", members: directorateMembers }] : [];
 
   const sportsCouncil =
-    convenors.length > 0 || studentBody.length > 0
+    convenors.length > 0 || coaches.length > 0 || studentBody.length > 0
       ? [
-          { tier: "Core Team", members: studentBody },
-          { tier: "Convenors & Coaches", members: [...convenors, ...coaches] },
+          { tier: "Convenors", members: convenors },
+          { tier: "Coaches", members: coaches },
+          { tier: "Student Body", members: studentBody },
         ]
       : [];
 
@@ -104,7 +107,7 @@ export default function Hierarchy() {
                 viewport={{ once: true, margin: "-60px" }}
               >
                 {group.members.map((member) => (
-                  <MemberCard key={member.name} member={member} />
+                  <MemberCard key={member.id} member={member} />
                 ))}
               </motion.div>
             </div>
@@ -144,7 +147,7 @@ export default function Hierarchy() {
                 viewport={{ once: true, margin: "-60px" }}
               >
                 {group.members.map((member) => (
-                  <MemberCard key={member.name} member={member} />
+                  <MemberCard key={member.id} member={member} />
                 ))}
               </motion.div>
             </div>

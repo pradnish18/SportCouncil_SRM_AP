@@ -24,4 +24,27 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.post('/join', async (req, res) => {
+  try {
+    const { clubId, name, email, message } = req.body;
+    const db = await getDb();
+    const request = {
+      id: new Date().valueOf().toString(),
+      clubId,
+      name,
+      email,
+      message,
+      status: 'PENDING',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
+
+    await db.collection('clubJoinRequests').insertOne(request);
+    return res.status(201).json({ success: true, request });
+  } catch (error) {
+    console.error('Error submitting join request:', error);
+    return res.status(500).json({ error: 'Failed to submit join request' });
+  }
+});
+
 module.exports = router;

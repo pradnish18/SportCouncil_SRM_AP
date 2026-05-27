@@ -92,7 +92,7 @@ export default function Navbar() {
 
           <div className="hidden md:block">
             <Link
-              to="/events"
+              to="/clubs"
               className="px-6 py-2.5 bg-brand-srm text-white font-outfit text-xs font-bold tracking-widest uppercase hover:bg-brand-srm_light transition-colors shadow-lg rounded-xl"
             >
               Join a Club
@@ -150,7 +150,7 @@ export default function Navbar() {
                 );
               })}
               <Link
-                to="/events"
+                to="/clubs"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="px-6 py-4 bg-brand-srm text-white text-center font-outfit text-lg font-bold tracking-widest uppercase rounded-2xl"
               >
