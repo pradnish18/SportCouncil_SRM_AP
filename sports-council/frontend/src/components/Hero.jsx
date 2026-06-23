@@ -20,14 +20,14 @@ export default function Hero() {
           alt="background"
           className="absolute inset-0 object-cover w-full h-full opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50 dark:from-black/70 dark:via-black/50 dark:to-black/80"></div>
       </div>
 
       <div className="z-10 text-center max-w-4xl px-6">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.3em] uppercase border rounded-xl border-white/20 bg-white/10 text-white backdrop-blur-md"
+          className="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.3em] uppercase border rounded-xl border-white/20 bg-white/10 text-white"
         >
           SRM University AP
         </motion.span>
@@ -56,28 +56,28 @@ export default function Hero() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
-        className="mt-16 z-10 glass shadow-2xl rounded-3xl p-1 bg-white/5 border-white/10"
+        className="mt-16 z-10 glass shadow-2xl rounded-3xl p-1 bg-background/10 dark:bg-white/5 border border-border/20 dark:border-white/10"
       >
         <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 p-2">
           <div className="px-8 sm:px-12 py-6 text-center">
-            <div className="text-3xl sm:text-4xl font-syne font-extrabold text-white">
+            <div className="text-3xl sm:text-4xl font-syne font-extrabold text-foreground">
               {totalTeams}+
             </div>
-            <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mt-1">Teams</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-foreground/60 dark:text-white/50 mt-1">Teams</div>
           </div>
-          <div className="hidden sm:block w-[1px] h-12 bg-white/10"></div>
+          <div className="hidden sm:block w-[1px] h-12 bg-foreground/10 dark:bg-white/10"></div>
           <div className="px-8 sm:px-12 py-6 text-center">
-            <div className="text-3xl sm:text-4xl font-syne font-extrabold text-white">
+            <div className="text-3xl sm:text-4xl font-syne font-extrabold text-foreground">
               {totalMembers}+
             </div>
-            <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mt-1">Athletes</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-foreground/60 dark:text-white/50 mt-1">Athletes</div>
           </div>
-          <div className="hidden sm:block w-[1px] h-12 bg-white/10"></div>
+          <div className="hidden sm:block w-[1px] h-12 bg-foreground/10 dark:bg-white/10"></div>
           <div className="px-8 sm:px-12 py-6 text-center">
-            <div className="text-3xl sm:text-4xl font-syne font-extrabold text-white">
+            <div className="text-3xl sm:text-4xl font-syne font-extrabold text-foreground">
               25+
             </div>
-            <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mt-1">Sports</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-foreground/60 dark:text-white/50 mt-1">Sports</div>
           </div>
         </div>
       </motion.div>

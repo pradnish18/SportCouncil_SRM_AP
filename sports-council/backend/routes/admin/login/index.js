@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getDb } = require('../../../lib/mongo');
+const { query } = require('../../../lib/pg');
 
 router.post('/', async (req, res) => {
   try {
@@ -10,13 +10,13 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'Username and password required' });
     }
 
-    const db = await getDb();
-    const admin = await db.collection('admins').findOne({ username });
+    const result = await query('SELECT * FROM admins WHERE username = $1', [username]);
 
-    if (!admin || admin.password !== password) {
+    if (result.rows.length === 0 || result.rows[0].password !== password) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
+    const admin = result.rows[0];
     return res.json({
       id: admin.id,
       username: admin.username,

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import useSWR from "swr";
 import { fetcher } from "../../lib/api";
+import AdminModal from "../../components/AdminModal";
+import ConfirmModal from "../../components/ConfirmModal";
 
 export default function AdminCouncil() {
   const { data: council, mutate } = useSWR("/api/council", fetcher);
@@ -8,16 +10,22 @@ export default function AdminCouncil() {
   const [isCreating, setIsCreating] = useState(false);
   const [formData, setFormData] = useState({ tier: "STUDENT_BODY", order: 0 });
   const [originalData, setOriginalData] = useState({});
+  const [confirmUnsaved, setConfirmUnsaved] = useState(false);
+  const [confirmDelete, setConfirmDelete] = useState(null);
 
   const hasChanges = JSON.stringify(formData) !== JSON.stringify(originalData);
 
+  const isModalOpen = editingMember || isCreating;
+
   const handleCloseModal = () => {
     if (hasChanges) {
-      const confirmClose = window.confirm(
-        "You have unsaved changes. Do you want to discard them?"
-      );
-      if (!confirmClose) return;
+      setConfirmUnsaved(true);
+      return;
     }
+    closeForm();
+  };
+
+  const closeForm = () => {
     setEditingMember(null);
     setIsCreating(false);
     setFormData({ tier: "STUDENT_BODY", order: 0 });
@@ -50,25 +58,26 @@ export default function AdminCouncil() {
       });
       if (response.ok) {
         mutate();
-        setEditingMember(null);
-        setIsCreating(false);
-        setFormData({ tier: "STUDENT_BODY", order: 0 });
-        setOriginalData({});
+        closeForm();
       }
     } catch (error) {
       console.error("Error saving council member:", error);
     }
   };
 
-  const handleDelete = async (memberId) => {
-    if (confirm("Are you sure you want to delete this council member?")) {
-      try {
-        await fetch(`/api/admin/council/${memberId}`, { method: "DELETE" });
-        mutate();
-      } catch (error) {
-        console.error("Error deleting council member:", error);
-      }
+  const handleDelete = (memberId) => {
+    setConfirmDelete(memberId);
+  };
+
+  const confirmDeleteAction = async () => {
+    if (!confirmDelete) return;
+    try {
+      await fetch(`/api/admin/council/${confirmDelete}`, { method: "DELETE" });
+      mutate();
+    } catch (error) {
+      console.error("Error deleting council member:", error);
     }
+    setConfirmDelete(null);
   };
 
   const allMembers = [
@@ -142,76 +151,90 @@ export default function AdminCouncil() {
       </div>
 
       {/* Edit / Add Modal */}
-      {(editingMember || isCreating) && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4">
-          <div className="bg-card p-6 rounded-lg max-w-md w-full relative">
-            <button
-              onClick={handleCloseModal}
-              className="absolute top-4 right-4 text-muted hover:text-foreground text-2xl leading-none"
+      <AdminModal
+        open={!!isModalOpen}
+        onClose={handleCloseModal}
+        title={editingMember ? "Edit Council Member" : "Add Council Member"}
+      >
+        <div className="space-y-5">
+          <div className="space-y-3">
+            <label className="text-xs font-black uppercase tracking-widest text-muted">Member Info</label>
+            <input
+              type="text"
+              placeholder="Name"
+              value={formData.name || ""}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-brand-srm/20 focus:border-brand-srm transition-all"
+            />
+            <input
+              type="text"
+              placeholder="Title"
+              value={formData.title || ""}
+              onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-brand-srm/20 focus:border-brand-srm transition-all"
+            />
+            <input
+              type="text"
+              placeholder="Photo URL"
+              value={formData.photoUrl || ""}
+              onChange={(e) => setFormData({ ...formData, photoUrl: e.target.value })}
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-brand-srm/20 focus:border-brand-srm transition-all"
+            />
+            <select
+              value={formData.tier || "STUDENT_BODY"}
+              onChange={(e) => setFormData({ ...formData, tier: e.target.value })}
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-srm/20 focus:border-brand-srm transition-all"
             >
-              ✕
-            </button>
-            <h2 className="text-xl font-syne font-bold mb-4">
-              {editingMember ? "Edit Council Member" : "Add Council Member"}
-            </h2>
-            <div className="space-y-4">
-              <input
-                type="text"
-                placeholder="Name"
-                value={formData.name || ""}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full p-2 border border-border rounded"
-              />
-              <input
-                type="text"
-                placeholder="Title"
-                value={formData.title || ""}
-                onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                className="w-full p-2 border border-border rounded"
-              />
-              <input
-                type="text"
-                placeholder="Photo URL"
-                value={formData.photoUrl || ""}
-                onChange={(e) => setFormData({ ...formData, photoUrl: e.target.value })}
-                className="w-full p-2 border border-border rounded"
-              />
-              <select
-                value={formData.tier || "STUDENT_BODY"}
-                onChange={(e) => setFormData({ ...formData, tier: e.target.value })}
-                className="w-full p-2 border border-border rounded"
-              >
-                <option value="DIRECTOR">Director</option>
-                <option value="ASSISTANT_DIRECTOR">Assistant Director</option>
-                <option value="CONVENOR">Convenor</option>
-                <option value="COACH">Coach</option>
-                <option value="STUDENT_BODY">Student Body</option>
-              </select>
-              <input
-                type="number"
-                placeholder="Order"
-                value={formData.order ?? 0}
-                onChange={(e) => setFormData({ ...formData, order: Number(e.target.value) })}
-                className="w-full p-2 border border-border rounded"
-              />
-            </div>
-            <div className="flex justify-end gap-2 mt-6">
-              <button
-                onClick={handleCloseModal}
-                className="px-4 py-2 text-muted hover:text-foreground"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleSave}
-                className="px-4 py-2 bg-brand-srm text-white rounded hover:bg-brand-srm/90"
-              >
-                Save
-              </button>
-            </div>
+              <option value="DIRECTOR">Director</option>
+              <option value="ASSISTANT_DIRECTOR">Assistant Director</option>
+              <option value="CONVENOR">Convenor</option>
+              <option value="COACH">Coach</option>
+              <option value="STUDENT_BODY">Student Body</option>
+            </select>
+            <input
+              type="number"
+              placeholder="Order"
+              value={formData.order ?? 0}
+              onChange={(e) => setFormData({ ...formData, order: Number(e.target.value) })}
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-srm/20 focus:border-brand-srm transition-all"
+            />
           </div>
         </div>
-      )}
+        <div className="mt-8 flex justify-end gap-3 border-t border-border pt-6">
+          <button
+            onClick={handleCloseModal}
+            className="rounded-xl border border-border px-6 py-2.5 text-sm font-medium text-foreground hover:bg-foreground/5 transition-colors"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={handleSave}
+            className="rounded-xl bg-brand-srm px-6 py-2.5 text-sm font-medium text-white hover:bg-brand-srm/90 transition-colors"
+          >
+            Save
+          </button>
+        </div>
+      </AdminModal>
+
+      {/* Confirm Discard Modal */}
+      <ConfirmModal
+        open={confirmUnsaved}
+        onConfirm={() => { closeForm(); setConfirmUnsaved(false); }}
+        onCancel={() => setConfirmUnsaved(false)}
+        title="Discard Changes?"
+        message="You have unsaved changes. Do you want to discard them?"
+        confirmLabel="Discard"
+      />
+
+      {/* Confirm Delete Modal */}
+      <ConfirmModal
+        open={!!confirmDelete}
+        onConfirm={confirmDeleteAction}
+        onCancel={() => setConfirmDelete(null)}
+        title="Delete Member?"
+        message="Are you sure you want to delete this council member? This action cannot be undone."
+        confirmLabel="Delete"
+      />
     </div>
   );
 }

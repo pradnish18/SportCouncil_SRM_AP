@@ -1,17 +1,28 @@
 import { Outlet } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
+import { LayoutDashboard, Shield, Calendar, Award, Newspaper, Users, BarChart3 } from "lucide-react";
+
+const iconMap = {
+  Dashboard: LayoutDashboard,
+  Clubs: Shield,
+  Events: Calendar,
+  Achievements: Award,
+  News: Newspaper,
+  Council: Users,
+  Stats: BarChart3,
+};
 
 export default function AdminLayout() {
   const location = useLocation();
 
   const navItems = [
-    { path: "/admin", label: "Dashboard", icon: "📊" },
-    { path: "/admin/clubs", label: "Clubs", icon: "🏆" },
-    { path: "/admin/events", label: "Events", icon: "📅" },
-    { path: "/admin/achievements", label: "Achievements", icon: "🏅" },
-    { path: "/admin/news", label: "News", icon: "📰" },
-    { path: "/admin/council", label: "Council", icon: "👥" },
-    { path: "/admin/stats", label: "Stats", icon: "📈" },
+    { path: "/admin", label: "Dashboard", icon: LayoutDashboard },
+    { path: "/admin/clubs", label: "Clubs", icon: Shield },
+    { path: "/admin/events", label: "Events", icon: Calendar },
+    { path: "/admin/achievements", label: "Achievements", icon: Award },
+    { path: "/admin/news", label: "News", icon: Newspaper },
+    { path: "/admin/council", label: "Council", icon: Users },
+    { path: "/admin/stats", label: "Stats", icon: BarChart3 },
   ];
 
   return (
@@ -48,7 +59,7 @@ export default function AdminLayout() {
                       : "hover:bg-brand-srm/10 text-foreground"
                   }`}
                 >
-                  <span className="text-xl">{item.icon}</span>
+                  <item.icon size={20} />
                   <span className="font-medium">{item.label}</span>
                 </Link>
               </li>

@@ -63,9 +63,8 @@ export default function Hierarchy() {
   const directorateOfSports = directorateMembers.length > 0 ? [{ title: "Directorate of Sports", members: directorateMembers }] : [];
 
   const sportsCouncil =
-    convenors.length > 0 || coaches.length > 0 || studentBody.length > 0
+    coaches.length > 0 || studentBody.length > 0
       ? [
-          { tier: "Convenors", members: convenors },
           { tier: "Coaches", members: coaches },
           { tier: "Student Body", members: studentBody },
         ]
@@ -157,8 +156,7 @@ export default function Hierarchy() {
         {/* Clubs Section */}
         <div>
           <div className="flex items-center gap-6 mb-12">
-            <h3 className="text-sm font-syne font-black uppercase tracking-[0.3em] text-brand-srm">Clubs Coordination</h3>
-            <div className="h-[2px] flex-1 bg-gradient-to-r from-brand-srm/20 to-transparent"></div>
+          <h3 className="text-sm font-syne font-black uppercase tracking-[0.3em] text-brand-srm">Club Coordinators</h3>
           </div>
 
           <motion.div

@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
 import { Sun, Moon } from "lucide-react";
+import ClubRegistrationForm from "./ClubRegistrationForm";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -16,6 +17,7 @@ const navLinks = [
 export default function Navbar() {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showRegistration, setShowRegistration] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -23,12 +25,16 @@ export default function Navbar() {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
+
   const isAdminRoute = location.pathname.startsWith("/admin");
 
   if (isAdminRoute) return null;
 
   return (
-    <header className="sticky top-0 z-[100] w-full bg-[#0c0b06]/95 text-white shadow-2xl shadow-black/30 backdrop-blur-md transition-colors">
+    <header className="sticky top-0 z-[100] w-full bg-background/80 backdrop-blur-md text-foreground shadow-2xl shadow-black/30 transition-colors">
       {/* Top Bar - University Colors Strip */}
       <div className="w-full bg-brand-srm text-white text-[10px] font-bold py-1.5 px-6 flex justify-between items-center hidden md:flex uppercase tracking-widest">
         <div className="flex items-center gap-4">
@@ -36,21 +42,21 @@ export default function Navbar() {
           <span>📍 SRM University AP, Andhra Pradesh</span>
         </div>
         <div className="flex items-center gap-6">
-          <span className="cursor-pointer hover:opacity-100 opacity-80">Facebook</span>
-          <span className="cursor-pointer hover:opacity-100 opacity-80">Instagram</span>
-          <span className="cursor-pointer hover:opacity-100 opacity-80">Twitter</span>
+          <a href="#!" className="opacity-80 hover:opacity-100 transition-all">Facebook</a>
+          <a href="#!" className="opacity-80 hover:opacity-100 transition-all">Instagram</a>
+          <a href="#!" className="opacity-80 hover:opacity-100 transition-all">Twitter</a>
         </div>
       </div>
 
       {/* Main Navigation */}
-      <div className="flex h-[70px] items-center justify-between bg-[#0c0b06]/95 px-6 py-4 xl:px-12">
+      <div className="flex h-[70px] items-center justify-between px-6 py-4 xl:px-12">
         {/* Logo Section */}
         <Link to="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 bg-brand-srm text-white rounded-xl flex items-center justify-center text-xl font-bold shadow-lg transform group-hover:rotate-6 transition-transform">
             S
           </div>
-          <span className="font-syne hidden text-xl font-extrabold uppercase tracking-tight text-white sm:block">
-            SRM <span className="text-white/75">Sports</span>
+          <span className="font-syne hidden text-xl font-extrabold uppercase tracking-tight text-foreground sm:block">
+            SRM <span className="text-foreground/60">Sports</span>
           </span>
         </Link>
 
@@ -63,14 +69,14 @@ export default function Navbar() {
                 key={link.name}
                 to={link.href}
                 className={`relative h-full flex items-center px-5 font-outfit text-xs font-bold uppercase tracking-widest transition-all rounded-xl hover:bg-brand-srm/5 ${
-                  isActive ? "text-white" : "text-white/65 hover:text-white"
+                  isActive ? "text-brand-srm" : "text-foreground/60 hover:text-brand-srm"
                 }`}
               >
                 {link.name}
                 {isActive && (
                   <motion.div
                     layoutId="nav-pill"
-                    className="absolute inset-0 rounded-xl bg-white/10"
+                    className="absolute inset-0 rounded-xl bg-brand-srm/10"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -84,25 +90,25 @@ export default function Navbar() {
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-foreground/5 text-foreground transition-colors hover:bg-brand-srm/5 hover:border-brand-srm/20"
             aria-label="Toggle theme"
           >
             {mounted && (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />)}
           </button>
 
           <div className="hidden md:block">
-            <Link
-              to="/clubs"
+            <button
+              onClick={() => setShowRegistration(true)}
               className="px-6 py-2.5 bg-brand-srm text-white font-outfit text-xs font-bold tracking-widest uppercase hover:bg-brand-srm_light transition-colors shadow-lg rounded-xl"
             >
               Join a Club
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none"
+            className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-srm rounded-lg"
             aria-label="Toggle Menu"
           >
             <motion.span
@@ -123,6 +129,13 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
+      {/* Registration Form Modal */}
+      <AnimatePresence>
+        {showRegistration && (
+          <ClubRegistrationForm onClose={() => setShowRegistration(false)} />
+        )}
+      </AnimatePresence>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
@@ -149,13 +162,15 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <Link
-                to="/clubs"
-                onClick={() => setIsMobileMenuOpen(false)}
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setShowRegistration(true);
+                }}
                 className="px-6 py-4 bg-brand-srm text-white text-center font-outfit text-lg font-bold tracking-widest uppercase rounded-2xl"
               >
                 Join a Club
-              </Link>
+              </button>
             </div>
           </motion.div>
         )}

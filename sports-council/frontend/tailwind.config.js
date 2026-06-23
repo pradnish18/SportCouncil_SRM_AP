@@ -28,8 +28,8 @@ module.exports = {
         edit: "#fbbf24",
       },
       fontFamily: {
-        syne: ["var(--font-syne)"],
-        outfit: ["var(--font-outfit)"],
+        syne: ["Times New Roman", "Times", "serif"],
+        outfit: ["Helvetica", "Arial", "sans-serif"],
       },
     },
   },

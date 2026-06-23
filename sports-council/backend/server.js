@@ -15,6 +15,9 @@ const adminCouncilRouter = require('./routes/admin/council');
 const adminEventsRouter = require('./routes/admin/events');
 const adminNewsRouter = require('./routes/admin/news');
 const adminStatsRouter = require('./routes/admin/stats');
+const authRouter = require('./routes/auth');
+const registrationsRouter = require('./routes/registrations');
+const chatRouter = require('./routes/chat');
 
 dotenv.config();
 
@@ -38,6 +41,10 @@ app.use('/api/admin/council', adminCouncilRouter);
 app.use('/api/admin/events', adminEventsRouter);
 app.use('/api/admin/news', adminNewsRouter);
 app.use('/api/admin/stats', adminStatsRouter);
+
+app.use('/api/auth', authRouter);
+app.use('/api/registrations', registrationsRouter);
+app.use('/api/chat', chatRouter);
 
 app.use((req, res) => {
   res.status(404).json({ error: 'Route not found' });

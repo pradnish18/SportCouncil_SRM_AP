@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Hero from "./components/Hero";
 import NewsCarousel from "./components/NewsCarousel";
 import Hierarchy from "./components/Hierarchy";
@@ -9,6 +9,9 @@ import AchievementsGallery from "./components/AchievementsGallery";
 import Navbar from "./components/Navbar";
 import ScrollProgressBar from "./components/ScrollProgressBar";
 import { ThemeProvider } from "./components/ThemeProvider";
+import { AuthProvider } from "./components/AuthProvider";
+import { NotificationProvider } from "./components/Notification";
+import ChatBot from "./components/ChatBot";
 import AdminAchievements from "./pages/admin/AdminAchievements";
 import AdminClubs from "./pages/admin/AdminClubs";
 import AdminCouncil from "./pages/admin/AdminCouncil";
@@ -21,7 +24,7 @@ import AdminStats from "./pages/admin/AdminStats";
 
 function HomePage() {
   return (
-    <main id="main-content">
+    <main>
       <Hero />
       <NewsCarousel />
       <AboutCouncil />
@@ -33,7 +36,7 @@ function HomePage() {
 
 function PageShell({ title, children }) {
   return (
-    <main id="main-content" className="min-h-screen bg-background text-foreground pt-28 px-6 pb-20">
+    <main id="main-content" tabIndex={-1} className="min-h-screen bg-background text-foreground pt-28 px-6 pb-20 focus:outline-none">
       <div className="mx-auto max-w-7xl">
         <h1 className="mb-10 font-syne text-4xl font-black uppercase tracking-wide text-foreground md:text-6xl">
           {title}
@@ -68,7 +71,7 @@ function SiteFooter() {
             {["Instagram", "Twitter", "LinkedIn"].map((social) => (
               <a
                 key={social}
-                href="#"
+                href="#!"
                 className="text-[10px] font-black uppercase tracking-[0.2em] text-muted transition-colors hover:text-brand-srm"
               >
                 {social}
@@ -81,53 +84,69 @@ function SiteFooter() {
   );
 }
 
+function AppContent() {
+  const location = useLocation();
+  const isAdmin = location.pathname.startsWith("/admin");
+
+  return (
+    <>
+      <a href="#main-content" className="skip-to-main">
+        Skip to main content
+      </a>
+      <ScrollProgressBar />
+      <Navbar />
+      {!isAdmin && <ChatBot />}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/clubs"
+          element={
+            <PageShell title="Clubs">
+              <ClubsGrid />
+            </PageShell>
+          }
+        />
+        <Route
+          path="/events"
+          element={
+            <PageShell title="Events">
+              <EventsList />
+            </PageShell>
+          }
+        />
+        <Route
+          path="/achievements"
+          element={
+            <PageShell title="Achievements">
+              <AchievementsGallery />
+            </PageShell>
+          }
+        />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="clubs" element={<AdminClubs />} />
+          <Route path="events" element={<AdminEvents />} />
+          <Route path="achievements" element={<AdminAchievements />} />
+          <Route path="news" element={<AdminNews />} />
+          <Route path="council" element={<AdminCouncil />} />
+          <Route path="stats" element={<AdminStats />} />
+        </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </>
+  );
+}
+
 export default function App() {
   return (
     <BrowserRouter>
       <ThemeProvider>
-        <a href="#main-content" className="skip-to-main">
-          Skip to main content
-        </a>
-        <ScrollProgressBar />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route
-            path="/clubs"
-            element={
-              <PageShell title="Clubs">
-                <ClubsGrid />
-              </PageShell>
-            }
-          />
-          <Route
-            path="/events"
-            element={
-              <PageShell title="Events">
-                <EventsList />
-              </PageShell>
-            }
-          />
-          <Route
-            path="/achievements"
-            element={
-              <PageShell title="Achievements">
-                <AchievementsGallery />
-              </PageShell>
-            }
-          />
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin" element={<AdminLayout />}>
-            <Route index element={<AdminDashboard />} />
-            <Route path="clubs" element={<AdminClubs />} />
-            <Route path="events" element={<AdminEvents />} />
-            <Route path="achievements" element={<AdminAchievements />} />
-            <Route path="news" element={<AdminNews />} />
-            <Route path="council" element={<AdminCouncil />} />
-            <Route path="stats" element={<AdminStats />} />
-          </Route>
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+        <AuthProvider>
+          <NotificationProvider>
+            <AppContent />
+          </NotificationProvider>
+        </AuthProvider>
       </ThemeProvider>
     </BrowserRouter>
   );

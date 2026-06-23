@@ -200,8 +200,21 @@ export default function ClubsGrid() {
   const [selectedClub, setSelectedClub] = useState(null);
   const { data: dbClubs } = useSWR("/api/clubs", fetcher);
 
-  // Use dynamic data if available, otherwise fallback to static
-  const clubsData = Array.isArray(dbClubs) && dbClubs.length > 0 ? dbClubs : clubs;
+  // Normalize API data to match static club structure
+  const normalizeClub = (c) => ({
+    ...c,
+    icon: c.icon || c.logoUrl || "🏆",
+    image: c.image || c.bgImageUrl || "",
+    convenor: c.convenor || (c.convenorName ? { name: c.convenorName, role: c.convenorRole || "Convenor", details: c.convenorDetails || "" } : null),
+    coConvenor: c.coConvenor || (c.coConvenorName ? { name: c.coConvenorName, role: c.coConvenorRole || "Co-Convenor", details: c.coConvenorDetails || "" } : null),
+    coach: c.coach || (c.coachName ? { name: c.coachName, role: c.coachRole || "Coach", details: c.coachDetails || "", photoUrl: c.coachPhotoUrl || "" } : null),
+    achievements: c.achievements || (Array.isArray(c.achievementsList) ? c.achievementsList : c.achievementsList ? [c.achievementsList] : []),
+    gallery: c.gallery || [],
+    players: c.players || [],
+    coachImage: c.coachImage || "",
+  });
+
+  const clubsData = (Array.isArray(dbClubs) && dbClubs.length > 0 ? dbClubs.map(normalizeClub) : clubs);
 
   return (
     <>
@@ -236,6 +249,9 @@ function ClubCard({ club, onClick }) {
       transition={{ duration: 0.3 }}
       className="relative group cursor-pointer"
       onClick={onClick}
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(); } }}
+      role="button"
+      tabIndex={0}
       style={{ x, y, rotateX, rotateY, transformStyle: "preserve-3d" }}
     >
       <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl border border-border group-hover:border-brand-srm/40 transition-all duration-300">
@@ -249,7 +265,7 @@ function ClubCard({ club, onClick }) {
         <div className="absolute bottom-6 left-6 right-6 z-10">
           <div className="flex items-center gap-3 mb-3">
             <span className="text-3xl">{club.icon}</span>
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white bg-white/20 px-3 py-1 rounded-lg backdrop-blur-sm">
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white bg-white/20 px-3 py-1 rounded-lg">
               {club.name}
             </span>
           </div>
@@ -259,7 +275,7 @@ function ClubCard({ club, onClick }) {
         </div>
 
         <div className="absolute top-6 right-6 z-10">
-          <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-brand-srm/80 transition-colors">
+          <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-brand-srm/80 transition-colors">
             <span className="text-xl">→</span>
           </div>
         </div>

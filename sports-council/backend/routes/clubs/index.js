@@ -1,23 +1,25 @@
 const express = require('express');
 const router = express.Router();
-const { getDb, normalizeArray, normalizeDoc } = require('../../lib/mongo');
+const { query } = require('../../lib/pg');
 
 router.get('/', async (req, res) => {
   try {
-    const db = await getDb();
-    const clubs = await db.collection('clubs').find().sort({ order: 1 }).toArray();
-    const events = await db.collection('events').find().toArray();
+    const clubsResult = await query('SELECT * FROM clubs ORDER BY "order" ASC');
+    const eventsResult = await query('SELECT * FROM events');
+
+    const clubs = clubsResult.rows;
+    const events = eventsResult.rows;
 
     const clubMap = new Map(clubs.map((club) => [club.id, club]));
     events.forEach((event) => {
-      if (event.clubId && clubMap.has(event.clubId)) {
-        const club = clubMap.get(event.clubId);
+      if (event.club_id && clubMap.has(event.club_id)) {
+        const club = clubMap.get(event.club_id);
         club.events = club.events || [];
-        club.events.push(normalizeDoc(event));
+        club.events.push(event);
       }
     });
 
-    return res.json(normalizeArray(clubs));
+    return res.json(clubs);
   } catch (error) {
     console.error('Error fetching clubs:', error);
     return res.status(500).json({ error: 'Failed to fetch clubs' });
@@ -27,20 +29,19 @@ router.get('/', async (req, res) => {
 router.post('/join', async (req, res) => {
   try {
     const { clubId, name, email, message } = req.body;
-    const db = await getDb();
-    const request = {
-      id: new Date().valueOf().toString(),
-      clubId,
-      name,
-      email,
-      message,
-      status: 'PENDING',
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    };
+    const id = new Date().valueOf().toString();
+    const now = new Date();
 
-    await db.collection('clubJoinRequests').insertOne(request);
-    return res.status(201).json({ success: true, request });
+    await query(
+      `INSERT INTO club_join_requests (id, club_id, name, email, message, status, created_at, updated_at)
+       VALUES ($1, $2, $3, $4, $5, 'PENDING', $6, $6)`,
+      [id, clubId, name, email, message, now]
+    );
+
+    return res.status(201).json({
+      success: true,
+      request: { id, clubId, name, email, message, status: 'PENDING', createdAt: now, updatedAt: now },
+    });
   } catch (error) {
     console.error('Error submitting join request:', error);
     return res.status(500).json({ error: 'Failed to submit join request' });

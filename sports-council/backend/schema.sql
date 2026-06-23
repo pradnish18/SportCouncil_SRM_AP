@@ -1,0 +1,135 @@
+CREATE TABLE IF NOT EXISTS achievements (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL DEFAULT '',
+  description TEXT NOT NULL DEFAULT '',
+  photo_url TEXT NOT NULL DEFAULT '',
+  date TIMESTAMPTZ,
+  sport TEXT NOT NULL DEFAULT '',
+  category TEXT NOT NULL DEFAULT 'TROPHY',
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS clubs (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL DEFAULT '',
+  description TEXT NOT NULL DEFAULT '',
+  logo_url TEXT NOT NULL DEFAULT '',
+  bg_image_url TEXT NOT NULL DEFAULT '',
+  convenor_name TEXT NOT NULL DEFAULT '',
+  convenor_role TEXT NOT NULL DEFAULT '',
+  convenor_details TEXT NOT NULL DEFAULT '',
+  co_convenor_name TEXT NOT NULL DEFAULT '',
+  co_convenor_role TEXT NOT NULL DEFAULT '',
+  co_convenor_details TEXT NOT NULL DEFAULT '',
+  coach_name TEXT NOT NULL DEFAULT '',
+  coach_role TEXT NOT NULL DEFAULT '',
+  coach_details TEXT NOT NULL DEFAULT '',
+  coach_photo_url TEXT NOT NULL DEFAULT '',
+  achievements_list TEXT NOT NULL DEFAULT '',
+  "order" INTEGER NOT NULL DEFAULT 0,
+  gallery JSONB NOT NULL DEFAULT '[]'::jsonb,
+  players JSONB NOT NULL DEFAULT '[]'::jsonb,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS events (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL DEFAULT '',
+  sport TEXT NOT NULL DEFAULT '',
+  venue TEXT NOT NULL DEFAULT '',
+  date TIMESTAMPTZ,
+  time TEXT NOT NULL DEFAULT '',
+  description TEXT NOT NULL DEFAULT '',
+  category TEXT NOT NULL DEFAULT '',
+  stage TEXT NOT NULL DEFAULT 'PLANNED',
+  team1 TEXT NOT NULL DEFAULT '',
+  team2 TEXT NOT NULL DEFAULT '',
+  score1 TEXT NOT NULL DEFAULT '',
+  score2 TEXT NOT NULL DEFAULT '',
+  live_updates TEXT NOT NULL DEFAULT '',
+  winner1st TEXT NOT NULL DEFAULT '',
+  winner2nd TEXT NOT NULL DEFAULT '',
+  match_details TEXT NOT NULL DEFAULT '',
+  club_id TEXT NOT NULL DEFAULT '',
+  registration_link TEXT NOT NULL DEFAULT '',
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS council_members (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL DEFAULT '',
+  title TEXT NOT NULL DEFAULT '',
+  photo_url TEXT NOT NULL DEFAULT '',
+  tier TEXT NOT NULL DEFAULT 'STUDENT_BODY',
+  "order" INTEGER NOT NULL DEFAULT 0,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS news (
+  id TEXT PRIMARY KEY,
+  headline TEXT NOT NULL DEFAULT '',
+  image_url TEXT NOT NULL DEFAULT '',
+  "order" INTEGER NOT NULL DEFAULT 0,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS stats (
+  id TEXT PRIMARY KEY DEFAULT 'global-stats',
+  total_teams INTEGER NOT NULL DEFAULT 0,
+  total_members INTEGER NOT NULL DEFAULT 0,
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS users (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL DEFAULT '',
+  email TEXT NOT NULL DEFAULT '',
+  password TEXT NOT NULL DEFAULT '',
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_users_email ON users(email);
+
+CREATE TABLE IF NOT EXISTS admins (
+  id TEXT PRIMARY KEY,
+  username TEXT NOT NULL DEFAULT '',
+  password TEXT NOT NULL DEFAULT '',
+  role TEXT NOT NULL DEFAULT '',
+  club_id TEXT NOT NULL DEFAULT ''
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_admins_username ON admins(username);
+
+CREATE TABLE IF NOT EXISTS club_join_requests (
+  id TEXT PRIMARY KEY,
+  club_id TEXT NOT NULL DEFAULT '',
+  name TEXT NOT NULL DEFAULT '',
+  email TEXT NOT NULL DEFAULT '',
+  message TEXT NOT NULL DEFAULT '',
+  status TEXT NOT NULL DEFAULT 'PENDING',
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS club_registrations (
+  id TEXT PRIMARY KEY,
+  full_name TEXT NOT NULL DEFAULT '',
+  email TEXT NOT NULL DEFAULT '',
+  registration_number TEXT NOT NULL DEFAULT '',
+  department TEXT NOT NULL DEFAULT '',
+  year_of_study TEXT NOT NULL DEFAULT '',
+  phone_number TEXT NOT NULL DEFAULT '',
+  interested_clubs JSONB NOT NULL DEFAULT '[]'::jsonb,
+  skills TEXT NOT NULL DEFAULT '',
+  previous_experience TEXT NOT NULL DEFAULT '',
+  statement TEXT NOT NULL DEFAULT '',
+  status TEXT NOT NULL DEFAULT 'PENDING',
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);

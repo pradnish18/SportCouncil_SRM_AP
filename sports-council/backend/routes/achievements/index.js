@@ -1,12 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { getDb, normalizeArray } = require('../../lib/mongo');
+const { query } = require('../../lib/pg');
 
 router.get('/', async (req, res) => {
   try {
-    const db = await getDb();
-    const achievements = await db.collection('achievements').find().sort({ date: -1 }).toArray();
-    return res.json(normalizeArray(achievements));
+    const result = await query('SELECT * FROM achievements ORDER BY date DESC');
+    return res.json(result.rows);
   } catch (error) {
     console.error('Error fetching achievements:', error);
     return res.status(500).json({ error: 'Failed to fetch achievements' });

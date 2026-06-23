@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { getDb, normalizeArray } = require('../../lib/mongo');
+const { query } = require('../../lib/pg');
 
 router.get('/', async (req, res) => {
   try {
-    const db = await getDb();
-    const members = await normalizeArray(await db.collection('councilMembers').find().sort({ order: 1 }).toArray());
+    const result = await query('SELECT * FROM council_members ORDER BY "order" ASC');
+    const members = result.rows;
 
     const groupedMembers = {
       DIRECTOR: members.filter((m) => m.tier === 'DIRECTOR'),

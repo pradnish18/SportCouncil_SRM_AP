@@ -1,22 +1,27 @@
 const express = require('express');
 const router = express.Router();
-const { getDb, normalizeArray } = require('../../lib/mongo');
+const { query } = require('../../lib/pg');
 
 router.get('/', async (req, res) => {
   try {
-    const db = await getDb();
-    const events = await db.collection('events').find().sort({ date: 1 }).toArray();
-    const clubIds = [...new Set(events.filter((event) => event.clubId).map((event) => event.clubId))];
-    const clubs = await db.collection('clubs').find({ id: { $in: clubIds } }).project({ id: 1, name: 1, logoUrl: 1 }).toArray();
-    const clubMap = new Map(clubs.map((club) => [club.id, club]));
+    const eventsResult = await query('SELECT * FROM events ORDER BY date ASC');
+    const events = eventsResult.rows;
+
+    const clubIds = [...new Set(events.filter((event) => event.club_id).map((event) => event.club_id))];
+    let clubMap = new Map();
+    if (clubIds.length > 0) {
+      const placeholders = clubIds.map((_, i) => `$${i + 1}`).join(',');
+      const clubsResult = await query(
+        `SELECT id, name, logo_url FROM clubs WHERE id IN (${placeholders})`,
+        clubIds
+      );
+      clubMap = new Map(clubsResult.rows.map((club) => [club.id, club]));
+    }
 
     const normalized = events.map((event) => ({
       ...event,
-      id: event.id || (event._id ? event._id.toString() : undefined),
-      club: event.clubId ? clubMap.get(event.clubId) || null : null,
+      club: event.club_id ? clubMap.get(event.club_id) || null : null,
     }));
-
-    normalized.forEach((item) => delete item._id);
 
     return res.json(normalized);
   } catch (error) {

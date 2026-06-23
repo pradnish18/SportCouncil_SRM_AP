@@ -324,7 +324,7 @@ export default function AchievementsGallery() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col sm:flex-row items-center sm:items-start gap-10 p-10 bg-card/60 backdrop-blur-xl rounded-[3rem] border-l-8 border-l-brand-srm border border-border group hover:shadow-2xl hover:shadow-brand-srm/5 transition-all"
+                className="flex flex-col sm:flex-row items-center sm:items-start gap-10 p-10 bg-card rounded-[3rem] border-l-8 border-l-brand-srm border border-border group hover:shadow-2xl hover:shadow-brand-srm/5 transition-all"
               >
                 <div className="flex-shrink-0 relative">
                   <div className="absolute -inset-2 bg-brand-srm/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all" />

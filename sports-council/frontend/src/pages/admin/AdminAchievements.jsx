@@ -1,6 +1,8 @@
 import { useState } from "react";
 import useSWR from "swr";
 import { fetcher } from "../../lib/api";
+import AdminModal from "../../components/AdminModal";
+import ConfirmModal from "../../components/ConfirmModal";
 
 export default function AdminAchievements() {
   const { data: achievements, mutate } = useSWR("/api/achievements", fetcher);
@@ -8,16 +10,22 @@ export default function AdminAchievements() {
   const [isCreating, setIsCreating] = useState(false);
   const [formData, setFormData] = useState({});
   const [originalData, setOriginalData] = useState({});
+  const [confirmUnsaved, setConfirmUnsaved] = useState(false);
+  const [confirmDelete, setConfirmDelete] = useState(null);
 
   const hasChanges = JSON.stringify(formData) !== JSON.stringify(originalData);
 
+  const isModalOpen = editingAchievement || isCreating;
+
   const handleCloseModal = () => {
     if (hasChanges) {
-      const confirmClose = window.confirm(
-        "You have unsaved changes. Do you want to discard them?"
-      );
-      if (!confirmClose) return;
+      setConfirmUnsaved(true);
+      return;
     }
+    closeForm();
+  };
+
+  const closeForm = () => {
     setEditingAchievement(null);
     setIsCreating(false);
     setFormData({});
@@ -50,25 +58,26 @@ export default function AdminAchievements() {
       });
       if (response.ok) {
         mutate();
-        setEditingAchievement(null);
-        setIsCreating(false);
-        setFormData({});
-        setOriginalData({});
+        closeForm();
       }
     } catch (error) {
       console.error("Error saving achievement:", error);
     }
   };
 
-  const handleDelete = async (achievementId) => {
-    if (confirm("Are you sure you want to delete this achievement?")) {
-      try {
-        await fetch(`/api/admin/achievements/${achievementId}`, { method: "DELETE" });
-        mutate();
-      } catch (error) {
-        console.error("Error deleting achievement:", error);
-      }
+  const handleDelete = (achievementId) => {
+    setConfirmDelete(achievementId);
+  };
+
+  const confirmDeleteAction = async () => {
+    if (!confirmDelete) return;
+    try {
+      await fetch(`/api/admin/achievements/${confirmDelete}`, { method: "DELETE" });
+      mutate();
+    } catch (error) {
+      console.error("Error deleting achievement:", error);
     }
+    setConfirmDelete(null);
   };
 
   return (
@@ -137,67 +146,81 @@ export default function AdminAchievements() {
       </div>
 
       {/* Edit/Create Modal */}
-      {(editingAchievement || isCreating) && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4">
-          <div className="bg-card p-6 rounded-lg max-w-md w-full relative">
-            <button
-              onClick={handleCloseModal}
-              className="absolute top-4 right-4 text-muted hover:text-foreground text-2xl leading-none"
+      <AdminModal
+        open={!!isModalOpen}
+        onClose={handleCloseModal}
+        title={isCreating ? "Create Achievement" : "Edit Achievement"}
+      >
+        <div className="space-y-5">
+          <div className="space-y-3">
+            <label className="text-xs font-black uppercase tracking-widest text-muted">Achievement Info</label>
+            <input
+              type="text"
+              placeholder="Title"
+              value={formData.title || ""}
+              onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-brand-srm/20 focus:border-brand-srm transition-all"
+            />
+            <textarea
+              placeholder="Description"
+              value={formData.description || ""}
+              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-brand-srm/20 focus:border-brand-srm transition-all"
+              rows={3}
+            />
+            <input
+              type="text"
+              placeholder="Sport"
+              value={formData.sport || ""}
+              onChange={(e) => setFormData({ ...formData, sport: e.target.value })}
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-brand-srm/20 focus:border-brand-srm transition-all"
+            />
+            <select
+              value={formData.category || ""}
+              onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-srm/20 focus:border-brand-srm transition-all"
             >
-              ✕
-            </button>
-            <h2 className="text-xl font-syne font-bold mb-4">
-              {isCreating ? "Create Achievement" : "Edit Achievement"}
-            </h2>
-            <div className="space-y-4">
-              <input
-                type="text"
-                placeholder="Title"
-                value={formData.title || ""}
-                onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                className="w-full p-2 border border-border rounded"
-              />
-              <textarea
-                placeholder="Description"
-                value={formData.description || ""}
-                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                className="w-full p-2 border border-border rounded"
-                rows={3}
-              />
-              <input
-                type="text"
-                placeholder="Sport"
-                value={formData.sport || ""}
-                onChange={(e) => setFormData({ ...formData, sport: e.target.value })}
-                className="w-full p-2 border border-border rounded"
-              />
-              <select
-                value={formData.category || ""}
-                onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                className="w-full p-2 border border-border rounded"
-              >
-                <option value="TROPHY">Trophy</option>
-                <option value="ACCOLADE">Accolade</option>
-                <option value="RECORD">Record</option>
-              </select>
-            </div>
-            <div className="flex justify-end gap-2 mt-6">
-              <button
-                onClick={handleCloseModal}
-                className="px-4 py-2 text-muted hover:text-foreground"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleSave}
-                className="px-4 py-2 bg-brand-srm text-white rounded hover:bg-brand-srm/90"
-              >
-                Save
-              </button>
-            </div>
+              <option value="TROPHY">Trophy</option>
+              <option value="ACCOLADE">Accolade</option>
+              <option value="RECORD">Record</option>
+            </select>
           </div>
         </div>
-      )}
+        <div className="mt-8 flex justify-end gap-3 border-t border-border pt-6">
+          <button
+            onClick={handleCloseModal}
+            className="rounded-xl border border-border px-6 py-2.5 text-sm font-medium text-foreground hover:bg-foreground/5 transition-colors"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={handleSave}
+            className="rounded-xl bg-brand-srm px-6 py-2.5 text-sm font-medium text-white hover:bg-brand-srm/90 transition-colors"
+          >
+            Save
+          </button>
+        </div>
+      </AdminModal>
+
+      {/* Confirm Discard Modal */}
+      <ConfirmModal
+        open={confirmUnsaved}
+        onConfirm={() => { closeForm(); setConfirmUnsaved(false); }}
+        onCancel={() => setConfirmUnsaved(false)}
+        title="Discard Changes?"
+        message="You have unsaved changes. Do you want to discard them?"
+        confirmLabel="Discard"
+      />
+
+      {/* Confirm Delete Modal */}
+      <ConfirmModal
+        open={!!confirmDelete}
+        onConfirm={confirmDeleteAction}
+        onCancel={() => setConfirmDelete(null)}
+        title="Delete Achievement?"
+        message="Are you sure you want to delete this achievement? This action cannot be undone."
+        confirmLabel="Delete"
+      />
     </div>
   );
 }
