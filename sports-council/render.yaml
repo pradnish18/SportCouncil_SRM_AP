@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: sports-council-api
+    runtime: node
+    repo: https://github.com/pradnish18/SportCouncil_SRM_AP
+    branch: pradnish
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /api/clubs
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: PORT
+        value: 4000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sports-council-db
+          property: connectionString
+      - key: OLLAMA_HOST
+        value: http://127.0.0.1:11434
+
+databases:
+  - name: sports-council-db
+    region: singapore
+    plan: free
+    postgresMajorVersion: 16
+    databaseName: sports_council
+    ipAllowList: []
