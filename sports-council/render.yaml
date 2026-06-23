@@ -4,7 +4,7 @@ services:
     runtime: node
     repo: https://github.com/pradnish18/SportCouncil_SRM_AP
     branch: pradnish
-    rootDir: backend
+    rootDir: sports-council/backend
     buildCommand: npm install
     startCommand: node server.js
     healthCheckPath: /api/clubs
