@@ -1,0 +1,11 @@
+{
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "numReplicas": 1,
+    "startCommand": "node server.js",
+    "healthcheckPath": "/api/clubs",
+    "healthcheckTimeout": 300
+  }
+}
