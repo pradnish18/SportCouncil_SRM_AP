@@ -52,8 +52,17 @@ export default function Navbar() {
       <div className="flex h-[70px] items-center justify-between px-6 py-4 xl:px-12">
         {/* Logo Section */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-brand-srm text-white rounded-xl flex items-center justify-center text-xl font-bold shadow-lg transform group-hover:rotate-6 transition-transform">
-            S
+          <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg transform group-hover:rotate-6 transition-transform">
+            <img
+              src="/images/sports-council-logo.png"
+              alt="SRM Sports Council"
+              className="w-full h-full object-contain"
+              onError={(e) => {
+                e.target.style.display = "none";
+                e.target.parentElement.classList.add("bg-brand-srm", "text-white", "flex", "items-center", "justify-center", "text-xl", "font-bold");
+                e.target.parentElement.textContent = "S";
+              }}
+            />
           </div>
           <span className="font-syne hidden text-xl font-extrabold uppercase tracking-tight text-foreground sm:block">
             SRM <span className="text-foreground/60">Sports</span>
