@@ -80,8 +80,15 @@ export default function AuthModal({ mode: initialMode = "signin", onClose, onSuc
         </button>
 
         <div className="text-center mb-8">
-          <div className="w-14 h-14 bg-brand-srm text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-            S
+          <div className="mx-auto mb-4 h-20 w-20 rounded-2xl overflow-hidden bg-background p-2">
+            <img
+              src="/images/sports-council-logo.png"
+              alt="SRM Sports Council"
+              className="w-full h-full object-contain"
+              onError={(e) => {
+                e.target.style.display = "none";
+              }}
+            />
           </div>
           <h2 className="text-2xl font-syne font-bold">
             {mode === "signin" ? "Welcome Back" : "Create Account"}

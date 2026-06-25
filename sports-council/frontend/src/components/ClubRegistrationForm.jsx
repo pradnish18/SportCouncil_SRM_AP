@@ -122,8 +122,15 @@ export default function ClubRegistrationForm({ onClose }) {
 
         <div className="p-6 md:p-8">
           <div className="text-center mb-6">
-            <div className="w-12 h-12 bg-brand-srm text-white rounded-2xl flex items-center justify-center text-xl font-bold mx-auto mb-3">
-              S
+            <div className="mx-auto mb-3 h-16 w-16 rounded-2xl overflow-hidden bg-background p-1.5">
+              <img
+                src="/images/sports-council-logo.png"
+                alt="SRM Sports Council"
+                className="w-full h-full object-contain"
+                onError={(e) => {
+                  e.target.style.display = "none";
+                }}
+              />
             </div>
             <h2 className="text-2xl font-syne font-bold">Join a Club</h2>
             <p className="text-xs text-muted font-outfit mt-1">

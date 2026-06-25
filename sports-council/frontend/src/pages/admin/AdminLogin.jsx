@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ShieldAlert } from "lucide-react";
 
 export default function AdminLogin() {
   const [credentials, setCredentials] = useState({ username: "", password: "" });
@@ -44,8 +43,15 @@ export default function AdminLogin() {
       >
         <div className="rounded-2xl border border-border bg-card p-10 shadow-2xl">
           <div className="text-center mb-10">
-            <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-srm shadow-lg shadow-brand-srm/20">
-              <ShieldAlert size={32} className="text-white" />
+            <div className="mx-auto mb-6 h-24 w-24 rounded-2xl overflow-hidden shadow-lg shadow-brand-srm/20 bg-background p-2">
+              <img
+                src="/images/sports-council-logo.png"
+                alt="SRM Sports Council"
+                className="w-full h-full object-contain"
+                onError={(e) => {
+                  e.target.style.display = "none";
+                }}
+              />
             </div>
             <h2 className="text-3xl font-syne font-bold text-foreground">Admin Login</h2>
             <p className="mt-3 text-sm text-muted">Sign in to access the admin panel</p>
