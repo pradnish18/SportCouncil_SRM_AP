@@ -231,6 +231,3 @@ The project includes `render.yaml` — a [Render Blueprint](https://render.com/d
 
 The full schema is in `backend/schema.sql` and `backend/schema-rag.sql`.
 
-## License
-
-MIT
